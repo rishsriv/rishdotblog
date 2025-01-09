@@ -34,9 +34,9 @@ export default function Home() {
             links.map(({ slug, title, published }) => (
               <div key={slug}>
                 <h2 className="font-bold text-2xl text-gray-700 dark:text-gray-200">
-                  <Link to={`/essays/${slug}`}>
+                  <a href={`/essays/${slug}`}>
                     {title}
-                  </Link>
+                  </a>
                 </h2>
                 <p className="text-gray-700 dark:text-gray-200">
                   {published}
