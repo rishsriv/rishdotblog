@@ -1,6 +1,6 @@
 import { createElement } from "react";
 import { useLoaderData } from "react-router";
-import { getEssayBySlug } from "../../utils/mdx.server";
+import { getEssayBySlug } from "~/utils/mdx.server";
 
 export async function loader({ params }: { params: { slug: string } }) {
   const essay = getEssayBySlug(params.slug);
@@ -52,7 +52,7 @@ export default function EssayPost() {
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <div className="max-w-[800px] w-full space-y-6 px-4">
           <article className="prose prose-slate dark:prose-invert lg:prose-lg max-w-none">
-            {renderedContent.map((node, index) => renderFromRawElement(node, index))}
+            {renderedContent.map((node: any, index: number) => renderFromRawElement(node, index))}
           </article>
         </div>
       </div>

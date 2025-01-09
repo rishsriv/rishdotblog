@@ -1,7 +1,6 @@
-import type { Route } from "./+types/home";
 import { Link } from "react-router"
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Rishabh Srivastava | Data Nerd, Founder of Defog.ai" },
     { name: "description", content: "Learning, Growth, Open Source." },
