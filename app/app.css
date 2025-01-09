@@ -10,3 +10,19 @@ body {
     color-scheme: dark;
   }
 }
+
+a {
+  @apply text-gray-50 hover:underline;
+}
+
+a.active {
+  @apply underline;
+}
+
+a.pending {
+  animation: pulse 1s infinite;
+}
+
+a.transitioning {
+  /* css transition is running */
+}
