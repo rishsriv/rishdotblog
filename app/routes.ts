@@ -8,4 +8,9 @@ export default [
     index("routes/essays/index.tsx"),
     route(":slug", "routes/essays/$slug.tsx"),
   ]),
+
+  ...prefix("notes", [
+    index("routes/notes/index.tsx"),
+    route(":slug", "routes/notes/$slug.tsx"),
+  ]),
 ] satisfies RouteConfig;
