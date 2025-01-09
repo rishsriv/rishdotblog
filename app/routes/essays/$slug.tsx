@@ -1,6 +1,6 @@
-import { createElement } from "react";
 import { useLoaderData } from "react-router";
 import { getEssayBySlug } from "~/utils/mdx.server";
+import { renderFromRawElement } from "~/utils/parsing";
 
 export async function loader({ params }: { params: { slug: string } }) {
   const essay = getEssayBySlug(params.slug);
@@ -20,31 +20,6 @@ export function meta({ data }: { data: any }) {
 
 export default function EssayPost() {
   const { content, frontmatter } = useLoaderData<typeof loader>();
-  
-  function renderFromRawElement(node: any, key: number) {
-    if (typeof node === 'string') {
-      return node;
-    }
-
-    if (!node || typeof node !== 'object') {
-      return null;
-    }
-
-    const { type, props } = node;
-
-    if (!type || !props) {
-      return null;
-    }
-
-    return createElement(
-      type,
-      { key, ...props },
-      Array.isArray(props.children)
-        ? props.children.map((child: any, index: number) => renderFromRawElement(child, index))
-        : props.children
-    );
-  }
-
   const renderedContent = content?.props?.children || [];
 
   return (
