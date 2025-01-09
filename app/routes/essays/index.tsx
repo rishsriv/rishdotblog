@@ -16,7 +16,7 @@ export function loader() {
 
 export function meta() {
   return [
-    { title: "Rishabh's Essays'" },
+    { title: "Rishabh's Essays" },
     { name: "description", content: "Essays" },
   ];
 }
