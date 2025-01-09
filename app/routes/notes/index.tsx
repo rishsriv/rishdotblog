@@ -34,6 +34,11 @@ export default function Home() {
             links.map(({ slug, title, published }) => (
               <div key={slug}>
                 <h2 className="font-bold text-2xl text-gray-700 dark:text-gray-200">
+                  {/*
+                    we use <a> tags instead of <Link> tags here. This is because we statically pre-render the essays
+                    using Link on client-side navigation would cause the loader to _expect_ a server response
+                    but since we don't have a server with SSG, we don't want that. So we use plain html anchor tags
+                  */}
                   <a href={`/notes/${slug}`}>
                     {title}
                   </a>
