@@ -28,7 +28,7 @@ export default function Home() {
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <div className="max-w-[800px] w-full space-y-6 px-4">
           <h1 className="font-bold text-3xl text-gray-700 dark:text-gray-200">
-            Notes from books, podcasts, and conversations
+            Notes from books, podcasts, and tinkerings
           </h1>
           {
             links.map(({ slug, title, published }) => (
