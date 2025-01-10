@@ -9,7 +9,9 @@ import Counter from "../../components/Counter";
 
 # Creating a SSG MDX Blog with React Router v7
 
-I have been meaning to move off my Notion based blog for a while, and was looking for an SSG friendly way to host my blog. We use NextJS for at our company. Worsening NextJS developer experience + Vercel's annoying lock-in made me decide to give React Router a try.
+I have been meaning to move by blog off Notion-based blog for a while. I had previously used Notion's API and Next's CMS for this. But heavy rate limiting on the Notion API and other issues made me was looking for an MDX-based, SSG friendly way to host my blog.
+
+While we generally use NextJS for [at our company](https://defog.ai). Worsening NextJS developer experience + Vercel's annoying lock-in made me decide to give React Router a try.
 
 ## TL;DR
 - React Router v7 is a SSG friendly solution for creating a blog with MDX.
@@ -19,7 +21,7 @@ I have been meaning to move off my Notion based blog for a while, and was lookin
 I wanted to be able to write blog posts with markdown in my IDE, and easily preview them using Cmd+Shift+V. I had 3 other requirements:
 1. Ability to use code blocks, since a lot of my content might be code
 2. Ability to use custom React components, for dataviz and other interactive content
-3. Infinite customizability
+3. Ability to easily move to SSR in the future, without being locked into a framework
 
 MDX was the answer to all these requirements.
 
@@ -50,5 +52,25 @@ chat_completion = client.chat.completions.create(
 ```
 
 ### Adding Custom Components
+I can easily add custom React components to my blog posts. For example, I could add this Counter component by just adding it to my MDX file.
+
+```javascript
+import Counter from "../../components/Counter";
+
+# Some MDX Text
+...
 
 <Counter />
+```
+
+You can see it in action below.
+<Counter />
+
+### Ability to move to SSR
+
+If the number of blog posts grow and it becomes infeasible to build them every time, it's easy to move to SSR. I can just change the vite config for certain pages to be built as SSR, by changing the `prerender` option in the `react-router.config.ts` file to `ssr`.
+
+Importantly, this can be done without being locked into a platform provider like Vercel. I can just deploy the blog to any platform I want.
+
+## What's next?
+I will mostly use this blog to talk about notes from implementing LLMs in enterprises, personal experiments, and other things. _Might_ also explore some personal hobbies - but will keep self-indulgence to a minimum.
