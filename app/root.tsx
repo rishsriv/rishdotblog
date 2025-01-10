@@ -10,22 +10,46 @@ import {
 import type { Route } from "./+types/root";
 import stylesheet from "~/app.css?url";
 import Navbar from "~/components/Navbar";
+import { useEffect } from "react";
+
+declare global {
+  interface Window {
+    WebFontConfig?: {
+      google?: {
+        families: string[];
+      };
+    };
+    WebFont?: {
+      load: (config: any) => void;
+    };
+  }
+}
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap",
-  },
   { rel: "stylesheet", href: stylesheet },
 ];
 
+function loadFonts() {
+  const script = document.createElement('script');
+  script.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+  script.async = true;
+
+  script.onload = () => {
+    window.WebFont?.load({
+      google: {
+        families: ['Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap']
+      }
+    });
+  };
+
+  document.head.appendChild(script);
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
   return (
     <html lang="en">
       <head>
