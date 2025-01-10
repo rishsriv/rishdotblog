@@ -1,11 +1,11 @@
 import { useLoaderData } from "react-router";
-import { getNotesBySlug } from "~/utils/mdx.server";
+import { getPostBySlug } from "~/utils/mdx.server";
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 
 export async function loader({ params }: { params: { slug: string } }) {
-  const note = await getNotesBySlug(params.slug);
+  const note = await getPostBySlug(params.slug, 'notes');
   if (!note) {
     throw new Response("Note not found", { status: 404 });
   }

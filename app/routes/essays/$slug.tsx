@@ -1,22 +1,22 @@
 import { useLoaderData } from "react-router";
-import { getEssayBySlug } from "~/utils/mdx.server";
+import { getPostBySlug } from "~/utils/mdx.server";
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 
 export async function loader({ params }: { params: { slug: string } }) {
-  const note = await getEssayBySlug(params.slug);
+  const essay = await getPostBySlug(params.slug, 'essays');
   
-  if (!note) {
+  if (!essay) {
     throw new Response("Essay not found", { status: 404 });
   }
-  if (!note.code) {
+  if (!essay.code) {
     throw new Response("Essay content is missing", { status: 500 });
   }
 
   return {
-    code: note.code,
-    frontmatter: note.frontmatter
+    code: essay.code,
+    frontmatter: essay.frontmatter
   };
 }
 

@@ -52,38 +52,10 @@ const resolveContentPath = (contentType: 'essays' | 'notes', slug: string) => {
   throw new Error(`Content not found for ${contentType}/${slug}`);
 };
 
-export const getEssayBySlug = async (slug: string) => {
+export const getPostBySlug = async (slug: string, contentType: 'essays' | 'notes') => {
   try {
-    const notePath = resolveContentPath('essays', slug);
+    const notePath = resolveContentPath(contentType, slug);
     const source = await fs.promises.readFile(notePath, 'utf8');
-    const { code, frontmatter } = await bundleMDX({
-      source,
-      files,
-      mdxOptions(options) {
-        options.remarkPlugins = [
-          ...(options.remarkPlugins ?? []),
-          // Add your remark plugins here
-        ];
-        options.rehypePlugins = [
-          ...(options.rehypePlugins ?? []),
-          // Add your rehype plugins here
-        ];
-        return options;
-      },
-    });
-
-    return { code, frontmatter };
-  } catch (error) {
-    console.error('Error processing MDX:');
-    return null;
-  }
-};
-
-export const getNotesBySlug = async (slug: string) => {
-  try {
-    const notePath = resolveContentPath('notes', slug);
-    const source = await fs.promises.readFile(notePath, 'utf8');
-    console.log(__dirname);
     const { code, frontmatter } = await bundleMDX({
       source,
       files,
