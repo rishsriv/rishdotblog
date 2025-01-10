@@ -34,8 +34,8 @@ export default function EssayPost() {
     <MDXProvider>
       <main className="flex items-center justify-center pt-16 pb-4">
         <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-          <div className="max-w-[800px] w-full space-y-6 px-4">
-            <article className="prose prose-slate dark:prose-invert lg:prose-lg max-w-none">
+          <div className="w-full max-w-[800px] space-y-6 px-4 md:px-6">
+            <article className="prose prose-slate dark:prose-invert lg:prose-lg prose-pre:max-w-[calc(100vw-2rem)] prose-pre:overflow-x-auto">
               <Component />
             </article>
           </div>
