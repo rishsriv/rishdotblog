@@ -19,7 +19,7 @@ export default function Home() {
             I am the founder of <Link to="https://defog.ai" className="text-blue-600 hover:underline">Defog.ai</Link> (YC W23), an open-source AI Data Analyst for enterprises.
           </p>
           <p className="font-medium text-gray-700 dark:text-gray-200">
-            Previously, I founded <Link to="https://loki.ai" className="text-blue-600 hover:underline">Loki.ai</Link>, a data intelligence platform that extracted insights from unstructured web data for enterprises in Asia.
+            Previously, I founded <Link to="https://loki.ai" className="text-blue-600 hover:underline">Loki.ai</Link>, a data intelligence platform for extracting insights from unstructured web data for enterprises in Asia.
           </p>
           <p className="font-medium text-gray-700 dark:text-gray-200">
             I like to <Link to="/experiments" className="text-blue-600 hover:underline">tinker</Link>, <Link to="/notes" className="text-blue-600 hover:underline">learn</Link>, and <Link to="/essays" className="text-blue-600 hover:underline">write</Link>.
