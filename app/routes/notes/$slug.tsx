@@ -21,6 +21,7 @@ export function meta({ data }: { data: any }) {
 export default function EssayPost() {
   const { content, frontmatter } = useLoaderData<typeof loader>();
   const renderedContent = content?.props?.children || [];
+  // console.log(content)
 
   return (
     <main className="flex items-center justify-center pt-16 pb-4">

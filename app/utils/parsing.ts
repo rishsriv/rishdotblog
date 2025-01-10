@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 
 export const renderFromRawElement = (node: any, key: number) => {
+  console.log(node);
   if (typeof node === 'string') {
     return node;
   }
@@ -11,9 +12,11 @@ export const renderFromRawElement = (node: any, key: number) => {
 
   const { type, props } = node;
 
-  if (!type || !props) {
+  if (!type) {
     return null;
   }
+
+  console.log(type);
 
   return createElement(
     type,

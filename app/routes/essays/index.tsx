@@ -39,7 +39,7 @@ export default function Home() {
                     using Link on client-side navigation would cause the loader to _expect_ a server response
                     but since we don't have a server with SSG, we don't want that. So we use plain html anchor tags
                   */}
-                  <a href={`/essays/${slug}`}>
+                  <a href={`/essays/${slug}`} className="hover:underline text-2xl text-gray-700 dark:text-gray-200">
                     {title}
                   </a>
                 </h2>

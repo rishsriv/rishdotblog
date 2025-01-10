@@ -1,0 +1,54 @@
+---
+title: Creating a SSG MDX Blog with React Router v7
+description: Using React Router v7 to create a SSG MDX blog, and hosting it on Cloudflare Pages.
+published: 2024-01-10
+featured: true
+---
+
+import Counter from "../../components/Counter";
+
+# Creating a SSG MDX Blog with React Router v7
+
+I have been meaning to move off my Notion based blog for a while, and was looking for an SSG friendly way to host my blog. We use NextJS for at our company. Worsening NextJS developer experience + Vercel's annoying lock-in made me decide to give React Router a try.
+
+## TL;DR
+- React Router v7 is a SSG friendly solution for creating a blog with MDX.
+- If you want to just try it yourself, [fork this repo ⑂](https://github.com/rishsriv/rishdotblog).
+
+## Why MDX?
+I wanted to be able to write blog posts with markdown in my IDE, and easily preview them using Cmd+Shift+V. I had 3 other requirements:
+1. Ability to use code blocks, since a lot of my content might be code
+2. Ability to use custom React components, for dataviz and other interactive content
+3. Infinite customizability
+
+MDX was the answer to all these requirements.
+
+## Why React Router v7?
+[React Router v7](https://reactrouter.com/) is a lightweight, fast and powerful solution for creating a React sites. It used to be just a library that supported client-side navigation. But now (and with Remix features merged in) it also supports server-side rendering and excellent SEO options, which is what we need for our blog.
+
+I wanted to avoid Vercel's lock-in, and also wanted to a SSG/SSR friendly framework that could be hosted anywhere. So I went for React Router v7.
+
+## Cool Features
+
+### Syntax Highlighting
+Thanks to [rehype-pretty-code](https://rehype-pretty.pages.dev/) I can easily add code blocks in any language. Example below:
+
+This is a language aware code block, which means it will get syntax highlighted and rendered as a code block. I just had to start the code block with \```python and end it with \```
+
+```python
+from openai import OpenAI
+openai = OpenAI()
+chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Say this is a test",
+        }
+    ],
+    model="gpt-4o",
+)
+```
+
+### Adding Custom Components
+
+<Counter />
