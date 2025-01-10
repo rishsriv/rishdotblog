@@ -2,6 +2,9 @@ import { bundleMDX } from 'mdx-bundler';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -61,12 +64,10 @@ export const getPostBySlug = async (slug: string, contentType: 'essays' | 'notes
       files,
       mdxOptions(options) {
         options.remarkPlugins = [
-          ...(options.remarkPlugins ?? []),
-          // Add your remark plugins here
+          remarkFrontmatter, remarkMdxFrontmatter,
         ];
         options.rehypePlugins = [
-          ...(options.rehypePlugins ?? []),
-          // Add your rehype plugins here
+          rehypePrettyCode
         ];
         return options;
       },
