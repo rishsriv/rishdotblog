@@ -79,7 +79,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200">
+      <body className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200">
         <Navbar theme={theme} setTheme={setTheme} />
         {children}
         <ScrollRestoration />

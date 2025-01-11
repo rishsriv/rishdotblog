@@ -33,8 +33,8 @@ export default function EssayPost() {
   return (
     <MDXProvider>
       <main className="flex items-center justify-center py-16">
-        <div className="flex-1 flex flex-col items-center min-h-0">
-          <div className="w-full max-w-[65ch] space-y-8 px-4 md:px-6">
+        <div className="flex-1 flex flex-col items-center">
+          <div className="max-w-[800px] w-full px-4">
             <article className="prose prose-slate dark:prose-invert lg:prose-lg max-w-none
               prose-headings:font-display
               prose-h1:text-4xl prose-h1:font-bold prose-h1:mb-8
