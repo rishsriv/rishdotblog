@@ -57,6 +57,7 @@ const resolveContentPath = (slug: string) => {
 export const getPostBySlug = async (slug: string) => {
   try {
     const notePath = resolveContentPath(slug);
+    // @ts-ignore
     const source = await fs.promises.readFile(notePath, 'utf8');
     const { code, frontmatter } = await bundleMDX({
       source,
