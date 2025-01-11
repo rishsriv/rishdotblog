@@ -33,14 +33,14 @@ nav {
 
 nav a {
   @apply text-gray-400 no-underline font-normal;
-  @apply hover:text-gray-200;
+  @apply hover:text-gray-700 dark:hover:text-gray-100;
   @apply transition-all duration-200 relative mx-4 first:ml-0;
   @apply border-b-2 border-transparent;
 }
 
 nav a.active {
-  @apply text-gray-100 font-medium;
-  @apply border-gray-100;
+  @apply dark:text-gray-100 text-gray-900 font-medium;
+  @apply dark:border-gray-300 border-gray-700;
 }
 
 /* Links */
