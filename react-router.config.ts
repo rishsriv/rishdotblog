@@ -8,15 +8,12 @@ export default {
   // prerender: true,
 
   async prerender() {
-    const essays = await import.meta.glob("./app/content/essays/*.mdx");
-    const notes = await import.meta.glob("./app/content/notes/*.mdx");
+    const notes = await import.meta.glob("./app/content/*.mdx");
     
     // get all the dynamic slugs explicitly listed here
-    const essaySlugs = Object.keys(essays).map((path: string) => path.replace("app/content/", "/").replace(".mdx", ""));
-    const noteSlugs = Object.keys(notes).map((path: string) => path.replace("app/content/", "/").replace(".mdx", ""));
+    const noteSlugs = Object.keys(notes).map((path: string) => path.replace("app/content/", "/p/").replace(".mdx", ""));
 
-    return ["/", "/contact", "/essays", "/notes"].concat(
-      essaySlugs,
+    return ["/", "/contact", "/notes"].concat(
       noteSlugs
     );
   },
