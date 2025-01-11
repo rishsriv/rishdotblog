@@ -34,7 +34,7 @@ export default function Home() {
             <li className="ml-4 pl-2 pb-2">Prioritize long-term compounding, not short-term grabs</li>
             <li className="ml-4 pl-2 pb-2">Identify the point of highest leverage and go there</li>
             <li className="ml-4 pl-2 pb-2">Seek pain and push yourself. Pain + Reflection = Progress</li>
-            <li className="ml-4 pl-2 pb-2">Build systems that enable flow states for yourself, your team, and your customers</li>
+            <li className="ml-4 pl-2 pb-2">Build systems that enable sustainable, peak performance for yourself, your team, and your customers</li>
           </ul>
           <hr />
           <h2 className="font-bold text-2xl text-gray-700 dark:text-gray-200">
