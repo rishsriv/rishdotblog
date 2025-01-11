@@ -1,0 +1,73 @@
+---
+title: Deploying Text-to-SQL LLMs in large enterprises - pitfalls and best practices
+description: We deployed Text-to-SQL LLMs in 10 large enterprises. Here is what worked and what did not.
+published: 2024-01-12
+public: true
+---
+
+# Here be dragons! Deploying Text-to-SQL LLMs in large enterprises
+
+At my [day job](https://defog.ai), we have deployed text-to-SQL LLMs in dozens of large enterprises, with varying degrees of success. At some of these, these LLMs perform extremely well and get near-perfect accuracy. At others enterprises, they perform very poorly. This blog outlines what worked, what did not, and how you can use LLMs to implement text-to-SQL for your own databases.
+
+## TL;DR
+- Choice of LLM doesn't really matter. All frontier models (`gpt-4o`, `claude-3.5-sonnet`, `gemini-2.0-pro`, `deepseek-v3`) are good enough.
+- It's super important to create good metadata. Column descriptions, table descriptions, and instructions are all important.
+- Like all LLM problems, getting text-to-SQL right is an iterative process. You need to keep iterating on column descriptions, instructions, and "golden queries" until you get it right.
+- If you have particularly complex questions or messy metadata, then "thinking" models, like [OpenAI's o1](https://platform.openai.com/docs/models/o1) and [Google's gemini-2.0-flash-thinking](https://ai.google.dev/gemini-api/docs/thinking-mode) have the best performance (by far). They are slower, but the increase in performance is worth it.
+
+## Defining Metadata
+
+### Why Metadata Matters
+Metadata forms the backbone of accurate text-to-SQL systems. Poorly defined metadata leads to ambiguous SQL queries, while good metadata provides the LLM with the context it needs to generate accurate and meaningful results.
+
+### Key Aspects of Metadata
+
+**1. Defining Company-Specific Terms**  
+Provide clear descriptions for ambiguous columns. For instance, if `pricepaid` represents the price paid per ticket (not the total), include this in the column description. Similarly, clarify if `commission` is included in `pricepaid` or calculated separately.
+
+**2. Handling Enums**  
+For columns with specific values, such as a `status` column with values like `done` and `not done`, list all possible values in the description.
+
+**3. Handling JSON Data**  
+If you have a column containing JSON objects, document the structure. For example:  
+```text
+This contains a JSON with the following keys: "completed" (boolean type), "contract_amount" (integer type), "person_in_charge" (string type). 
+```
+
+**4. Hinting Joins and Indexes**
+To improve query performance, explicitly mention which columns can be used for joins or indexing.
+
+## Instructions
+### Adding Context for Business Logic
+LLMs require guidance on business rules and internal terminology not captured by schema definitions. Examples include:
+
+- For "popular events," prioritize revenue over tickets sold.
+- When asked about "users," always include their username and city in the results.
+
+## Custom Instructions
+Define specific instructions like:
+
+- Always compute commission as 10% of pricepaid.
+- Use username and city for user queries unless stated otherwise.
+
+
+## Golden Queries
+Golden Queries act as reference points, aligning LLMs with real-world expectations. Here's how to implement them:
+
+1. Store golden queries in a vector database.
+2. Use vector similarity to retrieve the top 3-4 similar queries for any given user question.
+3. Add these as examples in the prompt to fine-tune query generation.
+
+## Evaluation
+Use tools like Defog's open-source [SQL-Eval](https://github.com/defog-ai/sql-eval) to evaluate LLM performance. Compare generated SQL against expected outputs by running queries on the database. This approach ensures accuracy in real-world conditions.
+
+
+## Iteration
+Improving text-to-SQL systems is an iterative process. Cchieving 90% accuracy is straightforward, but reaching production-grade reliability requires weeks of refinement. Key steps include:
+
+1. Refining column and table metadata.
+2. Iterating on custom instructions.
+3. Expanding and refining golden queries.
+
+## Conclusion
+Deploying text-to-SQL systems in large enterprises isn't a plug-and-play task. It demands careful preparation, robust metadata, and continuous iteration. While the journey may be complex, the payoff—accurate, scalable, and automated natural language query systems—is undoubtedly worth it.
