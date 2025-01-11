@@ -2,10 +2,10 @@ import { useLoaderData, Link } from "react-router";
 
 export function loader() {
   // get links to all the essays from content/essays
-  const notes = import.meta.glob("../../content/notes/*.mdx", { eager: true });
+  const notes = import.meta.glob("../../content/*.mdx", { eager: true });
 
   const links = Object.keys(notes).map((path) => ({
-    slug: path.replace("../../content/notes/", "").replace(".mdx", ""),
+    slug: path.replace("../../content/", "").replace(".mdx", ""),
     // @ts-ignore
     title: notes[path].frontmatter?.title,
     // @ts-ignore

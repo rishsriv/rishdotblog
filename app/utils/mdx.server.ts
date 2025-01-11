@@ -26,7 +26,7 @@ const getComponentFiles = () => {
         const filePath = path.join(componentsPath, file);
         const content = fs.readFileSync(filePath, 'utf8');
         // @ts-ignore
-        acc["../../components/" + file] = content;
+        acc["../components/" + file] = content;
         return acc;
       }, {});
     }
@@ -39,12 +39,12 @@ const getComponentFiles = () => {
 const files = getComponentFiles();
 
 // Helper function to resolve content paths
-const resolveContentPath = (contentType: 'essays' | 'notes', slug: string) => {
+const resolveContentPath = (slug: string) => {
   const paths = [
     // Try the build directory first
-    path.join(process.cwd(), 'app', 'content', contentType, `${slug}.mdx`),
+    path.join(process.cwd(), 'app', 'content', `${slug}.mdx`),
     // Then try the source directory
-    path.join(__dirname, '..', 'content', contentType, `${slug}.mdx`),
+    path.join(__dirname, '..', 'content', `${slug}.mdx`),
   ];
 
   for (const contentPath of paths) {
@@ -52,12 +52,11 @@ const resolveContentPath = (contentType: 'essays' | 'notes', slug: string) => {
       return contentPath;
     }
   }
-  throw new Error(`Content not found for ${contentType}/${slug}`);
 };
 
-export const getPostBySlug = async (slug: string, contentType: 'essays' | 'notes') => {
+export const getPostBySlug = async (slug: string) => {
   try {
-    const notePath = resolveContentPath(contentType, slug);
+    const notePath = resolveContentPath(slug);
     const source = await fs.promises.readFile(notePath, 'utf8');
     const { code, frontmatter } = await bundleMDX({
       source,
