@@ -1,12 +1,10 @@
 // Navbar component for the app
 import { NavLink } from "react-router";
+import { useTheme } from "~/contexts/theme";
 
-interface NavbarProps {
-  theme: 'light' | 'dark';
-  setTheme: (theme: 'light' | 'dark') => void;
-}
-
-const Navbar = ({ theme, setTheme }: NavbarProps) => {
+const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
@@ -33,14 +31,14 @@ const Navbar = ({ theme, setTheme }: NavbarProps) => {
                   Notes
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink 
                   to="/contact"
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Contact
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
             
             <button
