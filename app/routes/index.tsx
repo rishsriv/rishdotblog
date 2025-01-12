@@ -2,7 +2,7 @@ import { Link } from "react-router"
 
 export function meta() {
   return [
-    { title: "Rishabh Srivastava | Data Nerd, Founder of Defog.ai" },
+    { title: "Rishabh Srivastava | Co-Founder of Defog.ai" },
     { name: "description", content: "Learning, Growth, Open Source." },
   ];
 }
@@ -25,11 +25,11 @@ export default function Home() {
             <h1>Rishabh Srivastava 👨🏽‍💻</h1>
             
             <p>
-              I am the founder of <Link to="https://defog.ai">Defog.ai</Link> (YC W23), an open-source AI Data Analyst for enterprises.
+              I am a co-founder of <Link to="https://defog.ai">Defog.ai</Link> (YC W23), an open-source AI Data Analyst for enterprises.
             </p>
             
             <p>
-              Previously, I founded <Link to="https://loki.ai">Loki.ai</Link>, a data intelligence platform for extracting insights from unstructured web data for enterprises in Asia.
+              Previously, I ran <Link to="https://loki.ai">Loki.ai</Link>, a data intelligence platform for extracting insights from unstructured web data.
             </p>
             
             <p>
