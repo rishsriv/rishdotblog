@@ -13,7 +13,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // During SSR, return a default theme
     if (typeof window === "undefined") return "light";
     
-    const savedTheme = localStorage.getItem("theme") as Theme;
+    const savedTheme = sessionStorage.getItem("theme") as Theme;
     if (savedTheme) return savedTheme;
     
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -26,7 +26,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       root.classList.remove("dark");
     }
-    localStorage.setItem("theme", theme);
+    sessionStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
