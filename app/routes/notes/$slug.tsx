@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router";
 import { getPostBySlug } from "~/utils/mdx.server";
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
+import { useLoaderData, useFetcher } from "react-router";
 
 export async function loader({ params }: { params: { slug: string } }) {
   const note = await getPostBySlug(params.slug);
@@ -29,6 +29,19 @@ export function meta({ data }: { data: any }) {
 export default function EssayPost() {
   const { code, frontmatter } = useLoaderData<typeof loader>();
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
+  const fetcher = useFetcher();
+  const [message, setMessage] = React.useState("");
+
+  React.useEffect(() => {
+    if (fetcher.data) {
+      setMessage(fetcher.data.message);
+      if (fetcher.data.success) {
+        // Clear form on success
+        const form = document.querySelector('form');
+        if (form) form.reset();
+      }
+    }
+  }, [fetcher.data]);
 
   return (
     <MDXProvider>
@@ -52,6 +65,37 @@ export default function EssayPost() {
               prose-blockquote:pl-4 prose-blockquote:py-1 prose-blockquote:pr-2 prose-blockquote:rounded-r prose-blockquote:italic prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400">
               <Component />
             </article>
+
+            <div className="mt-16 border-t border-gray-200 dark:border-gray-800 pt-8">
+              <fetcher.Form
+                method="post"
+                action="/api/subscribe"
+                className="max-w-md mx-auto"
+              >
+                <h3 className="text-xl font-semibold mb-4">Sign up for updates</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">Get notified when I publish new articles</p>
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md dark:bg-gray-800"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                {message && (
+                  <p className={`mt-2 text-sm ${fetcher.data?.success ? 'text-green-600' : 'text-red-600'}`}>
+                    {message}
+                  </p>
+                )}
+              </fetcher.Form>
+            </div>
           </div>
         </div>
       </main>
