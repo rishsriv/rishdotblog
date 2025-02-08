@@ -13,7 +13,7 @@ export default {
     // get all the dynamic slugs explicitly listed here
     const noteSlugs = Object.keys(notes).map((path: string) => path.replace("app/content/", "/p/").replace(".mdx", ""));
 
-    return ["/", "/contact", "/notes"].concat(
+    return ["/", "/contact", "/notes", "/editor"].concat(
       noteSlugs
     );
   },
