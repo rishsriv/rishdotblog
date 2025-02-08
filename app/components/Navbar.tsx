@@ -31,14 +31,6 @@ const Navbar = () => {
                   Notes
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink 
-                  to="/contact"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
-                >
-                  Contact
-                </NavLink>
-              </li> */}
             </ul>
             
             <button
