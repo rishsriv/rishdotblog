@@ -14,11 +14,19 @@ body {
 
 /* Typography */
 h1 {
-  @apply text-4xl font-bold mb-6 text-gray-900 dark:text-gray-50;
+  @apply text-4xl font-bold mb-6
 }
 
 h2 {
-  @apply text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100;
+  @apply text-2xl font-semibold mb-4;
+}
+
+h3 {
+  @apply text-xl font-semibold mb-4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-gray-900 dark:text-gray-50;
 }
 
 p {
@@ -83,4 +91,65 @@ a.pending {
 
 a.transitioning {
   @apply opacity-50 transition-opacity duration-200;
+}
+
+/* Basic editor styles */
+.tiptap {
+  @apply pl-2;
+
+  /* Placeholder (on every new line) */
+  .is-empty::before {
+    color: var(--gray-4);
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  a {
+    color: var(--purple);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--purple-contrast);
+    }
+  }
+
+  /* List styles */
+  ul,
+  ol {
+    padding: 0 1rem;
+    margin: 1rem 1rem 1rem 0.4rem;
+
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+
+
+  /* Code and preformatted text styles */
+  code {
+    background-color: var(--purple-light);
+    border-radius: 0.4rem;
+    color: var(--black);
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+
+  .code-block {
+    position: relative;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--gray-3);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--gray-2);
+    margin: 2rem 0;
+  }
 }
