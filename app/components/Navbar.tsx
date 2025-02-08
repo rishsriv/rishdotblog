@@ -18,7 +18,7 @@ const Navbar = () => {
               <li>
                 <NavLink 
                   to="/"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="relative px-2 py-1 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-200 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-gray-900 dark:before:bg-white before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200 before:origin-left"
                 >
                   Home
                 </NavLink>
@@ -26,7 +26,7 @@ const Navbar = () => {
               <li>
                 <NavLink 
                   to="/notes"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="relative px-2 py-1 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-200 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-gray-900 dark:before:bg-white before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200 before:origin-left"
                 >
                   Notes
                 </NavLink>
