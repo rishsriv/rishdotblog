@@ -96,6 +96,8 @@ a.transitioning {
 /* Basic editor styles */
 .tiptap {
   @apply pl-2;
+  @apply min-h-[400px];
+  @apply border border-gray-200 dark:border-gray-800;
 
   /* Placeholder (on every new line) */
   .is-empty::before {
