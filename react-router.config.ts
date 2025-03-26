@@ -18,7 +18,7 @@ export default {
       return `/p/${filename}`;
     });
 
-    return ["/", "/contact", "/notes", "/editor"].concat(
+    return ["/", "/contact/", "/notes/", "/editor/"].concat(
       noteSlugs
     );
   },
