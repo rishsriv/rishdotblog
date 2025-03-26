@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          '"Newsreader"',
+          '"Inter"',
+          '"SF Pro Display"',
           "ui-sans-serif",
           "system-ui",
           "sans-serif",

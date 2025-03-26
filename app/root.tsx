@@ -38,7 +38,7 @@ function loadFonts() {
   script.onload = () => {
     window.WebFont?.load({
       google: {
-        families: ['Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap']
+        families: ['Inter:wght@300..700&display=swap']
       }
     });
   };

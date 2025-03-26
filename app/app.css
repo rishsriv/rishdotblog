@@ -63,11 +63,15 @@ section {
 
 /* Operating Principles */
 ol {
-  @apply space-y-4 list-decimal list-inside;
+  @apply space-y-4 list-decimal pl-10;
 }
 
 ol li {
-  @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+  @apply text-gray-700 dark:text-gray-300 leading-relaxed relative pl-2 mb-2;
+}
+
+ol li::marker {
+  @apply font-semibold text-gray-700 dark:text-gray-300;
 }
 
 /* Social Links */

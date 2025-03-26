@@ -41,8 +41,10 @@ export default function EssayPost() {
               prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800
               prose-p:leading-relaxed prose-p:text-gray-700 dark:prose-p:text-gray-300
               prose-ul:my-6 prose-ul:list-none prose-ul:pl-0 prose-ul:space-y-4
-              prose-li:relative prose-li:pl-6 prose-li:before:content-[''] prose-li:before:absolute prose-li:before:left-0 prose-li:before:top-[0.6em] prose-li:before:h-1.5 prose-li:before:w-1.5 prose-li:before:rounded-full prose-li:before:bg-gray-400 dark:prose-li:before:bg-gray-600
-              prose-ol:list-decimal prose-ol:pl-6 prose-ol:my-6 prose-ol:space-y-4
+              prose-ul>li:relative prose-ul>li:pl-6 prose-ul>li:before:content-[''] prose-ul>li:before:absolute prose-ul>li:before:left-0 prose-ul>li:before:top-[0.6em] prose-ul>li:before:h-1.5 prose-ul>li:before:w-1.5 prose-ul>li:before:rounded-full prose-ul>li:before:bg-gray-400 dark:prose-ul>li:before:bg-gray-600
+              prose-ol:list-decimal prose-ol:my-6 prose-ol:space-y-4 prose-ol:pl-10
+              prose-ol>li:relative prose-ol>li:pl-2 prose-ol>li:mb-2 prose-ol>li:before:content-none
+              prose-ol>li:marker:font-semibold prose-ol>li:marker:text-gray-700 dark:prose-ol>li:marker:text-gray-300
               prose-pre:bg-gray-900 prose-pre:shadow-lg prose-pre:rounded-lg
               prose-pre:p-4 prose-pre:max-w-[calc(100vw-2rem)] prose-pre:overflow-x-auto
               prose-code:text-pink-500 dark:prose-code:text-pink-400
