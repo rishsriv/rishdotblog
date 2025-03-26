@@ -6,6 +6,7 @@ html,
 body {
   @apply bg-white dark:bg-gray-950 font-sans;
   @apply transition-colors duration-200;
+  scroll-behavior: smooth;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -19,10 +20,12 @@ h1 {
 
 h2 {
   @apply text-2xl font-semibold mb-4;
+  @apply scroll-mt-16;
 }
 
 h3 {
   @apply text-xl font-semibold mb-4;
+  @apply scroll-mt-16;
 }
 
 h1, h2, h3, h4, h5, h6 {
