@@ -11,7 +11,12 @@ export default {
     const notes = await import.meta.glob("./app/content/*.mdx");
     
     // get all the dynamic slugs explicitly listed here
-    const noteSlugs = Object.keys(notes).map((path: string) => path.replace("app/content/", "/p/").replace(".mdx", ""));
+    const noteSlugs = Object.keys(notes).map((path: string) => {
+      // Extract filename without extension
+      const filename = path.split('/').pop()?.replace('.mdx', '');
+      // Create clean path
+      return `/p/${filename}`;
+    });
 
     return ["/", "/contact", "/notes", "/editor"].concat(
       noteSlugs
