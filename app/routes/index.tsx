@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             
             <p>
-              I share things I learn <Link to="/notes">here</Link>.
+              I share things I learn <a href="/notes">here</a>.
             </p>
             
             <h2>Operating Principles</h2>
