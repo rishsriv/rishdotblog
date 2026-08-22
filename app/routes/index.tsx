@@ -2,7 +2,7 @@ import { Link } from "react-router"
 
 export function meta() {
   return [
-    { title: "Rishabh Srivastava | Co-Founder of Defog.ai" },
+    { title: "Rishabh Srivastava | Co-Founder of FactIQ" },
     { name: "description", content: "Learning, Growth, Open Source." },
   ];
 }
@@ -25,11 +25,11 @@ export default function Home() {
             <h1>Rishabh Srivastava 👨🏽‍💻</h1>
             
             <p>
-              I am a co-founder of <Link to="https://defog.ai">Defog.ai</Link> (YC W23), an open-source AI Data Analyst for enterprises.
+              I am a co-founder of <Link to="https://factiq.com">FactIQ</Link> (YC W23), investment research data built for AI agents.
             </p>
             
             <p>
-              Previously, I ran <Link to="https://loki.ai">Loki.ai</Link>, a data intelligence platform for extracting insights from unstructured web data.
+              Previously, I built <Link to="https://defog.ai">Defog.ai</Link>, an open-source AI data analyst for enterprises, and ran <Link to="https://loki.ai">Loki.ai</Link>, a data intelligence platform for extracting insights from unstructured web data.
             </p>
             
             <p>
