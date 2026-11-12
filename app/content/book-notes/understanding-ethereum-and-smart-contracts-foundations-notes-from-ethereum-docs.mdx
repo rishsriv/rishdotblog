@@ -1,0 +1,197 @@
+---
+title: "Understanding Ethereum and Smart Contracts – Foundations (notes from Ethereum Docs)"
+description: "Articles notes"
+published: "2021-02-22"
+public: true
+mediaType: "Articles"
+lessonType: "Technology"
+url: "https://ethereum.org/en/developers/docs/intro-to-ethereum/"
+source: notion
+---
+
+# Understanding Ethereum and Smart Contracts – Foundations (notes from Ethereum Docs)
+
+*Articles · Technology* · [Source](https://ethereum.org/en/developers/docs/intro-to-ethereum/)
+
+## Overview
+
+### What's a blockchain?
+
+A blockchain is a public database that is updated and shared across many computers in a network
+
+"Block" refers to the fact that data and state is stored in sequential batches or "blocks". If you send ETH to someone else, the transaction data needs to be added to a block for it to be successful
+
+"Chain" refers to the fact that each block cryptographically references its parent. A block's data cannot be changed without changing all subsequent blocks, which would require the consensus of the entire network
+
+Each new block and the chain as a whole must be agreed upon by every node in the network. This is so everyone has the same data. For this to work, blockchains need a **consensus mechanism**
+
+Ethereum currently uses a proof-of-work consensus mechanism. This means that anyone who wants to add new blocks to the chain must solve a difficult puzzle that you need a lot of computing power to work on. Solving the puzzle "proves" that you have spent the computational resources. Doing this is known as mining. Mining can be trial and error but adding a block successfully is rewarded in ETH. On the other hand, submitting fraudulent blocks is not an attractive option considering the resources you've spent on producing the block.
+
+### What is Ethereum?
+
+In the Ethereum universe, there is a single, canonical computer (called the Ethereum Virtual Machine, or EVM) whose state everyone on the Ethereum network agrees on. Everyone who participates in the Ethereum network (every Ethereum node) keeps a copy of the state of this computer.
+
+Additionally, any participant can broadcast a request for this computer to perform arbitrary computation. Whenever such a request is broadcast, other participants on the network verify, validate, and carry out (“execute”) the computation. This causes a state change in the EVM, which is committed and propagated throughout the entire network.
+
+Requests for computation are called transaction requests; the record of all transactions as well as the EVM’s present state is stored in the blockchain, which in turn is stored and agreed upon by all nodes.
+
+Cryptographic mechanisms ensure that once transactions are verified as valid and added to the blockchain, they can’t be tampered with later; the same mechanisms also ensure that all transactions are signed and executed with appropriate “permissions” (no one should be able to send digital assets from Alice’s account, except for Alice herself).
+
+### Ether
+
+The purpose of Ether, the cryptocurrency, is to allow for the existence of a market for computation. Such a market provides an economic incentive for participants to verify/execute transaction requests and to provide computational resources to the network.
+
+Any participant who broadcasts a transaction request must also offer some amount of ether to the network, as a bounty to be awarded to whoever eventually does the work of verifying the transaction, executing it, committing it to the blockchain, and broadcasting it to the network.
+
+The amount of ether paid is a function of the length of the computation. This also prevents malicious participants from intentionally clogging the network by requesting execution of infinite loops or resource-intense scripts, as these actors will be continually charged.
+
+### What are Dapps?
+
+In practice, participants don’t write new code every time they want to request a computation on the EVM. Rather, application developers upload programs (reusable snippets of code) into EVM storage, and then users make requests for the execution of these code snippets with varying parameters. We call the programs uploaded to and executed by the network smart contracts. These are a script which, when called with certain parameters, performs some actions or computation if certain conditions are satisfied.
+
+Any developer can create a smart contract and make it public to the network, using the blockchain as its data layer, for a fee paid to the network. Any user can then call the smart contract to execute its code, again for a fee paid to the network.
+
+### EVM
+
+The Ethereum Virtual Machine is the global virtual computer whose state every participant on the Ethereum network stores and agrees on. Any participant can request the execution of arbitrary code on the EVM; code execution changes the state of the EVM.
+
+### Nodes
+
+The real-life machines which are storing the EVM state. Nodes communicate with each other to propagate information about the EVM state and new state changes. Any user can also request execution of code by broadcasting code execution request from a node. The Ethereum network itself is the aggregate of all Ethereum nodes and their communications.
+
+## Dapps
+
+A decentralized application (dapp) is an application built on a decentralized network that combines a smart contract and a frontend user interface. Note, in Ethereum smart-contracts are accessible and transparent – like open APIs – so your dapp can even include a smart contract that someone else has written.
+
+A dapp has its backend code running on a decentralized peer-to-peer network. Contrast this with an app where the backend code is running on centralized servers.
+
+A dapp can have frontend code and user interfaces written in any language (just like an app) that can make calls to its backend. Furthermore, its frontend can be hosted on decentralized storage such as IPFS.
+
+- **Decentralized** that makes them independent, and no one controls them.
+- **Deterministic** i.e., they perform the same function irrespective of the environment they are executed.
+- **Turing complete**, which means given the required resources, the dapp can perform any action.
+- **Isolated**, which means they are executed in a virtual environment known as Ethereum Virtual Machine so that if the smart contract happens to have a bug, it won’t hamper the normal functioning of the blockchain network.
+
+### Benefits of dapp development
+
+- **Zero downtime** – once the smart contract at the core of an app is deployed and on the blockchain, the network as a whole will always be able to serve clients looking to interact with the contract. Malicious actors therefore cannot launch denial-of-service attacks targeted towards individual dapps.
+- **Privacy** – you don’t need to provide real-world identity to deploy or interact with a dapp.
+- **Resistance to censorship** – no single entity on the network can block users from submitting transactions, deploying dapps, or reading data from the blockchain.
+- **Complete data integrity** – data stored on the blockchain is immutable and indisputable, thanks to cryptographic primitives. Malicious actors cannot forge transactions or other data that has already been made public.
+- **Trustless computation/verifiable behavior** – smart contracts can be analyzed and are guaranteed to execute in predictable ways, without the need to trust a central authority. This is not true in traditional models; for example, when we use online banking systems, we have to trust that financial institutions will not misuse our financial data, tamper with records, or get hacked.
+
+### Implications of dapp development
+
+- **Maintenance** – dapps can be harder to maintain because code and data published to the blockchain is harder to modify. It’s hard for developers to make updates to their dapps (or the underlying data stored by a dapp) once they are deployed - even if bugs or security risks are identified in an old version
+- **Performance overhead** – there is a huge performance overhead, and scaling is really hard. To achieve the level of security, integrity, transparency, and reliability that Ethereum aspires to, every node runs and stores every transaction. On top of this, proof-of-work takes time as well. A back-of-the-envelope calculation puts the overhead at something like 1,000,000x that of standard computation currently.
+- **Network congestion** – at least in the current model, if one dapp is using too many computational resources, the entire network gets backed up. Currently, the network is only able to process about 10 transactions per second; if transactions are being sent in faster than this, the pool of unconfirmed transactions can quickly balloon.
+- **User experience** – it may be harder to engineer user-friendly experiences: The average end user might find it too difficult to set up a tool stack necessary to interact with the blockchain in a truly secure fashion.
+- **Centralization** – User-friendly and developer-friendly solutions built on top of the base layer of Ethereum might end up looking like centralized services anyways: for example, such services may store keys or other sensitive information server-side, serve a frontend using a centralized server, or run important business logic on a centralized server before writing to the blockchain. This eliminates many (if not all) of the advantages of blockchain over the traditional model.
+
+## Accounts
+
+### Account types
+
+Ethereum has two account types:
+
+- Externally-owned – controlled by anyone with the private keys
+- Contract – a smart contract deployed to the network, controlled by code. Learn about [smart contracts](https://ethereum.org/en/developers/docs/smart-contracts/)
+
+Both account types have the ability to:
+
+- Receive, hold and send ETH and tokens
+- Interact with deployed smart contracts
+
+**Key differences between the two**
+
+**Externally-owned**
+
+- Creating an account costs nothing
+- Can initiate transactions
+- Transactions between externally-owned accounts can only be ETH transfers
+
+**Contract**
+
+- Creating an account has a cost because you're using network storage
+- Can only send transactions in response to receiving a transaction
+- Transactions from an external account to a contract account can trigger code which can execute many different actions, such as transferring tokens or even creating a new contract
+
+### Account fields
+
+Ethereum accounts have four fields:
+
+- `nonce` – a counter that indicates the number of transactions sent from the account. This ensures transactions are only processed once. In a contract account, this number represents the number of contracts created by the account
+- `balance` – the number of Wei owned by this address. Wei is a denomination of ETH and there are 1e+18 Wei per ETH.
+- `codeHash` – All such code fragments are contained in the state database under their corresponding hashes for later retrieval. For contract accounts, this is the code that gets hashed and stored as the codeHash. For externally owned accounts, the codeHash field is the hash of the empty string.
+- `storageRoot` – Sometimes known as a storage hash. A 256-bit hash of the root node of a Merkle Patricia tree that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values. This tree encodes the hash of the storage contents of this account, and is empty by default.
+
+![](/notion/understanding-ethereum-and-smart-contracts-foundations-notes-from-ethereum-docs/untitled.png)
+
+### Externally-owned accounts and Key Pairs
+
+An account is made up of a cryptographic pair of keys: public and private. They help prove that a transaction was actually signed by the sender and prevent forgeries. Your private key is what you use to sign transactions, so it grants you custody over the funds associated with your account. You never really hold cryptocurrency, you hold private keys – the funds are always on Ethereum's ledger.
+
+## Transactions
+
+An Ethereum transaction refers to an action initiated by an externally-owned account, in other words an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action takes place within a transaction.
+
+![](/notion/understanding-ethereum-and-smart-contracts-foundations-notes-from-ethereum-docs/untitled-1.png)
+
+Transactions, which change the state of the EVM, need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a miner will execute the transaction and propagate the resulting state change to the rest of the network.
+
+Transactions require a fee and must be mined to become valid. To make this overview simpler we'll cover gas fees and mining later.
+
+A submitted transaction includes the following information:
+
+- `recipient` – the receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
+- `signature` – the identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorised this transaction
+- `value` – amount of ETH to transfer from sender to recipient (in WEI, a denomination of ETH)
+- `data` – optional field to include arbitrary data
+- `gasLimit` – the maximum amount of gas units that can be consumed by the transaction. Units of gas represent computational steps
+- `gasPrice` – the fee the sender pays per unit of gas
+
+The transaction object looks like this:
+
+```json
+{
+  from: "0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8",
+  to: "0xac03bb73b6a9e108530aff4df5077c2b3d481e5a",
+  gasLimit: "21000",
+  gasPrice: "200",
+  nonce: "0",
+  value: "10000000000",
+}
+```
+
+Itt needs to be signed using the sender's private key. This proves that the transaction could only have come from the sender and was not sent fraudulently.
+
+#### Gas
+
+Transactions cost [gas](https://ethereum.org/en/developers/docs/gas/) to execute. Simple transfer transactions require 21000 units of Gas.
+
+So for Bob to send Alice 1ETH at a `gasPrice` of 200 Gwei, he'll need to pay the following fee:
+
+`200*21000 = 4,200,000 GWEI--or--0.0042 ETH`
+
+Bob's account will be debited **-1.0042 ETH**
+
+Alice's account will be credited **+1.0 ETH**
+
+The miner processing the transaction will get **+0.0042 ETH**
+
+Gas is required for any smart contract interaction too.
+
+![](/notion/understanding-ethereum-and-smart-contracts-foundations-notes-from-ethereum-docs/untitled-2.png)
+
+Any gas not used in a transaction is refunded to the user account.
+
+### **Transaction Lifecycle**
+
+Once the transaction has been submitted the following happens:
+
+1. Once you send a transaction, cryptography generates a transaction hash:`0x97d99bc7729211111a21b12c933c949d4f31684f1d6954ff477d0477538ff017`
+2. The transaction is then broadcast to the network and included in a pool with lots of other transactions.
+3. A miner must pick your transaction and include it in a block in order to verify the transaction and consider it "successful".
+   - You may end up waiting at this stage if the network is busy and miners aren't able to keep up. Miners will always prioritise transactions with higher `GASPRICE`because they get to keep the fees.
+4. Your transaction will also get a block confirmation number. This is the number of blocks created since the block that your transaction was included in. The higher the number, the greater the certainty that the transaction was processed and recognised by the network. This is because sometimes the block your transaction was included in may not have made it into the chain.
+   - The larger the block confirmation number the more immutable the transaction is. So for higher value transactions, more block confirmations may be desired.

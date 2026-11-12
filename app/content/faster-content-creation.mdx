@@ -1,0 +1,88 @@
+---
+title: "Faster content creation"
+description: "This article is the second in a 3-part series that outlines technology solutions to the big challenges that traditional media companies (particularly those in Asia) currently face. If you have not read the first part yet, do take a look here."
+published: "2016-05-08"
+public: true
+source: notion
+---
+
+# Faster content creation
+
+*This article is the second in a 3-part series that outlines technology solutions to the big challenges that traditional media companies (particularly those in Asia) currently face. If you have not read the first part yet, do take a look here.*
+
+BuzzFeed and New York Times have showcased two wildly different but enormously effective ways of running an online media website, and building an in-house CMS system has contributed significantly to their success.
+
+New York Times has developed [Scoop](http://open.blogs.nytimes.com/2014/06/17/scoop-a-glimpse-into-the-nytimes-cms/), which allows journalists to manage workflows and collaborate in real-time. BuzzFeed has [developed a CMS](https://www.buzzfeed.com/buzzfeedcmsdocs) that lets users create listicles, quizzes and other interactive articles with ease. Both these systems serve wildly different purposes, but add critical value.
+
+However, most traditional media sites — and practically all in Asia — are still using CMS systems developed by external vendors or legacy systems. This has two drawbacks.
+
+1. Editorial and product teams are unable to add functionality into the CMS without going through weeks of submitting change requirements and liaising with the vendor
+2. Even minor changes (like modifying the order in which something appears on the home page) can take longer than expected because developers do not have access to the CMS code
+
+## A. **Integrating point-of-publishing analytics in the CMS**
+
+While I am a fan of both BuzzFeed and the New York Times, I believe that there CMS systems can (and should) do more in an era that is increasingly defined by predictive analytics. Moreover, CMS systems should allow publishers to reuse content components in order to reduce the turnaround time for producing an article.
+
+With this in mind, we created our own CMS system at [The Broadline](http://thebroadline.com/). This CMS has 3 main features.
+
+### 1. **Identifying bad headlines, and giving suggestions for improvement**
+
+Over the last 4 months, I crawled through all links published by major publishers every 30 minutes, and studied how content spreads across the web (in the Indian context).
+
+I did this to create a social listening tool that shows what India is talking about on Facebook in real-time (more on this in the next post), but a great side effect of this was that this gave me a huge repository of content that showed what headlines and content work on social media.
+
+I then codified this into an algorithm that tells you when a headline is “bad”, and gives suggestions to improve it. While this does not guarantee that your content will be successful, it does do a reasonable job at weeding out ineffective headlines.
+
+![](/notion/faster-content-creation/untitled.png)
+
+Integrating algorithms like this with the CMS means that journalists can be given quick, intuitive advice about how they can write better articles without disrupting their typical workflow
+
+### **2. Telling journalists how long someone will take to read their content, and how complex it is to read**
+
+Journalists can often misjudge how long someone will take to read their content, and they can also misjudge how easy there article is to read. While there is no formula for judging the best content length, or the best readability level, journalists perception of these should be objective in order to ensure that the content written is appropriate for the audience it is meant for. For instance, it would make little sense to write a scholarly piece about juicy celebrity gossip.
+
+To counter this, we integrated [Medium’s read time algorithm](https://medium.com/the-story/read-time-and-you-bc2048ab620c) and the [Flesch-Kincaid grade level](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch.E2.80.93Kincaid_grade_level) in our CMS so that the writer could get feedback about these parameters before the piece was published.
+
+![](/notion/faster-content-creation/untitled-1.png)
+
+### 3. **Making interactive content re-usable**
+
+Mobile-friendly interactives are great drivers of engagement, but can take a non-trivial amount of time to make. However, they tend to be highly reusable. For instance, [this interactive](http://thebroadline.com/caste-is-not-in-the-past-cbse-class-xii-results.html) about the effect of caste and religion on grades can be reused in multiple articles about caste and education.
+
+Unfortunately, most CMS systems do not let journalists search for existing interactives/images and insert them into the article they are writing. This is a preliminary prototype of how we did it
+
+![](/notion/faster-content-creation/untitled-2.png)
+
+## B. Helping journalists create interactive quizzes without touching a line of code
+
+BuzzFeed has shown that quizzes can be an extremely engaging tool for media companies. They appeal to both users’ inquisitiveness and narcissism, which are gold in a world dominated by social media. However, journalists often do not have the tools to built these by themselves.
+
+Indeed, one of the companies that I have worked with had a great idea for a quiz about India’s economic policy. They built a working prototype of the quiz, but weren’t able to push it online because interfacing with the tech team took too long. That is a *terrible* missed opportunity.
+
+Building tools to help journalists create quizzes of different types without touching a line of code is invaluable, because journalists can create quizzes about events soon after they happened.
+
+We allow journalists to create different kind of quizzes in our CMS, all without touching a line of code. Among large media publishers, BuzzFeed is the only one that I know that allows content creators to [create quizzes without touching code](https://www.buzzfeed.com/ariellecalderon/buzzfeed-quiz-guide#.bkPnAaJ1m). Other companies should take a lead from them.
+
+![](/notion/faster-content-creation/untitled-3.png)
+
+## C. Creating tools that help journalists do research better
+
+While building a CMS can help significantly with creating better headlines, reusing content, and creating alternative forms of content creation, it does not help them with creating truly novel, creative content.
+
+Building research tools solves this purpose though. Automating data gathering, analysis and visualization for events that you can generate regular and repeated content for (like sports, elections and economic data) can be a huge competitive advantage.
+
+For instance, I created an election analysis tool for a large Indian media-house, which significantly reduced the time taken for creating analysis articles.
+
+![](/notion/faster-content-creation/untitled-4.png)
+
+This tool was built by scraping publicly available data, cleaning it up, saving it into a searchable form, and creating a front-end to aggregate and visualize it. While it took around 40 man-hours in a one-off effort to create this tool, the savings in journalists’ man-hours were orders of magnitude higher. Similar tools were built for analyzing cricket data and economic data, and yielded similar results.
+
+## **The cultural impact of these changes**
+
+While these changes have a direct business impact, in the form of more engaging content and reduced turnaround time for articles, they have a larger cultural impact. They truly empower and motivate journalists, who feel less encumbered by data gathering and and unproductive liaising and can begin to focusing on creating creative, engaging content.
+
+## Have feedback, or open to sharing your own experiences?
+
+If you have feedback about this post, or want to share your own stories, please @ me on Twitter at [@rishdotblog](https://twitter.com/rishdotblog).
+
+[](https://twitter.com/rishdotblog)

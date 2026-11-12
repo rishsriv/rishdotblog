@@ -1,0 +1,103 @@
+---
+title: "Data Cloud — Frank Slootman (Snowflake)"
+description: "Podcasts notes"
+published: "2021-02-11"
+public: true
+mediaType: "Podcasts"
+lessonType: "Analytics, Technology"
+project: "Second Brain"
+source: notion
+---
+
+# Data Cloud — Frank Slootman (Snowflake)
+
+*Podcasts · Analytics, Technology*
+
+Created by [Rishabh Srivastava](https://rish.blog)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[‎Rise of the Data Cloud: The Past, Present, and Future of the Data Cloud with Frank Slootman, Chairman and CEO of Snowflake on Apple Podcasts](https://podcasts.apple.com/sg/podcast/rise-of-the-data-cloud/id1514856960?i=1000477286394)
+
+**Why is it important**: Contains an overview of Snowflake’s business model, product, and vision
+
+### Keywords
+
+Snowflake, Data Analytics, Data Cloud
+
+### Highlights
+
+#### What is the data cloud?
+
+Most data has moved to one of the cloud providers instead of being on prem. Azure, GCP, AWS. This is the Data Cloud
+
+Data used to be siloed in different data centres and across services. We don’t want data silos and data bunkers, where it’s difficult to get data in and even more difficult to get data out. That has really hamstring us
+
+We’re not in a position to move away from this, and people are really aching for the solution
+
+Data cloud has several components:
+
+- a) a data platform (think of it as a database in the cloud)
+- b) the data itself that resides on the data platform
+- c) a support industry that surrounds that data platform that is performing all kinds of functions
+  - Ingesting the data
+  - Curating, preparing, and transforming the data (ETL)
+  - Business Intelligence (Tableau, Looker)
+  - Machine Learning
+  - Data services and API providers (Data augmentation). They’ll read data out of the data cloud, bring their proprietary service and value to that data, and then bring the results back to whoever is requesting that
+  - Data companies themselves — companies that produce data for a living. Data Cloud helps them be accessible to anyone who wants them
+
+#### What is Snowflake?
+
+Was conceived to be a data platform for the cloud. Does not have its heritage in the on-prem world. Re-engineered for cloud scale and distributed computing
+
+Has open up possibilities to mobilise data much, much better. “The data cloud is just not possible without a cloud platform like Snowflake”
+
+They’re kind of an OS for data
+
+Key value of Snowflake which he didn’t talk about — orchestrating data across multiple clouds so that you don’t have proprietary lock-in into one of the cloud providers
+
+**What is the answer to “what can I do with Snowflake that I couldn’t do before”?**
+
+- The volume of data that you can interrogate goes up by orders of magnitude. You may have been operating at a terabytes scale, now you can operate at a petabyte scale and beyond
+- The amount of compute capacity that you can unleash on that data results in workloads completing also an order of magnitude than they did before. Have seen situations where workloads that used to take 3 hours take just 3 minutes on Snowflake. That changes everything that is possible with data analysis — you can do so much more and be so much more agile
+- We’re reducing the latency of data analysis. The faster that we can derive signals out of the data as it arrives – the quicker we can analyse it and the quicker we can act on it as an enterprise
+- Allows many companies to experiment with data for the first time — they can try things out. If a query or a model doesn’t work, they can throw it away and try something else. This allows them to be much more creative and experimental. Instead of having many meetings where they try to figure out what the hypotheses they test should be, they can literally run hundreds of experiments on all kinds of hypotheses. This makes is so much easier to arrive at the *truth* for enterprises
+- You pay for what you use — there isn’t an enormous up-front commitment that you have to make to use the software
+- When customers do something in minutes that took them hours or days to do — it’s a magical moment. Both around ETL and analysis. Instead of running 10-20% faster, it’s suddenly running 1000% faster
+- Super easy to use — you can become efficient with it in days. Doesn’t take months to learn
+
+#### **Data network effects and how data sharing promotes them**
+
+When you have a data sharing platform, network effects come into the picture. I now want to be on the platform because of whoever else is on the platform
+
+If I have a need to share data (either provide it on procure it), and I need to share data — I can just get it from whoever is on the data platform. This can create very significant network effects
+
+For example, having all suppliers in your Supply Chain on the same platform so you can optimise each other’s business
+
+There is an incredible impetus right now to seek out other providers of data and augment what you’re already capable of doing. We’re at the very beginning of data networks being the dominant way of working with data
+
+Snowflake thinks that there can be a marketplace for data, and has created one at. Should look very closely at this
+
+[Snowflake Data Marketplace | Access Live, Ready-to-Query Data](https://www.snowflake.com/data-marketplace/)
+
+Examples of the data marketplace:
+
+- Snowflake is essentially a federation of data. Anyone who has a snowflake instance and a snowflake account can share data with anyone else who is on Snowflake. Because data is virtual
+- People can explore everything that possibly could be on offer. Everyone has to cooperate and collaborate — the data exchange is a really powerful tool for this. **Snowflake’s data exchange helps people augment and combine data**
+
+#### Value of data-driven decisions
+
+Data is useful for every walk of life — but particularly important in situations where making the right decisions is absolutely critical
+
+Data Science try to describe behaviour with data. If they can start to describe data well, then they can accurately start to predict it. So you go from description to prediction, and from prediction to prescription
+
+Descriptive models are incredibly important — they are foundational. You have to start from understanding “how does it work”
+
+Assuming that “we don’t know” and asking wide open questions can unlock amazing paths for what decisions to make

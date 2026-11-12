@@ -1,0 +1,119 @@
+---
+title: "Lessons in Data Visualization across geographies (Gurman Bhatia on Explore Explain)"
+description: "Videos notes"
+published: "2020-11-19"
+public: true
+mediaType: "Videos"
+lessonType: "Data Visualization"
+source: notion
+---
+
+# Lessons in Data Visualization across geographies (Gurman Bhatia on Explore Explain)
+
+*Videos · Data Visualization*
+
+Created by [Rishabh Srivastava](https://rish.blog), Founder of [Loki.ai](https://loki.ai)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+### Context
+
+**Source URL**:
+
+[https://www.youtube.com/watch?v=2LtoJT00-es](https://www.youtube.com/watch?v=2LtoJT00-es)
+
+**Why is it important**: Contains some great insights on how to create data visualizations that can be understood by people in all geographies (both Diljeet from Amritsar and Joe from New York)
+
+### Keywords
+
+Data Visualization, Design
+
+### Summary
+
+Gurman Bhatia of Reuters (link to Twitter below) talked about her experience in creating data viz that can be understood by people in multiple countries
+
+[](https://twitter.com/GurmanBhatia)
+
+The dataviz in question is below. It essentially visualizes metrics about all candidates (>8000) in the Indian General Election with their faces
+
+[The figures behind the faces](https://graphics.reuters.com/INDIA-ELECTION-CRIMINAL-CANDIDATES/0100925031T/index.html)
+
+**How do you portray a very regional story to a global audience?**
+
+When designing something at the onset, they always ask the question: will both Diljeet from Amritsar and Joe in New York (fictional personas) understand the story. They want to design for both, as much as possible
+
+**Approach**
+
+One person (Gurman) was in charge of the main project. But others in the Reuters Graphics team (specifically [Manas Sharma](https://twitter.com/manshar_)) helped with some of the graphics and data verification. Their Editor ([Simon Scarr](https://twitter.com/SimonScarr)) had commissioned the project and provided feedback and ideas
+
+Once an initial version was done, reached out to local bureaus for their inputs
+
+**Key milestones and timescale**
+
+Had to get it out very early (and before the election results), so she could find some time to get the election dashboard and graphics ready
+
+The bombing in Sri Lanka happened around this time, too. They went all hands on deck to cover that. Was difficult to manage time between this project and the Sri Lanka project (link to one of the Sri Lanka pieces is in the bookmark below)
+
+[A decade of peace shattered](https://graphics.reuters.com/SRI%20LANKA-BLASTS/010091JW299/index.html)
+
+As such, didn't have a lot of resources to get the election faces project out. Had to reduce the scope a little (like how many times has some one contested)
+
+**Process**
+
+The initial idea/sketch was to make it a scrolly-telling idea. The treemap ideas was suggested by Simon (the Editor)
+
+The physical act of scrolling a lot adds a tactile nature to the story. Makes readers realize how many candidates there are
+
+**Data acquisition and cleaning**
+
+- Cleaned the photos phase by phase, as data was released by the government in drips. Had to wait for all of the data to come
+- Election Commission released all the data, and a non-profit called [ADR](https://adrindia.org/) then read through it manually, cleaned it and put it into a machine-consumable format (this is done on [myneta.info](http://myneta.info/)). This includes assets, liabilities, criminal cases, education, and more factors
+- Gurman scraped the cleaned data from ADR, and the photos from Election Commission. She then tried to match the two datasets. This was hard, becomes some of the photos were in PDFs. Had to do a lot of manual checking
+- Eventually, the Election Commission put the photos in a proper website. This made is much easier to scrape and automatically match
+
+Most of this was automatic, but required some manual checks. Used a combination of self-defined heuristics and fuzzy string matching for this
+
+!\[Lessons%20in%20Data%20Visualization%20across%20geographies%20(%206db68d47e093481c9938af313b7529f1/Untitled.png]\(Lessons%20in%20Data%20Visualization%20across%20geographies%20(%206db68d47e093481c9938af313b7529f1/Untitled.png)
+
+**Editorial choices and visual selection**
+
+Mostly went with what was the natural instinct for the format and didn't overthink it. There are better ways of visualizing (like perhaps showing connections between candidates). But went with what was suited this story best
+
+Used a scroll-based thing with pictures to show number of candidates of different types
+
+!\[Lessons%20in%20Data%20Visualization%20across%20geographies%20(%206db68d47e093481c9938af313b7529f1/Untitled%201.png]\(Lessons%20in%20Data%20Visualization%20across%20geographies%20(%206db68d47e093481c9938af313b7529f1/Untitled%201.png)
+
+For things like assets, criminal charges etc — used treemaps
+
+!\[Lessons%20in%20Data%20Visualization%20across%20geographies%20(%206db68d47e093481c9938af313b7529f1/Untitled%202.png]\(Lessons%20in%20Data%20Visualization%20across%20geographies%20(%206db68d47e093481c9938af313b7529f1/Untitled%202.png)
+
+To ideate for mobile, Gurman's general process is to take an A4 sheet, fold it in half, and sketch it out. In general, if it works on mobile it also works on desktop. Always a good idea to start designing with mobile, instead of starting to design on Desktop
+
+Used an SVG for the treemap, and each image was centered on its associated treemap rectangle
+
+Considered grouping graphics by gender/education instead of by party. But ended up sticking with just the party to make it more easily readable
+
+**Interactivity decisions**
+
+Had to balance out a lot of things - time available to complete the project, cognitive load for audience, what is interesting to the audience. Ended up not making the treemaps interactive — because thought that they wouldn't add much value to the casual audience
+
+Would have also had to come up with an efficient solution to load all 8000 photos if this was interactive — this would have made this very slow to load and would have made the page laggy on low end devices. So used a simple Adobe Illustrator to HTML approach
+
+*3 rules of interactivity from Archie Tse*
+
+1. If you make the reader click or do anything other than scroll, something spectacular has to happen
+2. If you want to make a tooltip or a rollover, assume that no one will ever see it. If content is important for readers to see, don't hide it
+3. When deciding whether to make something interactive, remember that getting it to work on all platforms is expensive
+
+**What iterations did the title and the text go through**
+
+Came up with a bunch of options for the title and brainstormed. Didn't want to publish this without really thinking through the title
+
+For the text, got a lot of input from local bureaus
+
+**What else could have been added to this graphic?**
+
+Give more time, the following:
+
+- Which candidates have contested elections for a long time? Specially without winning
+- Relationships between candidates?

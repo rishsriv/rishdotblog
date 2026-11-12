@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -39,12 +40,14 @@ const getComponentFiles = () => {
 const files = getComponentFiles();
 
 // Helper function to resolve content paths
-const resolveContentPath = (slug: string) => {
+const resolveContentPath = (slug: string, subdir = '') => {
+  // slugs come straight from the URL, so only allow simple slugs
+  if (!/^[a-z0-9-]+$/i.test(slug)) return undefined;
   const paths = [
     // Try the build directory first
-    path.join(process.cwd(), 'app', 'content', `${slug}.mdx`),
+    path.join(process.cwd(), 'app', 'content', subdir, `${slug}.mdx`),
     // Then try the source directory
-    path.join(__dirname, '..', 'content', `${slug}.mdx`),
+    path.join(__dirname, '..', 'content', subdir, `${slug}.mdx`),
   ];
 
   for (const contentPath of paths) {
@@ -54,9 +57,9 @@ const resolveContentPath = (slug: string) => {
   }
 };
 
-export const getPostBySlug = async (slug: string) => {
+export const getPostBySlug = async (slug: string, subdir = '') => {
   try {
-    const notePath = resolveContentPath(slug);
+    const notePath = resolveContentPath(slug, subdir);
     // @ts-ignore
     const source = await fs.promises.readFile(notePath, 'utf8');
     const { code, frontmatter } = await bundleMDX({
@@ -64,7 +67,7 @@ export const getPostBySlug = async (slug: string) => {
       files,
       mdxOptions(options) {
         options.remarkPlugins = [
-          remarkFrontmatter, remarkMdxFrontmatter,
+          remarkFrontmatter, remarkMdxFrontmatter, remarkGfm,
         ];
         options.rehypePlugins = [
           rehypePrettyCode

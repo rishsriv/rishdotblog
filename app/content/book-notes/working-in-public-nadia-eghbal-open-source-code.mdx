@@ -1,0 +1,679 @@
+---
+title: "Working in Public: Nadia Eghbal (Open-Source Code)"
+description: "Books notes"
+published: "2021-03-29"
+public: true
+mediaType: "Books"
+lessonType: "Technology"
+project: "Second Brain"
+url: "https://www.goodreads.com/book/show/54140556-working-in-public"
+source: notion
+---
+
+# Working in Public: Nadia Eghbal (Open-Source Code)
+
+*Books · Technology* · [Source](https://www.goodreads.com/book/show/54140556-working-in-public)
+
+**URL:**
+
+[](https://www.goodreads.com/en/book/show/54140556)
+
+## Summary
+
+I got a lot of value from this book.
+
+It had 3 themes: how the open-source ecosystem has evolved, an application of economic theories to open-source, and a prescription for how creators and platform could manage and sustain open-source projects better
+
+Some key points were:
+
+1. **Software is frequently characterized as “zero marginal cost”. It's not. It has significant distribution and maintenance costs.**
+2. **Charging price equal to marginal cost leaves the producer bankrupt, with little incentive to maintain the product except the hope of maintenance fees, and no incentive whatsoever to make another**. Without non-financial incentives, all but the most masochistic producer will get out of production.
+3. While more people use open source code than ever before, its developers failed to capture the economic value they created
+4. The GitHub generation of open source developers prioritize convenience over freedom or openness. They just publish their code on GitHub because sharing is the default.
+5. Creation is an intrinsic motivator, maintenance usually requires extrinsic motivation. Some developers love to make things, but they don’t like maintaining them. Functionally, the work required by these two roles is different.
+6. The combination of unpredictable quality and high volume means that casual contributions can quickly turn into a time sink for maintainers if they’re not careful
+7. When user adoption is low, the cost of support feels trivially small. But as adoption grows, the once trivial cost of support can become significant. If 0.1% of users require support and a company has 1,000 users, then only 1 user needs support. But 0.1% of 1 million users is 1,000 users
+8. Code by itself is not, and has never been, worth anything, and consumers already know this intuitively when they refuse to directly pay for it. What's valuable is the projects that depend on the code, the reputation of the creator, and the energy of its community
+9. Crowd-funded (as opposed to corporation-funded) open-source projects can be successful. In politics, politicians funded by grassroots operations are viewed more than those funded by corporate donations
+10. Reputation-based funding helps incentivize the ongoing production of creative work, because reputation is measured by past and future expectations. What people are paying for is not a bunch of text. They are paying for the perspective the writer brings to the subject.
+
+### Unique characteristics of open-source
+
+Open source is complicated because it contains a messy mix of both technical and social norms, most of which play out in public. It is documented extensively (nearly every decision is written down somewhere) but not clearly (you have to dig through years of mailing list archives to find what you need). Its treasures are hidden amidst a tangle of brambles and thorns.
+
+### 4 types of open-source projects
+
+- **Federations:** projects with high contributor growth and high user growth. They tend to develop processes—voting, leadership positions, foundations, working groups, and technical councils—that address coordination issues within their contributor community. Example: React, Rust
+- **Clubs:** projects with high contributor growth and low user growth, leading to a roughly overlapping group of contributors and users. Clubs may not have a wide reach, but they’re loved and built by a group of enthusiasts. Example: Astropy
+- **Toys:** projects with low contributor growth and low user growth. Basically personal projects
+- **Stadiums:** projects with low contributor growth and high user growth. While they may receive casual contributions, their regular contributor base does not grow proportionally to their users. As a result, they tend to be powered by one or a few developers. Example: webpack, Babel, Bundler, and RSpec. Stadiums are becoming increasingly commonplace today
+
+### Managing open-source communities
+
+Decentralized communities avoid creating big decision hierarchies. Instead, they invest in a broad, growing and empowered contributorship that can make progress without intervention.
+
+To pull off commons-based peer production, you need intrinsic motivation, modular and granular tasks, and low coordination costs.
+
+Intrinsic motivation is the currency of the commons: members do the work because they want to do it
+
+In order to keep people motivated, tasks must be modular and granular. Modularity refers to how the project is organized. Can it be broken into clear subcomponents, and do they fit easily back together? Granularity refers to the size of each module. It should be easy for anyone to jump in and complete the task without too much preexisting knowledge.
+
+### Relationships between maintainers and users
+
+Although maintainers don’t always have a direct relationship to their users, some users do make contributions to open source projects, even if they don’t think of themselves as contributors. Common examples include:
+
+- EDUCATION, in the form of live-coding, or making videos, blog posts, or tutorials about the project
+- SPREADING THE WORD, in the form of organizing events, posting about the project online, or giving talks at meetups or conferences
+- SUPPORT, in the form of answering user questions on mailing lists, issue trackers, or chat
+- BUG REPORTS, in the form of filing an issue with the project after discovering a bug\*\*
+
+Active users can be a maintainer’s best ally or worst enemy. At their best, active users test new releases, report bugs, and shield maintainers
+
+At their worst, however, active users can be pushy, putting stress on the project by demanding work, or providing other users with “unofficial” answers that are outdated or inaccurate.
+
+### The costs of software
+
+We can think about software as having three major types of costs: **creation, distribution, and maintenance**. Creation is frequently powered by intrinsic motivation. These are the fixed “first-copy” costs. Distribution is mostly powered by the platforms used by creators. These costs are low or free due to supply-side economies of scale. But maintenance is still a mystery. Maintenance costs typically fall onto the creator but, as we’ve seen, are not intrinsically motivated.
+
+#### User Support
+
+User support is a significant marginal cost associated with software, plaguing not just open source developers but the biggest technology companies, which are still figuring out how to manage unprecedented levels of adoption.
+
+When user adoption is low, the cost of support feels trivially small, perhaps nonexistent. But as adoption grows, the once trivial cost of support can become significant. Perhaps only 0.1% of users require support. If a company has 1,000 users, then only one user needs support. But 0.1% of 1 million users is 1,000 users. Suddenly, it matters to a developer whether a thousand or a million people consume their software.
+
+#### Temporal Costs
+
+In addition to marginal costs, software also requires ongoing maintenance to continue running successfully, regardless of how many people use it. Rather than a function of use, these costs are a function of entropy: the inevitable decay of systems over time. It’s not just code itself that requires maintenance either, but all the supporting knowledge that surrounds it. When code changes, its documentation must also change. The most upvoted answers on a Q\&A site eventually become outdated and incorrect. Programming books and videos eventually require revisions.
+
+### Value and pricing for open-source
+
+Charging price equal to marginal cost almost surely leaves the producer bankrupt, with little incentive to maintain the product except the hope of maintenance fees, and no incentive whatsoever to make another one except that warm fuzzy feeling one gets from impoverishing oneself for the general good. Without non-financial incentives, all but the most masochistic producer will get out \[of] the business of production.
+
+Code by itself is not, and has never been, worth anything, and consumers already know this intuitively when they refuse to directly pay for it
+
+What's valuable is the projects that depend on the code, the reputation of the creator, and the energy of its community
+
+### Reducing costs
+
+To reduce up-front costs, we can use automation (bots, continuous integration and automated tests) and better documentation (code style guides and linters, templates and checklists)
+
+To reduce maintenance costs, we can to user-to-user systems for support like forums (stack overflow, reddit) or a paid model for support
+
+### Monetizing: corporate and individual
+
+It’s easy to cynically rest on our laurels here and conclude that individual developers could never fund projects to the extent that companies can. But the opposite argument has been made in politics, where politicians who fund their campaigns from grassroots donations are generally viewed more favorably by the public than are those who are funded by corporate donations. I’m not sure that open source is so different.
+
+Patronage is an emerging funding system for online creators today, but it’s frequently conflated with the concept of “donations.” Patronage isn’t motivated by altruism but by an interest in following a creator’s future work, based on their current reputation. It’s more like a subscription than a donation. When an individual sponsors an open source developer, then, they’re ideally not paying for code but to feel closer to the person who writes the code.
+
+Reputation-based funding helps incentivize the ongoing production of creative work, because reputation is measured by past and future expectations. As writer Tiago Forte puts it, “What people are paying for is not a bunch of text. They are paying for the perspective the writer brings to the subject.”
+
+A tragedy of the commons occurs not from consumers over-appropriating the content itself, but from consumers over-appropriating a creator’s attention.
+
+the rise of subscription models shouldn’t be read as a death knell for advertising. These two models aren’t mutually exclusive; advertising is still alive and well, and it will continue to work for a very long time. And product sponsorships will probably only become more valuable, because they’re driven by the strength of a creator’s reputation.
+
+Subscription models can operate like a freemium model, but they get even more interesting as a two-sided market. In a freemium model, a creator gives away some of their content for free, but restricts other content to those with paid subscriptions. The free content helps creators grow their reputation via public network effects. In a two-sided market, paying subscribers subsidize all of the content for nonpaying readers
+
+## Highlights (not useful for most people – for my internal reference)
+
+### Introduction
+
+**developers—who write and publish code that anybody can use—often report feeling overwhelmed by the volume of inbound requests.**
+
+Many open source developers are not directly paid for their work, despite generating trillions of dollars in economic value. In the absence of additional reputational or financial benefits, maintaining code for general public use quickly becomes an unpaid job you can’t quit.
+
+But as I tracked developers’ stories over the years, I noticed that money is only part of the problem. Some developers deftly handle demand from their users without any financial compensation. And even paid open source developers seem to go through the same strange behavioral cycle, in a way that seems less common among those who write “proprietary,” or private, code for their employers.
+
+The cycle looks something like this: Open source developers write and publish their code in public. They enjoy months, maybe years, in the spotlight. But, eventually, popularity offers diminishing returns. If the value of maintaining code fails to outpace the rewards, many of these developers quietly retreat to the shadows.
+
+There are countless initiatives today aimed at helping more developers contribute to open source projects. These efforts are widely championed as “good for open source,” and they are frequently accomplished by tapping into a public sense of goodwill. However, in speaking to maintainers privately, I learned that these initiatives frequently cause them to seize with anxiety, because such initiatives often attract **low-quality contributions. This creates more work for maintainers—all contributions, after all, must be reviewed before they are accepted. Maintainers frequently lack infrastructure to bring these contributors into a “contributor community”; in many cases, there is no community behind the project at all, only individual efforts.**
+
+In my conversations with maintainers, I heard them express a genuine conflict between wanting to encourage newcomers to participate in open source and feeling unable to personally take on that work. Maintainers simply don’t have the energy to onboard every person who shows passing interest. Many told me they were frustrated by prior attempts to cater to a revolving door of contributors—sometimes hundreds of them—who didn’t stick around. Maintainers recounted how those who’d expressed interest sometimes disappeared before they’d even submitted their first contribution.
+
+there was an enormous disconnect between how we think open source works and what is actually happening on the ground today. There is a long, and growing, tail of projects that don’t fit the typical model of collaboration. Such projects include Bootstrap, a popular design framework used by an estimated 20% of all websites, where three developers have authored over 73% of commits. Another example is Godot, a software framework for making games, where two developers respond to more than 120 issues opened on their project per week.
+
+**This distribution—where one or a few developers do most of the work, followed by a long tail of casual contributors, and many more passive users—is now the norm, not the exception, in open source**. From the perspective of these maintainers, quietly tending to their code on the prairie amidst the tumbleweeds of unanswered issues, the world doesn’t look like the utopian vision, embraced by early internet pioneers, of large-scale collaboration among strangers. If anything, it looks like exactly the opposite of what these early advocates predicted.
+
+There’s even a term called the bus factor, where project health is measured by the number of developers that would need to get hit by a bus before the project is in trouble.
+
+The expectation that open source should be a collaborative effort leaves solo maintainers scratching their heads, wondering if they’re doing something wrong when nobody shows up to meaningfully pitch in.
+
+In contrast to big, monolithic software projects that give rise to persistent communities, npm packages are designed to be small and modular, which leads to fewer maintainers per project and a transitory relationship with the code they write.
+
+**Casual contributors** are often aware that they have little context for what is going on behind the scenes of the project. But more importantly, they **do not want to spend time familiarizing themselves with a project’s goals, roadmap, and contribution process**. These developers primarily see themselves as users of the project; they do not think of themselves as part of a “contributor community.”
+
+The problem facing maintainers today is not how to get more contributors but how to manage a high volume of frequent, low-touch interactions. These developers aren’t building communities; they’re directing air traffic.
+
+it’s not the excessive consumption of code but the excessive participation from users vying for a maintainer’s attention that has made the work untenable for maintainers today.
+
+If you read reviews on Amazon, you’re mostly reading reviews written by people like Grady Harp. If you read Wikipedia, you’re mostly reading articles written by people like Justin Knapp. . . . And if you read YouTube comments, you’re mostly reading comments written by people like Justin Young. If you consume any content on the Internet, you’re mostly consuming content created by people who for some reason spend most of their time and energy creating content on the Internet. And those people clearly differ from the general population in important ways.
+
+### Github as a Platform
+
+Like any other creator, these developers create work that is intertwined with, and influenced by, their users, but it’s not collaborative in the way that we typically think of online communities. Rather than the users of forums or Facebook groups, GitHub’s open source developers have more in common with solo creators on Twitter, Instagram, YouTube, or Twitch, all of whom must find ways to manage their interactions with a broad and fast-growing audience. Instead of facing one another, as pop culture critic Mark Fisher allegedly once put it, a creator’s audience now faces the stage.
+
+Like other creators, open source developers rely heavily upon platforms to distribute their work. As closed economies, these platforms also bear the responsibility of helping creators grow their reputations and capture the value of their efforts.
+
+**over the last twenty years, open source inexplicably skewed from a collaborative to a solo endeavor. And while more people use open source code than ever before, its developers failed to capture the economic value they created:**
+
+Stallman wanted to liberate code from proprietary use. The term “free” refers to being able to do what you want with the code, rather than the code being free of charge. (Thus the oft-repeated phrase, attributed to Stallman, “Free as in freedom, not free as in beer,” and the occasional use of the Spanish word libre, rather than gratis, to refer to free software, in order to distinguish between these two meanings.)
+
+Hackers are characterized by bravado, showmanship, mischievousness, and a deep mistrust of authority. Hacker culture still lives on today, in the way that beatniks, hippies, and Marxists still exist, but hackers don’t capture the software cultural zeitgeist in the same way that they used to. The generational successor to hackers today might be cryptographers and those who dabble in information security: those who flirt with the law, and do so with a wink and a bow.
+
+Richard Stallman (also known as RMS) was the hacker who kicked off the free software movement at MIT in the 1980s. Eric S. Raymond (also known as ESR), the programmer who helped rebrand free software to “open source” in the 1990s, is widely viewed as early open source’s unofficial anthropologist. And Linus Torvalds is the programmer who created both Linux, the open source kernel that powers many of today’s operating systems, in 1991, and Git, in 2005.
+
+Although the Linux Foundation reports more than 14,000 contributors to the Linux kernel since 2005, Torvalds is still the only person who’s allowed to merge those contributions into the main project.
+
+preoccupied with evangelizing the idea of open source, whether for ideological or business reasons. But today’s developers hardly even notice “open source” as a concept anymore. They just want to write and publish their code, and GitHub is the platform that makes it easy
+
+GitHub was founded in 2008 by four Ruby developers, who billed it as a “social coding” platform at a time when Web 2.0—Facebook, Twitter, YouTube, Tumblr—was just getting off the ground. By bringing open source developers all to one platform, GitHub helped standardize how they worked. GitHub wasn’t the first code-hosting platform. It was preceded by SourceForge, founded in 1999. If GitHub is like Facebook, SourceForge was the MySpace of code-hosting platforms: the first significant product of its kind, and, though still alive today, mostly remembered as a blueprint.
+
+GitHub’s founders staked its reputation on Git—only a few years old at the time—as the future of software collaboration. Doubling down on relatively new technology helped GitHub attract a new wave of developers who were just realizing the benefits of Git.
+
+The site creators added the ability to “star” projects, so you could tell which ones were more or less popular. However flawed the metric may be, stars became—and still are—a mark of success for developers, giving them a way to rank their projects against others’.
+
+While the MIT license is credited with making the distribution of open source code frictionless, its “set it and forget it” approach has also been criticized for driving the wedge between open source code and its ideological origins. Oddly, the GPL might have been better for open source developers in the long run, since it gives developers more control over how others use their code. But it’s difficult to imagine how the GPL would’ve become the dominant license on a platform like GitHub, because it’s incompatible with one of the biggest advantages of platforms: free, unfettered distribution.
+
+**GitHub generation of open source developers** doesn’t see it that way, because they **prioritize convenience over freedom (unlike free software advocates) or openness (unlike early open source advocates). Members of this generation aren’t aware of, nor do they really care about, the distinction between free and open source software. Neither are they fired up about evangelizing the idea of open source itself. They just publish their code on GitHub because, as with any other form of online content today, sharing is the default.**
+
+today’s generation of open source developers needs GitHub to do their best work. Just as there are Instagram influencers and Twitch streamers, there are GitHub developers. These activities take place away from platforms, too—you can still upload photos or videos of your Hawaii vacation to a self-hosted website—but why would you? For those hoping to reach an audience, platforms and creators have become inseparable.
+
+Ben Thompson, who writes about business and technology on his blog, Stratechery, goes so far as to suggest that delivering this kind of value is, itself, the definition of a platform, as opposed to aggregators. Platforms deliver value to third parties that build on top of them, whereas aggregators are pure intermediaries. Thompson references a quote attributed to Bill Gates, who defines a platform as “when the economic value of everybody that uses it exceeds the value of the company that creates it.”36 Based on this definition, Thompson suggests that Facebook is not actually a platform but an aggregator, because there is “no reason for Facebook, beyond goodwill, to do anything for \[media] publishers.”
+
+They just want to make things, and sharing is a natural byproduct of those efforts. Jacob Thornton, cocreator of the popular frontend framework Bootstrap, once admitted in a conference talk that he “really had no idea what open source was,” despite working on highly visible open source projects for years.
+
+It’s unsurprising, then, that these emerging behaviors would become among the defining characteristics of JavaScript, a language ecosystem that grew up on GitHub.
+
+On GitHub, JavaScript is more than twice as popular as Python, the second-place contender. It has rapidly grown to become the most common programming language among developers, according to the site Stack Overflow.
+
+Contemporary JavaScript grew up in the post-Web 2.0 era. It’s friendly and polished, but also politically charged. It attracts developers who like to explain things, and explain them with emoji and brightly colored logos. JavaScript developers embrace the “amateurization of open source,” despite garnering occasional eye rolls from their predecessors.
+
+because JavaScript must maintain compatibility across browsers, its official core library is smaller than that of most other languages. So developers are forced to customize it for themselves, writing their own packages to fill in the gaps. As a result, each project tends to be smaller and more disposable, like LEGO blocks that fit together instead of a castle carved from stone.
+
+JavaScript developers aren’t always known for a specific project anymore, either, the way Stallman is known for GNU, or Torvalds is known for Git and Linux. Rather than being associated with just one project, or a few, prominent JavaScript developers often create hundreds of small yet widely used projects. They’re known for who they are, rather than which projects they’re involved in.
+
+**The cult of personality thrives in JavaScript, even if its most prominent developers are reluctant to acknowledge it**, perhaps because this attitude clashes with the professed ideal of open source as “community-built.” Compared to early renowned hackers like Torvalds, Raymond, and Stallman, many of today’s JavaScript developers are unusually humble.
+
+Each of these developers commands a large audience of people who follow them personally; they have the attention of thousands of developers, and they choose to use that influence to demonstrate kindness and respect.
+
+The locus of open source culture has shifted from celebrating heavy-handed authoritarianism to seeking out thoughtfulness and stewardship. Even Linus Torvalds issued a mea culpa in 2018, stepping away from the Linux project for a month in order to reflect on years of “people in our community confront\[ing] me about my lifetime of not understanding emotions,” and calling it a “‘look in the mirror’ moment.”53 Eric S. Raymond was banned from the OSI’s mailing lists for combative language.54 And Richard Stallman resigned from his positions at MIT and the Free Software Foundation after making controversial comments on MIT’s Computer Science and Artificial Intelligence Laboratory (CSAIL) mailing list.
+
+Sindre Sorhus, who maintains hundreds of JavaScript projects, once tweeted, “After having reviewed 10k+ pull requests on GitHub . . . \~80% of contributors doesn’t \[sic] know how to resolve a merge conflict.”56 A few years later, he followed up with more observations: Almost no one writes a good pull request title More than half don’t know about the ‘Fixes #112’ syntax \~30% don’t run tests locally before submitting a PR \~40% don’t include docs/tests. I’ve also noticed that the general PR quality has gone considerably down in the past few years. I guess it’s a result of GitHub’s increased popularity. `¯\\_(ツ)_/¯`
+
+Developer Nolan Lawson describes his experience as “a perverse effect where, the more successful you are, the more you get ‘punished’ with GitHub notifications.”61
+
+Taken together, it’s a perfect storm of drive-by users—most well intentioned, others not so much—flooding the channels of single maintainers, using a platform that’s designed to encourage this behavior, and shielded by social norms that explicitly discourage pushing back on inbound requests.
+
+### The structure of an open-source project
+
+**Open source is complicated because it contains a messy mix of both technical and social norms, most of which play out in public. It is documented extensively (nearly every decision is written down somewhere) but not clearly (you have to dig through years of mailing list archives to find what you need). Its treasures are hidden amidst a tangle of brambles and thorns.**
+
+Anyone can propose a change to an open source project in the form of a “patch”—or to use GitHub’s nomenclature, a pull request—but these changes undergo reviews and are subject to approval from prior trusted contributors. It’s the equivalent of having comment permissions on a shared document: anyone can suggest a change, but not everyone can actually approve it.
+
+Some developers have permission to merge changes into the trunk (or master), which is the baseline version of the project. Having these permissions is often referred to as commit access, which is like being able to edit a shared document.
+
+The process by which a developer gains commit access varies widely between projects and is subject to preexisting social norms. Some projects adopt the mindset of needing to demonstrate trust, while others prefer to operate on the basis of trustlessness.
+
+For example, Debian, an operating system based on Linux, requires that developers follow an extensive onboarding process in which they are expected to read a manual, find a mentor, and meet a maintainer in person who can vouch for their identity. On the other hand, it’s common among JavaScript developers to give away commit access more freely. The idea is to distribute the burden of maintenance by making it easy for others to contribute, and it’s assumed that strangers are trustworthy until proven otherwise.
+
+These differences in social norms are often closely intertwined with technical design. Clojure’s core developers highly prioritize stable code, which means they’re more reluctant to accept changes. And Debian has a monolithic, tightly coupled codebase, where green-lighting the wrong maintainer could, indeed, have dire consequences. But JavaScript, including Node.js, is designed to be modular, where each maintainer has a limited ability to affect other components of the ecosystem,
+
+If a developer is otherwise unknown in the project, they must try to lobby for a maintainer’s attention. The polite thing to do is to contain one’s interactions to the specific pull request. It’s acceptable to @-mention (i.e., notify) the relevant person on the thread to ask for a review, so long as the request isn’t spammy—much like the practice of following up on an unanswered cold email after a week rather than a day. Reaching out through personal channels, such as private email, is generally considered rude, in the same way that tweeting at someone to respond to your email is considered rude, unless otherwise specified.
+
+the size and structure of a repository are influenced by technical decisions and personal preferences. Some projects like to break up their code into many repositories, each of which contains a smaller amount of code. These repositories can all live under a single GitHub organization. Other projects adopt the monorepo philosophy, managing large amounts of code under a single repository.
+
+Django hosts its code on GitHub but uses a different product, called Trac, for its issue tracker. React also hosts its code on GitHub but keeps its documentation, tutorials, and community on a separate website.
+
+Projects often utilize both synchronous communication channels (like IRC, Slack, or Discord) and asynchronous ones (like mailing lists, Reddit, or GitHub issues) in order to talk to users and other contributors. These channels are used for all sorts of conversations, including: Asking and answering questions among both users and contributors (“How do I use the project to do X?” as well as “How do I make Y contribution?”) Coordinating work among maintainers Providing a community space Holding office hours Educating users (e.g., teaching or demonstrating something)
+
+Once the project is released, the author or authors are usually eager to get feedback, bug reports, issues, and pull requests. They’ll often promote the project just like a founder would promote a startup: by sharing it on relevant channels online, giving talks at conferences and meetups, and encouraging others to write and talk about it.
+
+Nathan Marz, who wrote the data-computation system Apache Storm, timed its release with his talk at a software conference called Strange Loop, open-sourcing the project live onstage. The announcement got a lot of attention, and he set up a mailing list for developers to give feedback, where he “spen\[t] one to two hours a day answering questions.” Over the next year, he continued giving talks about Storm at conferences, meetups, and companies, noting that “all this speaking got Storm more and more exposure.”
+
+At this stage, the goal is distribution—getting new code in the hands of other developers—so the project transitions to a more open state of development. As when publishing a blog post or a video online, open source developers want engagement with their material, so they’ll encourage contributions while still retaining control over their vision of the project. If other developers are filing issues, starring the project, and asking questions, it’s a sign that people find it interesting.
+
+**“Growth” means that more developers might be using the project, but that doesn’t necessarily mean that more developers are making meaningful contributions, or that there are more maintainers meeting this level of demand (as one might expect a successful company to grow employee head count). At this stage, community interactions get noisier—comments, feature requests, pull requests from strangers—which makes it harder for maintainers to be responsive to everyone.**
+
+**A project’s contributor growth is a function of its technical scope, support required, ease of participation, and user adoption.**
+
+Whether a project is easy to contribute to is partly a function of its technical scope, but there are other factors involved: **the quality of its documentation, how responsive the maintainers are, the perceived hostility (or lack thereof) in social interactions, and the tools or preexisting skills required to make a contribution**. Most important is the question of whether the project is on GitHub or not.
+
+**Federations are projects with high contributor growth and high user growth**. These are the “bazaars,” first described by Eric S. Raymond, which we typically think of when we imagine an open source project.
+
+They’re more complex to manage from a governance standpoint, so they **tend to develop processes—voting, leadership positions, foundations, working groups, and technical councils—that address coordination issues within their contributor community**. These contributors, in turn, make decisions for a broader constituency of passive users.
+
+Instead of gatekeeping new contributions, these maintainers try to distribute ownership more widely, which encourages more people to become active contributors.
+
+**Clubs are projects with high contributor growth and low user growth, leading to a roughly overlapping group of contributors and users.**
+
+Astropy, for example, is a package that provides core functionality and tooling for those using Python for astronomy and astrophysics. While Astropy will never be used by most developers, the package’s narrow focus makes it easier to recruit contributors and maintain relevance among those for whom Astropy is extremely important.
+
+Clubs are similar to meetup or hobby groups: they attract a narrow group of users, who then also become contributors because they have higher context for the project’s activity and feel a sense of affinity to the group. **Clubs may not have a wide reach, but they’re loved and built by a group of enthusiasts.**
+
+Like obscure message boards, or online communities that are well past their heyday but still survive, clubs tend to be stable, so long as there are enough newcomers who join as older regulars fade away.
+
+Magnetic projects are those that attract a large proportion of new contributors. Sticky projects are those where a large proportion of contributors continue to make contributions.
+
+Toys are projects with low contributor growth and low user growth. They’re probably the least interesting production model to analyze for the purposes of this book, because they are effectively personal projects.
+
+**Stadiums are projects with low contributor growth and high user growth. While they may receive casual contributions, their regular contributor base does not grow proportionally to their users. As a result, they tend to be powered by one or a few developers**. Many widely depended-upon packages and libraries fit into this model, including webpack, Babel, Bundler, and RSpec. **Stadiums are becoming increasingly commonplace today.**
+
+In a stadium model, one or a few maintainers make decisions on behalf of a broader user base. Unlike a federation or club, whose communities are decentralized, a stadium’s community assumes a centralized structure, centered around its maintainers. Decentralized communities are defined by many-to-many interactions, but centralized communities have a one-to-many social structure.
+
+if we think about who supplies labor to an open source project, it’s “expensive” to onboard new maintainers, because maintenance often requires knowledge that isn’t easily externalized to others. So newcomers tend to make casual contributions, instead of pitching in on more complex tasks around project management. Given the high fixed costs of entry into maintainership, the knowledge required to maintain tends to stay concentrated among one or a few people. The longer they go without externalizing this knowledge, the more difficult it becomes for newcomers to participate.
+
+**Decentralized communities**, e.g., clubs and federations, are characterized by the potential for high contributor growth. The future of these projects hinges upon recruiting new contributors, as well as reducing friction to contribute.
+
+**Avoid creating big decision hierarchies. Instead, invest in a broad, growing and empowered** **contributorship that can make progress without intervention.**
+
+**Through her research, Ostrom identified eight design principles that contribute to a well-managed, successful commons:**
+
+1. **Membership boundaries are clearly defined.**
+2. **The rules that govern the commons should match the actual conditions.**
+3. **Those who are affected by these rules can participate in modifying them.**
+4. **Those who monitor the rules are either community members or are accountable to the community, rather than outsiders.**
+5. **Those who violate the rules are subject to graduated sanctions, which vary depending on the seriousness and context of the offense.**
+6. **Conflicts should be resolved within the community, using low-cost methods.**
+7. **External authorities recognize the right of community members to devise their own institutions.**
+8. **If the commons is part of a larger system, its governing rules are organized into multiple “nested” layers of authority.110**
+
+**Members also have a low discount rate, which is another way of saying they have “skin in the game,” meaning they intend to participate in the community for a while. This means that sanctions, and even the threat of sanctions, help set social norms effectively, because members care about not getting kicked out of the community.**
+
+In the early 2000s, Yochai Benkler expanded upon Ostrom’s model by applying her findings to the online world. He terms this communal structure commons-based peer production (CBPP) in a 2002 essay called “Coase’s Penguin, Or, Linux and ‘The Nature of the Firm.’”
+
+Benkler reasons that if individuals are personally motivated to do something, coordination costs will be lower.111 Unlike companies—which need to solicit, evaluate, hire, and manage employees—the members of a commons simply self-organize based on who wants to do the work most.
+
+In terms of coordination effort, it could be less costly to designate one person as the leader, whose job it is to collect information from everyone and keep all the work in one place. But when you have a group of strangers who are loosely affiliated with one another and excited to participate, and nobody is officially in charge, it’s more likely that a bunch of people will volunteer all at once. Intrinsic motivation makes it easier for people to self-organize to achieve the same outcome.
+
+**A few of the conditions that Benkler identifies as necessary to pull off commons-based peer production are intrinsic motivation, modular and granular tasks, and low coordination costs.**
+
+**Intrinsic motivation is the currency of the commons: members do the work because they want to do it**. In the case of open source, it’s assumed that developers participate because they enjoy writing code. Guido van Rossum, for example, wrote the programming language Python while looking for a “‘hobby’ programming project that would keep me occupied during the week around Christmas.”113 And Linus Torvalds released the Linux kernel and operating system as “just a hobby, won’t be big and professional,”114 then released the version control system Git as “some scripts to try to track things a whole lot faster.”
+
+**in order to keep people motivated, tasks must be modular and granular**: When a project of any size is broken up into little pieces, each of which can be performed by an individual in a short amount of time, the motivation necessary to get any given individual to contribute need only be very small.
+
+**Modularity refers to how the project is organized. Can it be broken into clear subcomponents, and do they fit easily back together? Granularity refers to the size of each module. It should be easy for anyone to jump in and complete the task without too much preexisting knowledge.**
+
+As Doug McIlroy, one of its developers, counsels, “Write programs that do one thing and do it well. Write programs to work together.”
+
+Finally, Benkler suggests that low coordination costs are necessary to produce in a commons. **In open source, coordination costs include both “quality control over the modules” (such as reviewing code) and “integrating the contributions into the finished product” (such as merging pull requests).**
+
+When the costs of coordination outpace the benefits, the commons breaks down as a useful production model.
+
+But today, not every open source project looks like a commons. Stadiums have one or a few maintainers, who are surrounded by casual contributors and users. This structure engenders one-to-many, rather than many-to-many, activity. Much of our online behavior today increasingly resembles these centralized communities, with just one or a few creators who attract a bigger crowd.
+
+**Decentralized communities prioritize work based on abundance of attention: encouraging new contributors, developing governance processes, and improving engagement and retention. But in Stadiums, a creator prioritizes work based on scarcity of attention: saying no to contributions, closing out issues, reducing user support. While the commons is tasked with resolving coordination issues, creators are defined by the need for curation.**
+
+Anthropologist Michael Wesch uses the term “context collapse” to describe how YouTube’s wide reach affects how people present themselves online. Instead of having in-person interactions, which occur within a specific context, YouTube creators experience “an infinite number of contexts collapsing upon one another into that single moment of recording.”
+
+### Roles, Incentives, and Relationships
+
+Today, most developers transact casually with one another, across projects, with low context and little skin in the game. These developments present a challenge to Ostrom’s definition of a commons, and, by extension, to our current working theories about how and why open source software is produced.
+
+if developers don’t see themselves as “members” of a community, they might not necessarily mind being shamed or kicked out, and may indeed even thrive on such conflict.
+
+One prominent controversy centered around a code of conduct took place in 2015 on Opal, a Ruby-to-JavaScript compiler project, in an episode later dubbed “Opalgate.” After one of Opal’s maintainers made a comment about transgender people on Twitter, his comments prompted a Ruby developer to open an issue on Opal with the subject line “Transphobic maintainer should be removed from project.” The developer linked to the tweet, asking, “Is this what the other maintainers want to be reflected in the project? Will any transgender developers feel comfortable contributing?”
+
+Another maintainer promptly closed the issue and shot back, If you want him removed, start working on Opal and contributing as much as him to everything he did for Opal so we have a replacement that’s more in orientation with your morals and views. Protip: you won’t because you can’t.
+
+Although Opalgate was ostensibly about whether a maintainer’s personal political views should affect their ability to participate in the project, another reason the issue blew up the way it did is because it was opened by, and attracted pile-on from, developers outside of Opal’s contributor community. But what defines an outsider in open source, when any developer is supposed to be able to participate? If everybody is a potential contributor, who gets to make, enforce, and follow the rules?
+
+The newcomer effect is also known as the “Eternal September” problem, a term coined by members of the early online community Usenet, which experienced an influx of newcomers every September due to new students getting access for the first time. But once America Online (a sort of early highway system itself) began offering access to Usenet, the service provider exposed the community to a constant stream of new users, creating an “eternal September.”
+
+Deferring to one’s community seems to be more obviously aligned with democratic values, but open source’s distributed nature makes that ideal challenging to live up to. If maintainers were to defer to their community, how could they assess overall opinion, given the lack of clear membership boundaries? Countries have citizenships and constituencies, but open source projects are open to anyone. If someone made a one-time contribution to Opal, does that make them a “contributor” in the same sense as a lead maintainer? How do we know if the developers opposing or favoring action represent a minority voice, if we don’t know the actual population of the community?
+
+Thus, even within a group of people who could ostensibly be called “Lerna maintainers,” there are unspoken layers of influence. Lerna’s author abdicated his decision-making power. The maintainer who proposed the change did not have sufficient buy-in from his collaborators to pull it off, and was removed from the organization.† Getting weak support from a fellow maintainer was not enough to execute the change.
+
+The former option—deferring to maintainers—carries its own set of challenges, as maintainers don’t always agree with one another’s decisions. In 2018, a maintainer of Lerna, a tool for managing JavaScript projects, decided to add a clause to its MIT license “banning ICE collaborators”—that is, companies known to work with the United States Immigration and Customs Enforcement agency. In the pull request, the maintainer explained, “I’ve been really disturbed to see what ICE has done to American immigrants . . . . a lot of big tech companies are supporting ICE by providing them with infrastructure and in some cases doing significant development work for them.”130
+
+These governance challenges speak to why many of the bigger open source projects prefer to use consensus-seeking over consensus processes. When it’s unclear where to draw community boundaries, voting systems don’t work very well, because there’s no way to know whether those votes are representative of the total population.
+
+active “members” like a decentralized community does. **Given that there are fewer people who are actively involved, stadiums are better suited to “benevolent dictator” governance models than consensus-seeking ones.**
+
+The ambiguous definition of a “contributor” can cause confusion between projects. In a club or federation, an active contributor cohort might display prosocial attitudes that lend themselves to making decisions collectively. But that attitude doesn’t necessarily port over to the stadium model, where contributors act more like users, and only the maintainer makes decisions on behalf of a project. (One maintainer, rolling his eyes, showed me a Hacker News thread in which a developer espousing strong opinions claimed to be a “contributor” to his project. That contribution turned out to be a single pull request, from several years ago, which removed a bit of white space.)
+
+### The work required by software
+
+**“Creation is an intrinsic motivator, maintenance usually requires extrinsic motivation.”**
+
+THE ROLE OF A MAINTAINER
+
+maintainers can be thought of as a keystone species. A keystone species is small in population size but has an outsize impact on its ecosystem. If we were to imagine a forest, for example, while there may not be many wolves in absolute numbers, if the wolves disappeared there would be cascading effects on the rest of the forest.
+
+Similarly, although maintainers are few in number, their impact on an open source project is far-reaching, because they’re the bottleneck to everyone else’s contributions. Unlike other contributors, maintainers tend to work laterally. When making decisions, they must keep the whole project in mind, balancing competing needs among users and contributors.
+
+The term author refers specifically to the developer or developers who were responsible for the project’s original release. Not all authors become maintainers or even active contributors. For example, while Sebastian McKenzie, also known as kittens, authored Babel, he is no longer a maintainer of the project.
+
+The distinction between “author” and “maintainer” also underscores the inherent tension between creating and maintaining software. **Some developers love to make things, but they don’t like maintaining them. Functionally, the work required by these two roles is quite different.**
+
+They might discover renewed intrinsic joy in maintaining the project because they’re learning a different set of valuable skills, such as project management or leadership. If they don’t enjoy these things, however, they must either figure out how to distribute the work to contributors and users or reduce the overall time they spend on undesirable tasks: for example, by turning off issues or auto-closing pull requests. If both avenues prove to be difficult, maintainers will eventually step down, find a replacement, or disappear altogether.
+
+Dominic Tarr is a developer who’s created hundreds of popular npm modules, many of which are widely downloaded and relied upon by millions of people around the world. In November 2018, he gave commit rights to a stranger who claimed they wanted to help maintain one of these modules, event-stream, which Tarr had long moved on from. Instead, the stranger proceeded to insert malicious code into the module, in an attempt to steal money from users of an application that depended on the library. As hundreds of developers scrambled to figure out what was wrong and fix it, Ayrton Sparling, the developer who discovered the hack, made a frightening comment that, while the code appeared to be malicious, “the worst part is I still don’t even know what this does . . .”
+
+Tarr stood by his decision. He published a statement on GitHub, describing why maintainers hand off access to others: I didn’t create this code for altruistic motivations, I created it for fun. I was learning, and learning is fun. . . . I’ve written way better modules than this, the internet just hasn’t fully caught up. . . .
+
+If it’s not fun anymore, you get literally nothing from maintaining a popular package. One time, I was working as a dishwasher in a resturant \[sic], and I made the mistake of being too competent, and I got promoted to cook. This was only a 50 cents an hour pay rise \[sic], but massively more responsibility. It didn’t really feel worth it. Writing a popular module like this is like that times a million, and the pay rise \[sic] is zero.
+
+Active contributors tend to be somewhat specialized, whether they focus on a specific part of the codebase or contribute their expertise, like security knowledge or managing the community. They’re distinct from maintainers in that they aren’t responsible for the overall direction of the project. While active contributors might care about the community, they’re not expected to make trade-offs between their interests and others’.
+
+**Active contributors have lower churn than casual contributors because they see themselves as part of the project. They’re more likely to leave due to a change in life circumstances than pure boredom or disinterest.**
+
+**By contrast, casual contributors (sometimes called “drive-by contributors”) have a transactional relationship with the project.**
+
+Generally speaking, truly casual contributors are current users who have discovered an issue that needs addressing: most commonly fixing a typo or a bug, but sometimes also adding new features or refactoring code (rewriting code to reduce its complexity, like editing one’s writing).163 Rather than participating in a discussion, their first action on the project is probably opening an issue or pull request. Whereas active contributors show interest in adding value to others early on, casual contributors demonstrate an acute, personal need at the outset.
+
+Casual contributors are in an “I want this fixed, and then I’m done” mindset. In an online community, the equivalent of casual contributors would be a casual commenter: someone who participates in discussions or asks questions that satisfy their own interest, rather than for the benefit of others.
+
+Casual contributors are like tourists visiting New York City for a weekend. Just as we wouldn’t expect, or even want, tourists to participate in local governance decisions, we shouldn’t assume that casual contributors are part of a project’s contributor community simply because they are physically present. After studying why newcomers abandon open source projects, researcher Igor Steinmacher et al. conclude, “By reading the discussions initiated by dropouts, we realized that part of the newcomers had no intention to join the project.”
+
+**The combination of unpredictable quality and high volume means that casual contributions can quickly turn into a time sink for maintainers if they’re not careful**. Much like a YouTube creator must learn to manage their relationship with the audience in order to retain their desire to keep making videos, a maintainer must manage their relationship with casual contributors in order to retain enthusiasm for the project.
+
+A maintainer may only discover who depends on their project when a user steps out from the shadows: for example, by opening an issue or pull request, or by reaching out to a maintainer directly. Daniel Stenberg, author of the command-line tool cURL, didn’t realize he had created one of the most widely used software projects in the world until people told him “they saw his name in the ‘about’ window of software, or buried in documentation,” many years into cURL’s development.
+
+Given that users aren’t usually visible to maintainers, we can characterize them as default-passive: They just want something that works. If users don’t make themselves known, it implies they are happy enough with the direction of the project that they don’t seek further interaction with its developers.
+
+**Although maintainers don’t always have a direct relationship to their users, some users do make contributions to open source projects, even if they don’t think of themselves as contributors. Common examples include:**
+
+- **EDUCATION, in the form of live-coding, or making videos, blog posts, or tutorials about the project**
+- **SPREADING THE WORD, in the form of organizing events, posting about the project online, or giving talks at meetups or conferences**
+- **SUPPORT, in the form of answering user questions on mailing lists, issue trackers, or chat**
+- **BUG REPORTS, in the form of filing an issue with the project after discovering a bug**\*\*
+
+These active users are similar to active contributors, but they tend to operate independently from the project’s contributor community. It’s possible they’ve never interacted with the project’s repository at all.
+
+Like active contributors, however, active users tend to think on a longer time span because of the reputational benefits associated with building and demonstrating expertise, whether directly (e.g., as a top answerer on Stack Overflow, or by becoming a recognized expert or evangelist) or indirectly (e.g., self-taught expertise might lead them to new opportunities, like a new job).
+
+**Active users can be a maintainer’s best ally or worst enemy. At their best, active users test new releases, report bugs, and shield maintainers** from, as researchers K. Crowston and J. Howison put it, “a barrage of setup, configuration, and build questions from passive users—those who use the code without contributing themselves.”
+
+**At their worst, however, active users can be pushy, putting stress on the project by demanding work, or providing other users with “unofficial” answers that are outdated or inaccurate.**
+
+What does it mean for a project to be doing “well”? There are three success metrics that are interrelated but distinct: POPULAR refers to how many people use the project. For example, a testing tool or text editor could be popular, even if other software doesn’t directly depend on it. DEPENDED UPON refers to how much software depends on the project, meaning that it is being actively used by other software, whether directly or transitively. If the project were to disappear, it would break someone else’s software. ACTIVE means the project is actively developed; this communicates an expectation that the project will continue to be maintained in the future. If a developer were evaluating whether to use this project, how would they know it’s reliable?177
+
+Contributors are commonly used as a measure of project health, whether total contributor count or contributor growth rate. GitHub prominently displays total contributor count on a repository’s homepage, and this number is frequently cited, with pride, as a sign of a healthy, booming project.
+
+“Men and months are interchangeable commodities only when a task can be partitioned among many workers with no communication among them”—in other words, the idealized version of the commons.
+
+“Contributor count” is not sufficiently nuanced to distinguish how an individual contributes, and this is especially visible among stadiums, where a few maintainers do most of the work. Removing a maintainer from an open source project causes significantly more harm than removing a one-time casual contributor.
+
+When a developer is trying to decide whether to use an open source project, one of the first things they’ll glance at is the date of the project’s last commit. A project that hasn’t seen any commits in several years is probably less maintained than one whose latest commit was a few days ago. “Work done” is easier to generalize than contributor count is, allowing us to compare across project and contributor types, since a project’s overall level of activity is agnostic to how the work gets done.
+
+Developer activity off of GitHub (such as on Stack Overflow, chats, and mailing lists) can help paint a more complete picture of how much work is involved.
+
+new interactions (such as opened issues and pull requests) are addressed quickly, which often depends upon maintainer responsiveness. A few metrics related to responsiveness include: NUMBER OF OPEN ISSUES AND PULL REQUESTS: A high number of open issues or pull requests suggests the project is not well maintained, although projects have different philosophies as to whether they prefer to keep issues open or closed. AVERAGE TIME TO FIRST RESPONSE, from a maintainer, on a new issue or pull request. (Sometimes, maintainers use bots as first responders.) AVERAGE TIME TO CLOSE AN ISSUE OR PULL REQUEST.
+
+Activity that directly feeds back into “work done” (meaning, changes to the code) should weigh more heavily than issues and questions. The latter might help us measure a project’s popularity, but a project that’s all talk and no action (lots of discussion, but no commits) is not necessarily healthy. By contrast, “issue zero” and “pull request zero,” with a steady rate of issues and pull requests opened and closed, would suggest that a project is in comparatively better shape.
+
+A few important caveats to keep in mind when developing project health metrics: LACK OF GRANULARITY: A project could have one massive pull request that takes months to get merged, versus a pull request containing a few typo fixes—yet each of these would count as one pull request. Commits are more granular than pull requests, but they aren’t uniform in size either. WORK RATE VARIES ACROSS PROJECTS: Depending on the work required, some projects might have consistent but low activity, while others projects have inconsistent large bursts of activity. It’s likely that there are multiple, stable pictures of “project health” that could be identified. PROJECTS THAT ARE STABLE: If a project is stable and widely used but doesn’t require much work, it shouldn’t be penalized for low activity. For this reason, issues are still important to track along with pull requests, even if they’re weighted less. For example, a project that’s not very active based on commits but has many open, unanswered issues might not be in the middle of active development.
+
+### Managing the costs of production
+
+**Software is frequently characterized as “zero marginal cost,” meaning that it can be distributed for nearly nothing, regardless of how many additional people consume it.**
+
+Code is nearly free to distribute, but maintenance can still be expensive. Although it’s not immediately visible from the code itself, software does incur a hidden set of costs over time.
+
+**Firstly, software, once written, is never really finished. It might be feature-complete, but, in order to continue running, software almost always requires some sort of ongoing maintenance.**
+
+regularly rewriting software is inherently beneficial. It helps cut away unnecessary complexity that has accumulated over time, as well as transfer knowledge and a sense of ownership to newer team members.
+
+**The cost of maintenance, coupled with a lack of intrinsic motivation to maintain, is why large open source projects tend to become modular as they grow.** Rails’ core developers, for example, incorporated many of the extensions written by the community into the main project until Rails 3, when they switched to a modularized approach. It had become too expensive to maintain other developers’ code under one project, and the maintainers risked sacrificing speed and customizability if they didn’t split it up.
+
+In a post ominously titled “A Conspiracy to Kill IE6,” developer Chris Zacharias describes the pain of having to support the infamously burdensome Internet Explorer 6 during his time at YouTube: IE6 had been the bane of our web development team’s existence. At least one to two weeks every major sprint cycle had to be dedicated to fixing new UI that was breaking in IE6. Despite this pain, we were told we had to continue supporting IE6 because our users might be unable to upgrade or might be working at companies that were locked in.189 Ultimately, Chris’s team secretly dropped support for IE6 altogether, without telling anyone else at the company.
+
+Apollo 11’s code lives in static state: It’s a commodity, like lumber. When we treat code as a commodity, we’re thinking about it on the basis of pure consumption. It can be bought and sold and traded. We can inspect the code for historical purposes, but it’s not used in production.
+
+In this state, code is easy to copy, share, and distribute. But the purpose of consuming code is, in most cases, not to simply read and study it but to use it. Open source code derives its value not from its static qualities but from its living ones.
+
+If a developer is looking for help with a programming problem, they might come across an answer on Stack Overflow where someone’s written out exactly the code they need. That code is in static state: a commodity available for anyone to consume. But when a developer copy-pastes that code into their own software, it suddenly comes to life. It might break instantly. It might break their other code, and now they have to rewrite everything around it. When software transitions from static to active state, it starts to incur a set of hidden costs.
+
+Forking is a useful exit strategy when we ignore the dependencies and upkeep required by the project in question. In reality, a widely used project makes itself unforkable because it’s become more than just the code.
+
+Maintenance costs make the difference between “forking as a credible threat” and “forking as a desirable outcome.”
+
+**We can think about software as having three major types of costs: creation, distribution, and maintenance.**
+
+**Creation is frequently powered by intrinsic motivation. These are the fixed “first-copy” costs. Distribution is mostly powered by the platforms used by creators. These costs are low or free due to supply-side economies of scale. But maintenance is still a mystery. Maintenance costs typically fall onto the creator but, as we’ve seen, are not intrinsically motivated.**
+
+In the strictest sense of the word, however, software is not quite non-rivalrous. As when more cars merge onto a highway during rush hour, the marginal cost incurred between the first and second software user may be negligible or even undetectable. But eventually, some user N will affect the ability of user N+1 to access that same software. If ten people use the same software versus 10,000 people, its developers will feel the difference.
+
+Developers use GitHub over GitLab not just for the network effects but also for the former’s security and reliability. The same goes for why someone would use a Google product, like Gmail or Google Docs, over that of a startup. It costs money and manpower to do these things well.
+
+**User support is a significant marginal cost associated with software, plaguing not just open source developers but the biggest technology companies, which are still figuring out how to manage unprecedented levels of adoption.**
+
+**When user adoption is low, the cost of support feels trivially small, perhaps nonexistent. But as adoption grows, the once trivial cost of support can become significant. Perhaps only 0.1% of users require support. If a company has 1,000 users, then only one user needs support. But 0.1% of 1 million users is 1,000 users. Suddenly, it matters to a developer whether a thousand or a million people consume their software.**
+
+Eric S. Raymond once coined the aphorism “Given enough eyeballs, all bugs are shallow.” His point is that open source software presents an advantage over closed source software, because if more people can inspect the code it will increase the chance that more bugs will be discovered. The implication is that support can be handled in a fully decentralized manner that will distribute its costs among users.\*
+
+But as Fred Brooks wryly notes in his classic engineering book The Mythical Man-Month, first published two decades before Raymond made his claim, although “more users find more bugs,” this results in a type of support cost that grows, and is “strongly affected by the number of users.”
+
+**TEMPORAL COSTS In addition to marginal costs, software also requires ongoing maintenance to continue running successfully, regardless of how many people use it. Rather than a function of use, these costs are a function of entropy: the inevitable decay of systems over time. It’s not just code itself that requires maintenance either, but all the supporting knowledge that surrounds it. When code changes, its documentation must also change. The most upvoted answers on a Q\&A site eventually become outdated and incorrect. Programming books and videos eventually require revisions.**
+
+Technical debt Code is “cleanest” when it’s first released, because that’s the time at which developers are thinking about the project holistically and writing it from scratch. As more code is added incrementally, software starts to become unwieldy, like a building from the 1850s that’s had new rooms, plumbing, and electric wiring added piecemeal over the years. When adding code to a project, it can be hard to prioritize decisions on a long time horizon. A critical bug or security vulnerability might require taking shortcuts to patch things up quickly, but eventually those short-term decisions start to add up. Developers refer to this as technical debt: making choices that are easier today but that cost time and money to address later on.
+
+Open source projects are particularly susceptible to technical debt because they accept contributions from developers who may not necessarily know one another, nor have full context on the project. Scope creep refers to the tendency for software to become bloated over time, because new code additions are evaluated incrementally rather than holistically.
+
+Refactoring is the process by which developers pay down technical debt: rewriting, simplifying, and otherwise cleaning up the codebase without changing its functionality. Much like editing a book versus writing it for the first time, refactoring code is often dreaded and unrewarding work.
+
+manage the build, test, and deployment aspects of this workflow, developers use CI services like Jenkins, Travis CI, and CircleCI. These tools are particularly important for open source projects, where developers are merging changes from people that they might not know. But because tests are added incrementally over time—written at the time of each additional code contribution—a project’s test infrastructure can become unwieldy. It’s easy to writing a quick, imperfect test in the moment, but these small choices add up, eventually affecting everybody else’s ability to work on the codebase. There are tests that are no longer useful, tests that are slow, tests that are flaky, tests that don’t do what the developer thought it would, and tests that are orphaned by their authors.
+
+Even big companies are susceptible to inertia when it comes to patching security vulnerabilities. In 2017, Equifax reported a security breach in which more than 140 million customers’ personal information was compromised, including Social Security numbers, credit card numbers, and addresses. The vulnerability was found not in the code that Equifax had written but in one of its open source dependencies, Apache Struts. The security vulnerability had been disclosed with a CVE ID several months before, and a patch had been released, but Equifax’s developers failed to update the company’s software in time.
+
+Adapting to user needs Maintenance is often classified as reactive work: it’s the minimum required to keep things running smoothly. But users’ needs change over time, too. Software must also change to meet these needs, or else risk becoming irrelevant.
+
+By focusing too much on iterating upon their incumbent product, companies risk missing major opportunities for so-called “disruptive innovation,” which eventually replaces existing products.
+
+Over time, ignoring software’s hidden, ongoing costs creates a tension between producer and consumer. As economist J. Bradford De Long and law professor A. Michael Froomkin write, If goods are non-rival—if two can consume as cheaply as one—then charging a per-unit price to users artificially restricts distribution: to truly maximize social welfare you need a system that supplies everyone whose willingness to pay for the good is greater than the marginal cost of producing another copy. And if the marginal cost of reproduction of a digital good is near-zero, that means almost everyone should have it for almost free. However, charging price equal to marginal cost almost surely leaves the producer bankrupt, with little incentive to maintain the product except the hope of maintenance fees, and no incentive whatsoever to make another one except that warm fuzzy feeling one gets from impoverishing oneself for the general good.
+
+Over time, ignoring software’s hidden, ongoing costs creates a tension between producer and consumer. As economist J. Bradford De Long and law professor A. Michael Froomkin write, If goods are non-rival—if two can consume as cheaply as one—then charging a per-unit price to users artificially restricts distribution: to truly maximize social welfare you need a system that supplies everyone whose willingness to pay for the good is greater than the marginal cost of producing another copy. And if the marginal cost of reproduction of a digital good is near-zero, that means almost everyone should have it for almost free. **However, charging price equal to marginal cost almost surely leaves the producer bankrupt, with little incentive to maintain the product except the hope of maintenance fees, and no incentive whatsoever to make another one except that warm fuzzy feeling one gets from impoverishing oneself for the general good. . . . . Without non-financial incentives, all but the most masochistic producer will get out \[of] the business of production.**
+
+So-called “greenfield” projects—those where a developer gets to write software from scratch—are coveted for a reason. Most of the work that software developers do is not writing new code, but rather tending to the code that someone else has written. Nathan Ensmenger, a professor of informatics and computing at Indiana University, suggests that “most computer programmers begin their careers doing software maintenance, and many never do anything but.”
+
+The cost of maintenance, coupled with a lack of intrinsic motivation to maintain, is why large open source projects tend to become modular as they grow. Rails’ core developers, for example, incorporated many of the extensions written by the community into the main project until Rails 3, when they switched to a modularized approach. It had become too expensive to maintain other developers’ code under one project, and the maintainers risked sacrificing speed and customizability if they didn’t split it up.
+
+In a post ominously titled “A Conspiracy to Kill IE6,” developer Chris Zacharias describes the pain of having to support the infamously burdensome Internet Explorer 6 during his time at YouTube: IE6 had been the bane of our web development team’s existence. At least one to two weeks every major sprint cycle had to be dedicated to fixing new UI that was breaking in IE6. Despite this pain, we were told we had to continue supporting IE6 because our users might be unable to upgrade or might be working at companies that were locked in.189 Ultimately, Chris’s team secretly dropped support for IE6 altogether, without telling anyone else at the company.
+
+Code is always published to GitHub in static state.
+
+In this state, code is easy to copy, share, and distribute. But the purpose of consuming code is, in most cases, not to simply read and study it but to use it. Open source code derives its value not from its static qualities but from its living ones.
+
+But when a developer copy-pastes that code into their own software, it suddenly comes to life. It might break instantly. It might break their other code, and now they have to rewrite everything around it. When software transitions from static to active state, it starts to incur a set of hidden costs.
+
+### The value of code
+
+**Code by itself is not, and has never been, worth anything, and consumers already know this intuitively when they refuse to directly pay for it**
+
+BASIC software, once unbundled from the Altair computer, wasn’t worth very much at all.
+
+Developer Ben Lesh once tweeted, “Open Source is such a strange thing. The open source work I do is clearly the most impactful work I do, but no one wants to pay me to work on it. Yet I’m asked to speak about it, and the work I’m actually *paid* to do no one really wants to hear about.
+
+**DEPENDENCIES** Code, in active state, carries its value in its dependencies, or who else is currently using it. If I publish code and nobody uses it, it’s worth less than other code I’ve written that’s embedded in software used by millions. I may derive personal value from the other code I wrote, but its value to others is negligible.
+
+While left-pad is an extreme example, software substitutability helps us understand why frontend web frameworks like Angular or Vue are harder to monetize than are databases like MongoDB and MySQL. There are lots of frontend frameworks to choose from (though switching costs substantially increase after you’ve chosen one to build with), but I’m less likely to want to make my own production-quality database.
+
+Open source code also tends to be a highly elastic good, meaning that its consumers are sensitive to price changes and restrictions, and will happily switch to a competitor if needed. (Airline tickets, for example, are an elastic good, while health insurance is inelastic.)
+
+In addition to dependencies, then, we can use a counterfactual approach to assess the value of widely depended-upon code: If this code didn’t exist, how much would it cost to accomplish the same thing in a different way?† How much money and time does this code save us? What does this code allow us to do that we couldn’t have done otherwise?
+
+**REPUTATION**
+
+A casual contributor doesn’t carry the same value as a maintainer, because it takes time for a new developer to get up to speed. The tacit knowledge required to maintain a project—meaning knowledge that is difficult to externalize and transfer to others—suggests that the perceived value of open source code is also at least partly a function of who’s behind it.
+
+While there are a lot of things about Sorhus’s life that we could remark upon, what’s relevant to this discussion is that he raises money on Patreon not to work on a specific open source project but to work on open source more generally.
+
+it also seems that developers sponsor Sorhus not just based on dependencies but on the basis of Sorhus himself. After all, there’s plenty of open source code that’s just as widely depended upon but that doesn’t pull in the same number of sponsorships as Sorhus. It’s Sorhus’s visibility, and his reputation, that make it possible for him to raise money through sponsorships. Like dependencies, the reputation of a developer is a dynamic property, based on their past and expected future value, viewed through the eyes of others.
+
+We measure the reputational value of content differently depending on whether we’re viewing it in static or active state. “Likes” and “follows” are not the same reward on social media. A viral tweet might gain thousands of likes, but those don’t necessarily translate into follows. The same goes for views and likes on a YouTube video, versus subscribing to its creator’s channel.
+
+**We can think of a creator’s reputation as a “battery,” or store of value, for attention. More followers mean more attention in the bank, but when people follow a creator they do so because they expect to receive more content. If creators don’t produce anything new, their followers will eventually get bored and leave. Reputation, like software, requires maintenance over time.**
+
+Open source code is transnational, affecting developers and users across many different countries, whereas governments are beholden to national interests (such as national security). And the world of software moves so fast that the law can’t keep up.
+
+The need for a new approach is why Elinor Ostrom’s writing has gained renewed appeal in recent years. Her work provides a framework for understanding how people can self-manage non-excludable resources without resorting to outside institutions like the government. Before we throw our weight behind solutions, however, we first need to revisit the problem.
+
+Our neighbor decorates his house for Christmas because, for whatever reason, he loves to do it. It costs him nothing if others want to enjoy those decorations. But if his neighbors started knocking on his door and putting in requests, or telling him how to decorate his house, he’d probably get annoyed and eventually stop putting the decorations up.
+
+When it comes to online public goods, I think our struggle to come up with provisioning solutions is due to the fact we haven’t defined the problem clearly enough. Put another way: When software is in static state, what if there is no free-rider problem? When code is non-rivalrous, it only has first-copy costs, which the creator is intrinsically motivated to provide—so the problem doesn’t seem to lie in how many people consume
+
+it doesn’t make sense to charge for access to code or content, because it’s not that too many people are consuming the good itself. It’s the production—not consumption—of software that suffers from too much demand. Our expectations about unfettered online participation have caused consumers to spill over to the other side.
+
+managing open source code requires separating its production from consumption: treating them as not one but two types of economic goods. Anyone can consume code, but only a limited number of people can produce it.
+
+Open source code itself is not a common pool resource but a positive externality of its underlying contributor community. Users can consume, or “appropriate,” code at zero marginal cost, because what the commons actually manages is not code but attention. When developers make contributions, they appropriate this attention from the commons.
+
+"There is definitely a place for users and their demands, however that’s not inside the community (unless they’re also contributing devs); the community, as in practicing any art form, is vulnerable; you wouldn’t sit and criticize a painter while they’re still painting their piece. The user base needs to be moved outside of the artistic realm and into the museum, where your software is on display."
+
+Jonathan Zdziarski proposes moving to a model that he calls “peer source,” where all his projects would become private repositories, which only trusted developers (people he knew, or that someone could vouch for) could access. “The rest of the community can download binaries, and have the satisfaction that there is accountability on some level, just not to them,” he writes.
+
+We have a problem of induced demand: just as adding lanes to a highway does not resolve traffic congestion, creating more threads does not resolve comment congestion.
+
+documentation is not static. As the primary language’s documentation changes over time, translations will also need to stay synchronized. Will the contributor who’s offering to translate documentation be willing to continue maintaining it indefinitely? Probably not. Does the maintainer want to track down new contributors who can keep their documentation up-to-date in Dutch, Slovenian, and Portuguese? Probably not.
+
+It’s possible for a maintainer to sink hours into coordinating and synchronizing multiple translations, with little benefit back to the project. So unless a maintainer wants to manage that work, it’s more likely that they’ll either accept a one-time translation from an eager contributor and clarify that it won’t be maintained or they just won’t accept translations at all.
+
+Hickey wrote a lengthy comment on Reddit challenging the idea that Clojure’s development needs to be a community effort at all: Authority comes along with authorship . . . . I don’t know why that is no longer obvious. Thinking otherwise yields a broken economic model, where people are not entitled to control over the products of their own labor, and thus are without control over their livelihood. Clojure was not originally primarily a community effort, and it isn’t primarily one now. That has to be ok. The presumption that everything is or ought to be a community endeavor is severely broken.
+
+MANAGING PRODUCER ATTENTION There are a few typical patterns used by open source maintainers to manage their available attention:
+
+- Reduce up-front costs
+- Make themselves less available
+- Distribute costs onto users
+- Increase total attention available
+
+A single maintainer might direct their users toward a user-to-user support system, while a large project might use automation to reduce overall demand. As explored in Chapter 3, “work done” is a function of total attention available, not a project’s number of contributors.
+
+Maintainers might gain more benefits in the earlier stages of a project and pay more attention to it as a result. But if a maintainer has already reaped the reputational benefits of being associated with the project, in the absence of additional rewards the amount of attention they’re willing to allocate will decrease over time, especially if the work required is growing.
+
+Maintenance costs are anathema to software developers. Every developer tries to reduce the amount of maintenance work they need to do over time. But software is never done, and also never dies: the cost of maintaining a project can be near-zero, but it is asymptotic.
+
+At a high level, it’s also possible that throwing away projects and starting fresh is the most cost-effective approach: rebuilding the whole system, piece by piece. Maybe it’s not the maintenance of any one project that we’re trying to solve for, but the broader ecosystem.
+
+Finally, perceived costs and benefits are subjective. One maintainer might enjoy spending many hours on certain tasks that another maintainer would not. Some maintainers care more about security vulnerabilities or code readability than others do. Others might refuse to spend time on support, even if they got paid for it. We might have opinions on what we wish maintainers would do, but what they ultimately choose to do depends on their own desires and motivations.
+
+#### REDUCING UP-FRONT COSTS
+
+Automation is a developer’s best friend when it comes to reducing work that doesn’t require the attention of humans at all. It’s the equivalent of setting up filters for your inbox so that unnecessary emails won’t vie for your attention in the first place.
+
+In open source, developers use automation to reduce costs, whether it’s bots, tests, scheduled tasks, linters and style guides, canned responses, or issue templates, all of which help manage the contribution process. Even documentation is arguably a form of automation, anticipating answers to common questions and making them publicly available.
+
+While some maintainers move to GitHub in order to boost their projects’ appeal and attract new contributors, others seem to deliberately enjoy not being on GitHub, because it makes their projects harder to get to.
+
+**Continuous integration and automated tests** Continuous integration is the practice of deploying smaller, but more frequent, changes to production, which helps developers iterate more rapidly on software. Even GitHub has started offering its own continuous integration services through GitHub Actions, a system for building custom automated software workflows.
+
+Bots Bots are automated, configurable assistants that have become indispensable to large open source projects. They can perform a variety of services, whether it’s being the first to respond to an issue, checking that contributions pass tests and comply with requirements, or updating dependencies. Rust’s Highfive bot, for example, finds the best reviewer for a given pull request then tags them,282 while Kubernetes’s Prow Robot reviews, triages, and merges pull requests.
+
+**Code style guides and linters** Developers don’t just test their code for functionality but also for the way in which it is written. As when multiple authors contribute to the same book, every developer has their own style of self-expression, even when creating a shared project with others.
+
+Open source projects, especially those with many contributors, will enforce a “style guide” to keep code clean and make it easier for newcomers to read and understand. 1+2 and (3^2)/(471-468) might both produce the same answer, but one is easier to read than the other.
+
+**Templates and checklists** Templates for issues and pull requests are like contact forms for customer support: they help “prescreen” user requests and filter out noise. Among the top hundred projects on GitHub by issue volume in 2018, 93% of projects used issue templates.286 The README for the command-line program Youtube-dl explains why templates are helpful: Before we had the issue template, despite our extensive bug reporting instructions, about 80% of the issue reports we got were useless . . . .
+
+youtube-dl is an open-source project manned by too few volunteers, so we’d rather spend time fixing bugs where we are certain none of those simple problems apply, and where we can be reasonably confident to be able to reproduce the issue without asking the reporter repeatedly.
+
+Philip Guo, who maintains an open source project called Python Tutor, describes this approach as “n=1”: Whenever something goes from n=1 developer to n=2, that is the biggest jump, because then it becomes a collaborative software development project with multiple people. I can’t keep everything in my head anymore, I need to coordinate and communicate with others . . . . So, in general, I don’t accept pull requests. I may look at them if you make pull requests, and I may comment on them, and I might get inspired by some of your ideas, but I do not have a workflow set up so that I, you know, accept contributions from outside . . . not because I don’t like to, but just because I do not have the time to be able to vet and maintain all that.
+
+Developer Gabriel Vieira recalls a similar experience when asking Roberto Ierusalimschy, who authored the Lua programming language, if he could submit a pull request to the project: I once asked \[Roberto] if I could send a PR about a feature I wanted in the language and he said something that I never forgot: “Yes, but I won’t use your code. I love that people send me ideas, but I actually enjoy coding... so I will gladly take your suggestions, though I will write it myself.” He then explained this “dictatorial” behavior is what allowed him to keep the implementation simple and concise over the years. At the time he boasted about the source code being less than 8K LOC \[lines of code], though it has likely increased in recent versions.291
+
+Homebrew’s lead maintainer, Mike McQuaid, limits his available attention by using a tiered approach to managing contributions: FIRST-TIME CONTRIBUTORS need documentation, templates, and automated checks “to encourage high quality pull requests,” as well as positive reinforcement when they do get a pull request merged, which encourages them to contribute again.292 SECOND-TIME CONTRIBUTORS warrant a mild increase in a maintainer’s attention, such as providing more detailed code review. Mike encourages maintainers to “make more ambitious requests” of the contributor, rather than trying to fix the contributor’s problems themselves. THIRD-TIME CONTRIBUTORS “now warrant . . . individual, focused attention,” including providing mentorship, suggesting additional areas of contribution, and vouching for their work to other community members.
+
+For a first-time contributor, the burden is on them, not the maintainer, to submit a “clean” pull request that meets the criteria for review. Maintainers don’t need to invest deeply into casual contributors until they come back for at least a second time. Repeat contributors increasingly gain the trust and attention of maintainers.
+
+**DISTRIBUTING COSTS: USER-TO-USER SYSTEMS User-to-user systems are a way of distributing costs without appropriating attention from producers.** Depending on the task, sometimes users are even more motivated to participate and manage the work than maintainers themselves are. Moderation Moderation can become expensive and unwieldy as user adoption grows, a pain experienced by many popular social platforms.
+
+GitHub provides a suite of tools that allows maintainers to moderate their communities, whether it’s by locking the comments on controversial discussion threads, blocking users, or banning them from the project. Twitter takes a similar approach, encouraging block and mute features to customize each user’s own experience. While the quality of these tools inspires endless debate among their users, the underlying strategy is an effective way of distributing and reducing moderation costs.
+
+Enthusiastic community members can also serve as a “shield” to creators, removing unnecessary distractions and allowing them to focus on their work. Creators with large followings start to recognize familiar faces. Instead of trying to moderate everything themselves, they can designate trusted members of their communities to help.
+
+John Resig, creator of the JavaScript library jQuery, confesses, The very first person I brought on to the jQuery project wasn’t another developer to help contribute . . . . It was someone to help manage our community. Because we were just getting so much feedback, so many issues coming in, and so many people using us, we needed a way to kind of keep track of it all, and ensure that people’s concerns were being heard. And so being able to kind of delegate some of that responsibility meant that I could spend more time focusing on writing code.
+
+User support Even with all the resources in the world, companies like Google, Apple, and Facebook can’t meet the cost of user support alone. Instead, they rely on public support forums.
+
+In open source, maintainers frequently push user support questions onto forums like Stack Overflow or group chats like Discord or Slack, where users can help answer one another’s questions.
+
+“I don’t think \[outsourcing] works because . . . the culture is so dramatically different when you are trying to apply a policy that is based on \[Western] culture.”300 Breen continues, “They tried outsourcing to India before I was there, and it was such a disaster that they just canceled it and said we have to do this all in-house.”
+
+Maintainers can also manage new, significant contributions by asking contributors to work on their own “branch” first. Major features for big projects tend to work this way: a developer works on a new idea as an entirely separate project, keeping maintainers informed along the way, until it’s ready to be merged into the core project. In this way, promising, but expensive, contributions can be de-risked without appropriating attention from the commons.
+
+### Monetization
+
+Sometimes, the reason why a maintainer can’t find funding for their work is not because their users are mean and ungrateful, or because the world is cruel, but because that person is shy about marketing themselves. Or maybe they’re hard to work with. Or their users don’t actually trust them. As discussed in previous chapters, the value of a project varies widely based on its dependencies and substitutability, as well as the maintainer’s reputation. Some open source projects are venture backable, while others have no business value.
+
+Who are the potential funders of open source, and why would they pay for anything? What are they paying for? And what can an open source developer conceivably charge for? To answer these questions, we need to return to the idea of attention as the currency of production. Historically, producers charge customers to access content. But today, producers can make content free to read, while instead charging for “write access”: meaning, the ability to appropriate attention from producers.
+
+**we’ve treated the production of open source software as a common pool resource, where maintainer attention is both non-excludable (anyone can bid for their attention) and rivalrous (appropriating their attention reduces the total amount available). Maintainers can make their attention excludable by charging for access, which turns it into a private good. Paid support, patronage, and bounties (meaning, paid rewards for certain tasks or contributions) are all examples of ways that maintainers price their attention. By making attention excludable, the quality of contributions will increase, as contributors and users compete for the attention of producers.**
+
+What companies like to fund Companies are mostly interested in open source code itself as a “product” or commodity. As a result, companies tend to value benefits like code quality, influencing the project’s roadmap, and brand association.
+
+**Companies will also pay for influence and access to a project they care about**. It can be difficult for a company to attract the attention of a project’s maintainers; they find it frustrating when issues and pull requests go unanswered. Sometimes, this lack of attention is deliberate. Not all maintainers want to pander to the requests of corporate users, especially if their work is unpaid. I’ve heard from a few engineers from large companies who confess that they’ve “laundered” their pull requests through non-work email addresses, because being associated with their employers can make it harder to get their contributions accepted.
+
+In terms of business models, this value proposition translates into having a direct line to the project’s maintainers, whether it’s paying for priority attention on the company’s issues and pull requests or being able to ask questions and have maintainers walk a company’s engineering team through certain product decisions. These relationships are usually not widely publicized.
+
+some open source projects are governed by a software foundation, where corporate stakeholders pay an annual fee to get representation on the board (also called a “pay-to-play” model). These relationships seem to especially plague bigger, federation-style projects. Some foundations take explicit steps to combat this behavior. The Apache Foundation is structured specifically so that individuals only represent themselves, rather than their employers.
+
+**The most common funding models – donations, README sponsors, or paid consulting – only work if a maintainer can get their appeal in front of users. This usually goes in a README or on a website. But reliable, error-free transitive dependencies are invisible. Therefore, the maintainers are invisible, too. And, the better these maintainers do their job, the more invisible they are**. . . . Maybe ads aren’t the answer – fine. But telling maintainers to bury their appeals where no one bothers to look is not the answer, either.
+
+Trivago, a travel company, started sponsoring webpack in 2017. After two years of sponsorship, Trivago’s head of frontend engineering, Patrick Gotthardt, reflected on the experience: All the public visibility you have given us lead \[sic] to a situation where we suddenly became one of the most interesting companies to work for as a JavaScript developer. . . . We’ve hired a lot of really great engineers who mentioned during their job interview that our sponsoring for Webpack was one of their primary motivations for applying.
+
+**What individual developers like to fund**
+
+An individual developer might spend five or ten dollars per month to support their favorite project, whereas a company can easily spend thousands. (Aboukhadijeh recalls a moment, walking through an open source conference, where he asked a company representative how much they paid for their booth: “They weren’t sure if it was $10,000 or $20,000.”314) To that end, open source developers sometimes offer two monthly tiers for recurring funders, which are clearly aimed at different audiences: one that costs around ten dollars or less, for individuals, and one that costs around $500 or more, for companies.
+
+**It’s easy to cynically rest on our laurels here and conclude that individual developers could never fund projects to the extent that companies can. But the opposite argument has been made in politics, where politicians who fund their campaigns from grassroots donations are generally viewed more favorably by the public than are those who are funded by corporate donations. I’m not sure that open source is so different.**
+
+common argument against funding from individual developers is that, regardless of intent, there just isn’t enough money out there to sustain the salary of a core developer. Again, this is a surprising assertion, given that software developers are generally well paid. If politicians can fund entire campaigns based on individual donations from middle-class citizens, the idea that an open source project could raise money from software developers—especially given that a single project might be depended upon by thousands or millions of people—doesn’t seem to require a leap of faith.
+
+The typical rewards for content creators are reputational gains, which they can convert into attention (meaning, an audience). If creators want to keep making things, they find ways to convert that attention into money.
+
+**Patronage is an emerging funding system for online creators today, but it’s frequently conflated with the concept of “donations.” Patronage isn’t motivated by altruism but by an interest in following a creator’s future work, based on their current reputation. It’s more like a subscription than a donation. When an individual sponsors an open source developer, then, they’re ideally not paying for code but to feel closer to the person who writes the code.**
+
+Ben Thompson, suggesting that subscriptions could be the future of local news, defines subscriptions as such: First, it’s not a donation: it is asking a customer to pay money for a product. What, then, is the product? It is not, in fact, any one article (a point that is missed by the misguided focus on micro-transactions). Rather, a subscriber is paying for the regular delivery of well-defined value. Each of those words is meaningful: Paying: A subscription is an ongoing commitment to the production of content, not a one-off payment for one piece of content that catches the eye. Regular Delivery: A subscriber does not need to depend on the random discovery of content; said content can be delivered to to \[sic] the subscriber directly, whether that be email, a bookmark, or an app. Well-defined Value: A subscriber needs to know what they are paying for, and it needs to be worth it.319
+
+reputation-based funding helps incentivize the ongoing production of creative work, because reputation is measured by past and future expectations. **As writer Tiago Forte puts it, “What people are paying for is not a bunch of text. They are paying for the perspective the writer brings to the subject.”**
+
+### Social Dynamics
+
+Twitch, Instagram, YouTube, Twitter, and Facebook are all status-based platforms. Who provides status as a service for developers?
+
+The academic system provides us with a blueprint of how a closed reputation economy for software might work. Researchers write and publish papers, which garner citations from other researchers, which theoretically earn the authors more negotiating power, and, eventually, tenure. But academia fails to create commensurate rewards for open source developers.
+
+Similarly, Tom Caswell, lead developer for Matplotlib, a data-plotting tool for Python, and Andreas Müller, core developer of scikit-learn, a machine learning library for Python, both have PhDs but are employed in non-tenure-track positions. There is a sense among developers in research-related fields that, while writing open source software can have other benefits, it doesn’t fit into the academic reputation system. Writing open source software with a lot of users doesn’t attract as much prestige as publishing a paper with a lot of citations.
+
+It’s still not easy to understand who a developer is, or what they do, from their GitHub profile. Profile pages highlight code activity, but they miss an opportunity to highlight educational content, questions answered, or even the projects that a developer is associated with—all of which are important ways that developers build their reputation. “Following” an open source developer isn’t a particularly meaningful action on GitHub, either, although thousands of users do it anyway. When I’ve asked developers why they follow other developers on GitHub, they cite respect for the craft: whether experienced or just learning a new skill, they want to see how the best do it.
+
+Some of today’s best-known developers aren’t even necessarily active open source contributors—meaning, people who commit code to open source projects—but rather educators, speakers, streamers, or just public personalities.
+
+Williams doesn’t build her reputation on GitHub, but on every other platform around it.
+
+Eugene Wei observes that companies offer value in terms of “utility” versus “social capital,” noting that “some companies manage to create utility for a network but never succeed at building any real social capital of note (or don’t even bother to try).”323 GitHub could be a textbook example of such an outcome.
+
+Twitch made it economically viable to play games online by attaching status to it. GitHub has the potential to do the same for developers, but it hasn’t yet, possibly because we still insist on highlighting the collaborative aspects of open source over the accomplishments of any one developer, even though many people now seem to find uncontroversial the assertion that much of open source is written and maintained by single developers.
+
+In a tweet, npm’s former CTO, Laurie Voss, lamented how this problem arises while fundraising: It is very hard to explain npm’s place in the ecosystem to VCs.“So what percentage of the fortune 500 use npm?”“100%”“Ha ha, but really”“No, really.”“What industries are you focused in?”“Every company that has a website.”“Isn’t that every company?”“Yes.”326 When faced with opportunities of this magnitude, the way to make meaning is to localize our interests. We can’t pay for the meals of every homeless person out there, but it’s easier to make the argument that we should occasionally buy lunch for the same homeless person whom we see every day. We might not care about the trash, air pollution, or safety of a city halfway across the world, but we do care about the safety and cleanliness of the streets that we walk on. When it comes to vetting funding opportunities for open source, Ostrom’s principle of seeking “high context, low discount rate” opportunities serves us well. It’s not a company’s or individual’s job to fund every open source project that they use. But some projects will mean more to certain funders than others, and those are the best opportunities to pursue. It’s OK (albeit mind-boggling) that a single developer might rely on thousands of open source projects to do their job every day, yet not personally fund the salaries of each one. But if there’s a particular project that they happen to love, that’s the one they should pursue. Likewise, it’s the job of an open source developer to make themselves top-of-mind to a targeted set of
+
+In a tweet, npm’s former CTO, Laurie Voss, lamented how this problem arises while fundraising: It is very hard to explain npm’s place in the ecosystem to VCs.“So what percentage of the fortune 500 use npm?”“100%”“Ha ha, but really”“No, really.”“What industries are you focused in?”“Every company that has a website.”“Isn’t that every company?”“Yes.”
+
+Critical to this argument is the idea of approaching funding from a place of abundance rather than scarcity. There will always be a loyal group of followers out there who are excited to support a given opportunity, so long as they have a meaningful relationship to it. This is especially true in today’s world, where creators can attract millions of fans without being nationally or internationally famous. Whereas everyone once congregated around the same set of memes, now countless online celebrities are knighted every day.
+
+Tiago Forte, reflecting on his experience moving from public to paywall-protected content, observes, The experience of blogging changed dramatically after I flipped the switch. My articles went from thousands of views to hundreds, but the quality of my readers spiked. I found my tribe. The noise of random passersby leaving inane comments dwindled to nothing, and we started having real conversations about what it would take to manifest a new vision of work. I started learning as much from them as they were learning from me. I went from having a blog that a large group of uncommitted readers perused, to a much smaller but more intimate group of people pre-committed to trying new things.
+
+We wouldn’t tackle the problem of too much email by making it easier for more people to send us email, or manage traffic congestion by paying more people to drive their cars across a bridge, instead of increasing the toll. In both cases, we’d want to add friction to the process, so that only the most important requests filter through. If anything, it’s casual contributors who should be paying for access to maintainers, not the other way around. Every
+
+**Funding people versus projects Another question for open source funders is whether to fund the project itself or individual contributors. Funding the project builds institutional memory and makes it easier to manage funds transparently, but funding individuals provides greater flexibility and avoids the centralized governance issues that seem so antithetical to open source. Which is better?**
+
+Today, as projects get smaller and a creator’s reputation becomes increasingly prominent, funding individuals is becoming a more attractive option.
+
+Raising money on the basis of personal reputation is liberating, in that developers like Sindre Sorhus aren’t tied to any one specific project. But it’s harder to rake in the big bucks without explicitly tying one’s work to a project. Sorhus himself notes, My Patreon campaign is going well, but it’s mostly (amazing) individuals supporting me, which is not sustainable in the long-term. . . . It’s a lot harder to attract company sponsors when you maintain a lot of projects of varying sizes instead of just one large popular project like Babel, even if many of those projects are the backbone of the Node.js ecosystem.
+
+**there are two economic goods in open source masquerading as one. Open source code is consumed like a public good, because when code is viewed as a static commodity the cost of additional users is nearly zero. But open source code is produced like a commons, where a maintainer’s attention is the limited resource.**
+
+Historically, most of our questions about the value of content have focused on the distribution side, rather than the production side. Today, the most interesting questions we can ask will focus on how content is made and maintained, and by whom. We’ve previously treated content as a first-copy cost problem, and have developed solutions like patents, intellectual property, and copyright to incentivize its creation. But these solutions don’t address the costs of maintenance, which accrue over time. The challenges facing online creators today derive from the fact that they are playing a repeated game, not a single one.
+
+MANAGING OVER-PARTICIPATION When people talk about the “attention economy,” they’re usually referring to the consumer’s limited attention, as when multiple apps compete for a user’s time. But a producer’s limited attention is just as important to consider.
+
+**A tragedy of the commons occurs not from consumers over-appropriating the content itself, but from consumers over-appropriating a creator’s attention.**
+
+The public stage increasingly reflects a one-way mirror pattern, where anybody can consume content but interactions with its creator are limited.
+
+MAKING MONEY
+
+**the rise of subscription models shouldn’t be read as a death knell for advertising. These two models aren’t mutually exclusive; advertising is still alive and well, and it will continue to work for a very long time. And product sponsorships will probably only become more valuable, because they’re driven by the strength of a creator’s reputation. The writer Tim Ferriss, for one, found that advertising worked better than subscriptions for his podcast, because his listeners especially trust his product recommendations.**
+
+With this principle in mind, it’s easier to see how paywalls are frequently misapplied. Putting all content behind a paywall isn’t likely to work well for creators or publishers, with the exception of a few heavy hitters (say, The New York Times). Similarly, micropayments—where consumers pay small sums for a specific piece of content, such as paying to unlock a specific article—don’t usually add up to much either (again, unless you’re The New York Times, and can play upon a reader’s fear of missing out). Micropayments make the transaction about content, rather than about creators, but because there is so much freely available, highly substitutable content they create decision fatigue for consumers.362
+
+**Subscription models can operate like a freemium model, but they get even more interesting as a two-sided market. In a freemium model, a creator gives away some of their content for free, but restricts other content to those with paid subscriptions. The free content helps creators grow their reputation via public network effects. In a two-sided market, paying subscribers subsidize all of the content for nonpaying readers, under the assumption that creators aren’t actually selling content but a sense of membership and identity. Instead of charging, say, all 100,000 readers ten cents to read an article, creators can instead give away the article for free, but charge 1,000 extra-dedicated subscribers ten dollars per year.**

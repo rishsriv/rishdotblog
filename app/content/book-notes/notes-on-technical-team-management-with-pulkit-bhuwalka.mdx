@@ -1,0 +1,107 @@
+---
+title: "Notes on technical team management with Pulkit Bhuwalka"
+description: "Conversations notes"
+published: "2022-04-08"
+public: true
+mediaType: "Conversations"
+lessonType: "Self-Management, Startups"
+project: "Second Brain"
+source: notion
+---
+
+# Notes on technical team management with Pulkit Bhuwalka
+
+*Conversations · Self-Management, Startups*
+
+This is a summary largely taken for my own reference, and may contain errors. Mistakes are mine, credit for the good stuff is entirely [Pulkit’s](https://twitter.com/nutsiepully)
+
+**Keywords**
+
+Team Management, Technical Processes, Scoping Problems
+
+## Pulkit’s background
+
+Pulkit works at Google on the Tensorflow team as a Senior Software Engineer, and previously worked with a bunch of tech companies in India. He has managed teams for a while now and is quite [believable](https://commoncog.com/blog/believability/) as a technical manager.
+
+## General Approach
+
+> 💡 Management is best learned as an apprentice or by doing it – no silver bullets to it
+
+The greedy algorithm (with some constraints) is very hard to beat. Don't go into overprocess mode, but don't run a cowboy shop either. At the early stage, just try to figure out what’s the weak point in the moment and focus on fixing that sustainably
+
+If your company is not burning at the moment, do some upfront design up to the level that you know the complexities and problems
+
+Get into to the habit of creating a cost structure of what you want to want to create and the problems you want to solve
+
+Testing is a great way to break down problems, and to keep your team accountable + on track
+
+Two kinds of tasks: bounded (you know how exactly to do it) and exploratory (you’re trying to figure things out). Manage both differently (more on that below)
+
+![IMG\_0239.jpeg](/notion/notes-on-technical-team-management-with-pulkit-bhuwalka/img_0239.jpeg)
+
+## Structuring and communicating problems
+
+For anything that involves user interactions, work out the UX steps on document first. Write down a simple doc that lists down the user flow. It'll help you throw away the ideas that are not great or important
+
+At Google, you have [design docs](https://www.industrialempathy.com/posts/design-docs-at-google/) (applies to all kinds of design, including system design — not just UX design). You can go as deep as you need. You can use these for:
+
+- Early identification of design issues, when making changes is still cheap
+- Ensuring consideration of people across a team
+- Transferring knowledge of senior people to others
+- Form the basis of an organizational memory around design decisions. They’re going to be super helpful months or even years down the line
+
+If you have multiple people working on something, you can use the design docs to create clear boundaries between them
+
+Condense things down into a few important points
+
+> 💡 Docs should be like a knowledge map, not a dump. These are the complexities ⇒ these are the tradeoffs ⇒ therefore this is why we designed this. Not just “this is what we did”
+
+Think through testing very deeply – that will help you with everything else (more on that below)
+
+## Communication
+
+1:1, human-to-human interaction is helpful when you want to excite people and give them a vision of what you want to do. But for following up and for scaling, write things down
+
+Any doc should have a clear objective of what the job is trying to achieve, and connect it with the main org goal. It's okay if this is repetitive. You need repetition to get org clarity
+
+## Onboarding People
+
+Create a ladder for people to start working. Start with easy things (easy, well-contained bugfixes) and slowly move them on to more complicated problems. This will help build up their confidence, and will let you see what they’re good at and what they need help with
+
+At the start, assign “kind” tasks instead of wicked ones. One's that are small, contained, and where it's clear what the outcome is
+
+Slowly onramp people to bigger and more complicated problems – particularly for more junior people so that they can build up their confidence and get more context
+
+People might do a shitty job in the beginning but then get better. Expect that and help them get better. You want to keep growing talent.
+
+![IMG\_0241.jpeg](/notion/notes-on-technical-team-management-with-pulkit-bhuwalka/img_0241.jpeg)
+
+## Defining Tasks
+
+In software, it’s very normal to be off in your calculations for how long something will take by a factor of 2. So have plenty of buffer time built in
+
+Make it very clear to the people who are assigned the task what is most valuable, and why you're asking them to focus on that
+
+![IMG\_0240.jpeg](/notion/notes-on-technical-team-management-with-pulkit-bhuwalka/img_0240.jpeg)
+
+### Bounded tasks
+
+If you know what exactly to build and how to build it, you can budget time +buffers accurately. Break down each task into its subcomponents, so you can a) make it very clear to the person doing the task what it involves, and b) create a “cost” for each subcomponent (in terms of senior and junior dev man hours) that you can use as a benchmark to check if the task is on track
+
+That's a great way of breaking down a task, and it's easier to guide other people as well. Once these tasks are broken down, you should have some costing model that comes out of it
+
+Focus here is on accountability and just getting the tasked shipped on time and in a manner that does not harm future tasks (write clean, modular code)
+
+### Exploratory tasks
+
+When you don’t know how to go about something, create an artificial time box in which you must “finish” exploring to whatever level you can. **Always start by writing down what are the questions you're trying to answer**
+
+But sometimes, you might not even know what the right questions to ask are. For something like this, understand that approaching experts is a lot better than reading 20 papers. Just approach well respected experts in the field to understand what you should be going for. If you’re going to do this frequently, have them on a retainer
+
+## Testing as a forcing function to clarity
+
+If you try to think through testing very deeply, it'll force you to break apart them system and break down tasks into sucomponents. You don't have to be 100% precise in the delineation, but strive for as much as you can
+
+Two kinds of tests: binary (pass/fail), and continuous (performance on some kind of metric)
+
+For each bounded task, create a set of metrics to measure success. This could just be pass/fail for binary tests. For continuous ones it could be latency, paint time, error rate, user success rate for a task, or something else

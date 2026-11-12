@@ -1,0 +1,76 @@
+---
+title: "Rust: A language for the next 40 years"
+description: "Videos notes"
+published: "2021-01-03"
+public: true
+mediaType: "Videos"
+lessonType: "Technology"
+source: notion
+---
+
+# Rust: A language for the next 40 years
+
+*Videos · Technology*
+
+Created by [Rishabh Srivastava](https://rish.blog), Founder of [Loki.ai](https://loki.ai)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[https://youtu.be/A3AdN7U24iU](https://youtu.be/A3AdN7U24iU)
+
+**Why is it important**: Gives an overview of what Rust is good at, which will allow me to assess whether or not to learn it
+
+### Keywords
+
+Rust, Programming
+
+### Summary
+
+Not an unbiased talk, but talks about the strengths of rust
+
+Rust is as safe as a language gets. In an age where cybersecurity becomes an increasing concern, Rust’s default safe approach will be adopted more
+
+C has a LOT of memory safety problems. Because a lot of other languages use C under the hood, they have these problems too. Some of these includes:
+
+- Use after free
+- Double free
+- Memory leaks
+- Buffer overreads/overwrites
+- Null pointers
+- Data races
+
+Rust is trying to learn from the mistakes of C. There are a bunch of reasons why it can last as long as C:
+
+1. Fixes common memory safety problems
+2. Makes systems programming easier. Rust allows makes debugging really easy and gives you memory safety by default. Trade offs:
+
+- Rust has the order of Cs performance at runtime (though compiling takes longer because of all the check)
+- It also compiles to everything that LLVM can. Though C can compile to non LLVM platforms too
+- BUT rust is far more complex than C. Has a lot more features and syntax. Has a very steep learning curve
+- It’s super easy to call Rust from Python or Ruby
+
+3. Stability without stagnation
+
+- Rust has strong backward compatibilities. Upgrading generally breaks your code
+- You can keep upgrading your compiler every 6 weeks, or you can just never upgrade it. It’s totally up to you
+
+4. Large enterprises are using Rust
+
+- Mozilla. Firefox Quantum was 2x faster on the speedometer 2.0 benchmark because of a component (CSS Rendering) that was re-written in Rust
+- There were 69 security bugs in this component since Firefox started. Rust would’ve prevented 51 of them
+- Amazon. Firecracker microVM is on Rust
+- Google. Fuchsia uses Rust
+- Facebook. Mononoke uses Rust
+- Microsoft uses rust for IoT edge stuff
+
+5. Rust Governance
+
+- No BDFL. Have teams and working groups
+- Consist of language theorists, enterprise users, hobby users, Low-level language people, functional languages, and high-level language people
+- All decisions are made in public via Requests for Comments

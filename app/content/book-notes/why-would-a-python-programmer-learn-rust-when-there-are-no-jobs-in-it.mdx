@@ -1,0 +1,84 @@
+---
+title: "Why would a python programmer learn rust, when there are no jobs in it?"
+description: "Videos notes"
+published: "2021-01-03"
+public: true
+mediaType: "Videos"
+lessonType: "Technology"
+source: notion
+---
+
+# Why would a python programmer learn rust, when there are no jobs in it?
+
+*Videos · Technology*
+
+Created by [Rishabh Srivastava](https://rish.blog), Founder of [Loki.ai](https://loki.ai)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[https://youtu.be/IYLf8lUqR40](https://youtu.be/IYLf8lUqR40)
+
+**Why is it important**: See title
+
+### Keywords
+
+Rust, Programming
+
+### Summary
+
+Rust can interface very well with C. Has a very significant advantage (Python’s is fast to develop, Rust’s is \_\_\_\_\_)
+
+**Why do people like Python?**
+
+- Fast to write
+- Quick to debug
+- Duck typing makes it succinct
+- Good enough error handling
+- Tool packaging is awesome
+
+**Python compromises**
+
+- Multithreading: GIL (Global Interpreter Lock) is sometimes a blocking issue
+- Performance
+- Default python doesn’t work well on embedded systems
+- Memory Usage can be very high
+
+**Why avoid C/C++?**
+
+- Development is slow
+- Debugging is hard
+- Multithreading is hard
+- Compiler errors
+- Memory management issues that often only appear in production
+
+**Why use Rust?**
+
+- Designed to replace C/C++ in Firefox. Gets their performance while avoiding issues
+- No Garbage collector
+- Multithreaded support based into type system
+- Variables are immutable by default
+- Enumerated types can contain variables
+
+Rustup is the default way to get rust development tools. Installs downloads and executes stuff from web
+
+Rust Cargo: simple to use
+
+Rust Compiler has error messages that are mostly helpful. Often proposes correct solution to the problem
+
+Macros show errors before being expanded — you can find your mistake fast
+
+Compile speeds are very slow, though
+
+Rust does not have exceptions like C++/python
+
+Rust is not quite OO, though. Doesn’t support inheritance. Has traits instead
+
+Rust borrow checker is awesome
+
+Can use pyo3 to embed Rust in python

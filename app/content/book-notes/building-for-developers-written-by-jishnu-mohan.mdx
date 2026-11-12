@@ -1,0 +1,100 @@
+---
+title: "Building for Developers (written by Jishnu Mohan)"
+description: "Articles notes"
+published: "2021-02-19"
+public: true
+mediaType: "Articles"
+lessonType: "Technology"
+url: "https://www.notion.so/Building-for-Developers-af80b5e2315448948f58e03a71fc46ea"
+source: notion
+---
+
+# Building for Developers (written by Jishnu Mohan)
+
+*Articles · Technology* · [Source](https://www.notion.so/Building-for-Developers-af80b5e2315448948f58e03a71fc46ea)
+
+This was originally written by [Jishnu Mohan](https://jishnumohan.com/) at [https://www.notion.so/Building-for-Developers-af80b5e2315448948f58e03a71fc46ea](https://www.notion.so/Building-for-Developers-af80b5e2315448948f58e03a71fc46ea?pvs=21).
+
+I have duplicated this here so I can annotate it, format it in a way that makes sense to me, and add my own thoughts to it.
+
+## Jishnu’s Post
+
+**Status**: Speculative / assertions. Based on secondary sources, putting myself in the shoes for the user.
+
+---
+
+### A. **High level principles**
+
+#### A1. Identify jobs to be done
+
+Developers have a **job to be done**. Any tool has to be primarily in service of the job. Other concerns (elegance, mindshare / goodwill) are secondary. Most often the tool will be evaluated with respect to fit for job.
+
+#### A2. Recognise that these jobs will have a LOT of variance across users
+
+Jobs have **remarkable variance across instances**. This **variance will likely not lie in the elevator pitch but in the deployment**.
+
+#### A3. To deal with this variance, design and document your service really well
+
+Developers are smart and used to solving problems along multiple dimensions. With well designed and documented degrees of freedom they can achieve their ends.
+
+- The best tools unlock new creativity beyond what the creators imagined. Good tools are used exactly as the creators intended. Poor tools are not used or are used suboptimally.
+- Good tool design is roughly 1) fit with existing mental models and patterns where they exist, and 2) *elegant* patterns of use for novel scenarios (or scenarios where existing patterns can be improved 10x)
+
+#### A4. Realise that (good) developers are early adopters, and are proactively looking at ways to do things better
+
+Developers want to try, discover, and learn new things. New ways of thinking or new capabilities can appeal to their curiosity.
+
+- Corollary of point 1 and 4: Letting developers try must be as frictionless as possible while still adding value and doing the job.
+
+#### A5. Realise that developers are quick to try new things, but hate paying for them
+
+The sales funnel to developers is longer. Demos or marketing can at best convince developers to try - where the tried product (in restricted time and/or feature set) should be convincing enough for a sale.
+
+- If a product needs significant developer investment to try or to deliver real value, relying on novelty and promise is unlikely to work. Costs of trying may have to be borne by the seller (sales engineers etc)
+
+### B. Strategies to successfully run a developer-focused company
+
+#### B1. **Try before buy**
+
+Common models for trials → either time bound (2 weeks) or feature bound (no storage / less compute / no support)
+
+Trials are tricky to get right since it's a balance where real + demonstrable value should be delivered (net the cost to try it) without giving away too much of the value such that there are no paying customers.
+
+The more investment is required to try, the more generous the trial value should be to convince developers to put in the effort to try as well as commit to pay
+
+- Counterargument → the IKEA effect and sunk cost of initial trying could potentially make 'hard to try' tools sticky but this does not seem sticky in the long term. For example, when the decision maker to continue the subscription is no longer the same person who did the trial, these biases will not hold.
+
+#### B2. **Deliver real value**
+
+> 💡 **Rishabh’s note**
+> This makes sense – but too narrowly defines what people are willing to pay for IMO. This is described really well in [Alchemy (Rory Sutherland)](/book-notes/alchemy-rory-sutherland). Relevant points are:
+>
+> 1. Economic theory is an insufficient way to identify value proposition - both in B2B and B2C scenarios. Loss avoidance and personal status gains are a much stronger motivators than prospects for economic gains
+>
+> 2. A Management Consultant would define something narrowly, automate or streamline it, and then regard the savings as profit -- regardless of it's downside consequences. Be wary of narrowly defined problems
+>
+> 3. Value is in the hearts and minds of the valuer. You don’t need to tinker with atomic structure to turn lead into gold. You can appeal to human psychology to change perceptions
+>
+> 4. Always remember to scent the soap. Don’t just sell utility, sell the experience. Why people use things, and what thing is meant for, are not necessarily the same things
+>
+> So how is this linked to *Deliver Real Value*? The pitch for things like VS Code, Notion, Snowflake, Databricks, Heroku, Gitlab is a *better developer experience* that allows you to magically do things much easier. This, in the long-term, *does* lead to either lower costs (developers do more in same time) or more revenue (new use cases are unlocked) — but it does so very indirectly. But the pitch to developers is “unlock new opportunities with a magical experience” instead of an appeal to financial gain
+
+- The most obvious way of adding value is saving developers time. This is a particular instance of *cost reduction*.
+  - Given developer salary is \~$40 per hour, this is straightforward to compute.
+  - Fixed costs → Cost of your tool (dev hours + sale cost) vs cost of BATNA (competitor or in-house)
+  - Ongoing costs → Recurring costs of your tool (dev hours + recurring dollar cost) vs cost of BATNA (competitor or in-house maintenance / additional feature work)
+  - An even more particular instance is a shift of fixed costs from in-house developer time to cash, which is generally more fungible. (Developers are hard to train etc). This seems especially risky since in a successful company, developer time may become less scarce than equivalent cash.
+  - Examples of such startups → most cloud services / pure software tools
+  - Strategies of cost reduction
+    - Amortise marginal cost over multiple clients (standard cloud economics)
+    - Capture rare knowledge so that internal marginal cost is cheaper than external marginal cost
+      - Stripe (financial integrations), regtech (GDPR / HIPAA compliance)
+- The other way of delivering value is to *unlock revenue.* It is arguable whether this should be considered purely a developer tool, as some other function (sales, marketing, product) would also need to be using this.
+  - Examples of such startups → analytics (Segment, Mixpanel), A/B testing (optimizely)
+  - *Question: How did such startups sell? Did the sale story evolve from focus on developer to focus on business decision maker*
+
+### C. **Risks**
+
+- A flipside of developer appeal of novelty → there is an element of fashion / trends in developer preferences.
+- Narrowly, developers see value clearest in making an existing workflow easier. They need to 'have the job' to seek or be sold a better tool for that job.
+- If single-cloud shops and stacks proliferate, barrier to entry for 3P solutions will increase. The likelier outcome on success will be for cloud companies to build out a competitive offering.

@@ -1,0 +1,138 @@
+---
+title: "Recommender System for Financial News"
+description: "Videos notes"
+published: "2020-10-27"
+public: true
+mediaType: "Videos"
+lessonType: "Personalization, Technology"
+project: "Personalization"
+source: notion
+---
+
+# Recommender System for Financial News
+
+*Videos · Personalization, Technology*
+
+Created by [Rishabh Srivastava](https://rish.blog), Founder of [Loki.ai](https://loki.ai)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[https://www.youtube.com/watch?v=kI6VbkrIbpg](https://www.youtube.com/watch?v=kI6VbkrIbpg)
+
+**Why is it important**: It's an interesting look at news personalization. It's not the best approach by any means. But worth checking out
+
+### Keywords
+
+Personalization
+
+### Summary
+
+...
+
+### Highlights
+
+#### Overview
+
+Data captured: data about users, data about articles, and data about interactions between users and articles
+
+- articles they have read
+- articles they have seen but not clicked
+
+Training data: clicks on articles from the past
+
+Prediction data: clicks on articles from tomorrow
+
+Cold-start problem: since articles are new every day, must rely on the content of the article and the user profiles for recommendations. Cannot really use collaborative filtering
+
+---
+
+#### Data preprocessing
+
+Data is significantly imbalanced. Can be a problem for the model as users are much more likely to not click on an article than to click on it
+To solve this, conduct a random sampling from negatives at the user level. This leads to a more balanced dataset. Do feature extraction from here
+
+User Features + Content Features + User-content features = Prediction
+
+3 kinds of features:
+
+- user features
+- article features
+- user-article features
+
+**A. Article features**
+
+i) Metadata
+
+- authors
+- content
+- section
+- publication date
+- long story?
+
+ii) Enrichments
+
+- \#paragraphs, #sentences, #words
+- tags
+- article length
+- article complexity
+- hapax legomenon
+- sentiment
+- word embeddings
+
+Tools used: textpipe, spacy, fasttext, nltk
+
+**B User features**
+
+i) Demographic
+
+- gender
+- age-range
+- ...
+
+ii) User reading behavior
+
+- tags followed
+- most read tags/authors
+- average #words, #sentences, #paragraphs read per story
+- average article length
+- average sentiment
+- average word embeddings
+
+**C. User-article features**
+
+i) Article & avg user set overlap
+
+- tags
+- authors
+- article length
+
+ii) Articles and average user reading habits comparson
+
+- ## words, #sentences, #paragraphs
+- Word embeddings similarity
+
+---
+
+#### Model used and approach
+
+- Have an average of 14k feature representations (length of feature vector is 14k)
+- Research questions:
+  - what model to use?
+  - what data to use?
+  - what features to keep?
+
+Models:
+
+- Gradient Boosted Decision Trees (GBDT) + Logistic Regression
+- Training methods:
+  a) fit: train new model every day
+  b) partial fit: re-train previous day's model with today's data, without adding new trees
+  c) re-train previous day's model with today's data, with new trees
+
+Trained data every day, and trained it on the past 3-7 days worth of data to capture emerging trends well
