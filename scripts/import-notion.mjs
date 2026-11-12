@@ -5,7 +5,8 @@
 //   e.g. node scripts/import-notion.mjs ~/Downloads/personal_site/f9dbaa56-..._Export-3f57cf0c-...
 //
 // What it does:
-//   - Blog posts, Resources pages and About Me  -> app/content/<slug>.mdx        (served at /p/<slug>)
+//   - Blog posts, Resources pages and About Me  -> app/content/<slug>.mdx        (served at /p/<slug>;
+//                                                 Resources + About Me are unlisted)
 //   - Everything else (book/podcast notes, clipped articles, nested sub-pages)
 //                                               -> app/content/book-notes/<slug>.mdx (served at /book-notes/<slug>)
 //   - Images and other attachments              -> public/notion/<slug>/...
@@ -163,6 +164,8 @@ for (const file of mdFiles) {
   else if (rel.length === 2 && /^(Blog|Resources) /.test(rel[0])) {
     if (title === "Blog title") { skipped.push(`template: ${path.relative(exportRoot, file)}`); continue; }
     section = "post";
+    // Resources pages have no date in Notion; keep them reachable but out of the /notes list
+    if (rel[0].startsWith("Resources ")) unlisted = true;
   } else if (/^About Me /.test(rel[0])) { section = "post"; unlisted = true; }
   else section = "note";
 
