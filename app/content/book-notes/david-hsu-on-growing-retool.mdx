@@ -1,0 +1,1214 @@
+---
+title: "David Hsu on growing Retool"
+description: "Podcasts notes"
+published: "2022-11-11"
+public: true
+mediaType: "Podcasts"
+lessonType: "Business"
+url: "https://review.firstround.com/podcast/episode-74"
+source: notion
+---
+
+# David Hsu on growing Retool
+
+*Podcasts · Business* · [Source](https://review.firstround.com/podcast/episode-74)
+
+Created by [Rishabh Srivastava](https://rish.blog)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[How Retool reached $2M in ARR before launch by focusing on developers](https://review.firstround.com/podcast/episode-74)
+
+## Summary
+
+> 💡 This summary is focused around the early stage journey, because that’s what I’m most interested in. The actual interview has way more stuff!
+
+Initial hunch for Retool founders: could there be level way of building internal software, like an Excel with higher order primitives?
+
+Initially thought it would be for 2-3 person companies.
+
+**Really fast iteration cycles**
+
+Customer #2 said “Retool looks cool, but I don't have a database. I only have APIs. Can I connect Retool to my APIs?”. They built that integration overnight and sent it to the user the next day.
+
+That user got to “happy” within maybe a week or two – it wasn't instantaneous. But they tried to make users as happy as possible
+
+**Adding really granular analytics and alerts to call customers as soon as they faced a bug**
+
+At the beginning, they had very few customers. Added very granular analytics (all built in-house, in order to capture data from adblock users as well) so they had a good sense of what people were doing with the product.
+
+Also set up a Slack webhook that would notify them anytime a user was doing something in the product on Slack. Whenever they were pinged, they would look at live logs. And then set up sentries so that anytime any error occurred, they would immediately reach out to the customer. “You know, we might even call them actually, or we might even text them, if we have their phone number.”
+
+“from a customer experience perspective, their experience was really quite intimate in the sense that, you know, using this product, you run into any error, immediately the CEO calls you, you know, a minute later or something like that.”
+
+“it also taught us so much about the product, because we immediately sort of learned what the sort of major buggy areas were, for example, when they were using the products, what was friction full and what we should actually go and fix, how we should prioritize the product, what the use cases were, et cetera.”
+
+**Outbound as a powerful way to get feedback**
+
+Got their first 5 customers by pitching in person (”outbounding-in-person”). But the next few customers came via email outbounds.
+
+Outbounding allowed them to iterate on messaging and understanding what the exact pain point was. “When we were talking with early customers, we would say things that were pretty out there just to sort of see what people thought about it.”
+
+Iterating with the messaging, iterating with the product, iterating with the use cases, that was what the early customers helped us with. Sometimes we think of that as a language market fit.
+
+“If you get a warm intro by an investor, for example, obviously, we'll take the call and they'll say, yeah, yeah, sounds interesting. This sort of warm intro is going to be quite dangerous, basically, because they sort of give you false optimism or false hope.”
+
+They quickly realized that “Excel with higher order primitives” was a bad way to describe the product,
+
+**Figuring out product features that scaled**
+
+As a result of doing outbound, realized that their value proposition was very consistent but the use cases were very different.
+
+So they building block features basically that could be used by a lot of customers rather than any one off feature.
+
+Got enterprise customers very early on.
+
+**Figuring out what was not their market**
+
+One early hypothesis: “Retool as a product actually is kind of similar to something like a file maker, for example, or a Microsoft Access or a Visual Basic. And so what we should do is actually we should go find customers of FileMaker and try to convince them to use Retool”
+
+That seemed like a plausible path to find a product market fit. So David went to LinkedIn, basically found a sort of FileMaker user groups, and infiltrated these groups. Sent a few hundred cold emails, but only got a one percent reply rate. The FileMaker developer that we talked to basically said, this is a horrible idea. I cannot believe you're working on this idea. Like FileMaker is great.
+
+So they realized that they should look outside the Access/FileMaker universe.
+
+## Transcript
+
+If we look back five years, or before we started, it was actually really non-obvious, it was actually a bad idea.
+
+We are creating a drag-and-drop way so that developers can code faster.
+
+And developers are allergic to drag-and-drop, they hate drag-and-drop.
+
+I as a developer, if you told me, hey, you should build this website via drag-and-drop way, for example, I'd be like, oh, that's not for me, that's for marketers, I would never touch a drag-and-drop tool, I'm a hardcore engineer, I write code.
+
+And so the idea of Redox sounded like quite a bad one, which is, we're going to teach people who already know how to code, but we're going to change their mind about how they should code.
+
+In fact, we're going to sort of tell them that drag-and-drop is a better way of coding, which is completely antithetical to sort of their mental model of how coding is done.
+
+And this is where I think the first principles thinking is so interesting, because we had maybe a few of these core beliefs that were, I think, quite controversial or non-obvious that a lot of people would disagree with at the time, and that has now led us to success.
+
+---
+
+Hi, everyone, and welcome to In Depth.
+
+I'm Todd Jackson, and I'm a partner here at First Round, and I'm guest hosting a few episodes this season all about finding product market fit.
+
+Today's episode is with David Hsu, the founder and CEO of Retool.
+
+**Retool is a low-code platform for developers that makes it fast and easy to build custom internal tools.**
+
+Because of this focus on internal tooling, Retool has perhaps flown a bit under the radar and may not grab all the splashiest headlines.
+
+But as you'll hear from David today, the company has a fascinating founding story and counts fellow YC companies like DoorDash, Brex, and even a Fortune 500 company as some of their very earliest customers.
+
+**In fact, by the time Retool launched on Hacker News, the company already had $2 million in ARR.**
+
+Five years later, the company is now valued at $3.2 billion and has over 500,000 apps built on its platform, with customers ranging from big tech players like Amazon and Pinterest to the NFL and NBCUniversal.
+
+This makes their path to product market fits sound remarkably seamless, but let's go back to the beginning.
+
+We start our conversation by talking about where the idea for Retool came from, while David was juggling a few different side projects.
+
+As the idea for Retool began to crystallize, David explains why tons of people thought that the product idea actually sounded like a dud and that no developer worth their salt would use a drag-and-drop coding tool.
+
+But David persisted down this path, and we explore why he had such strong conviction in the developer audience, rather than listening to the consensus at the time and try to build a product for non-technical folks.
+
+Next, we talk about the process for honing Retool's messaging and finding language market fit, which took some trial and error.
+
+Here David has tons of advice for early-stage founders and makes a strong case for prioritizing cold outbound to constantly test and iterate on your message to find what sticks.
+
+Finally, we end on the piece of oft-repeated startup advice that David regrets listening to in the early days, as well as his playbook for creating incredibly tight feedback cycles with your early customers.
+
+I hope you enjoy the interview and David's strong first principles approach to starting and growing Retool.
+
+And now onto my conversation with David.
+
+So welcome to the show, David.
+
+Hey, how's it going? Great.
+
+So Retool launched in 2017, and I know the company has seen tremendous success since then.
+
+It's a $45 million series C backed by some great folks, the Collison brothers, Sequoia, a lot Gil, and a really impressive list of customers, Allbirds, DoorDash, Amazon.
+
+And really, I think Retool has established itself as the go-to platform for developers building internal tools.
+
+And so when people hear stories like this, David, I think they have a tendency to assume that the road was always smooth, but we know that's never really how company building works.
+
+And so today I want to zoom in on the details with you from the early pivots you had to make to your path to finding product market fit.
+
+So to kick things off, would love to rewind to your days in college at Oxford.
+
+Tell us about that.
+
+Yeah.
+
+Well, it was a lot of fun.
+
+So I actually grew up in Palo Alto, so sort of even going abroad to study pretty far away was kind of a big decision.
+
+I ended up there actually because I really wanted to study both comp sci and philosophy.
+
+There are very few sort of schools in the US that offer that.
+
+The one school that offered that actually was Stanford, but I grew up in Palo Alto, so I really did not want to go to school at Stanford.
+
+To some extent, I knew I would be in tech afterwards, and so I was like, I should get out of here, get out of SF Bay Area for maybe a few years while I still can.
+
+And so I ended up at Oxford mostly because they had one degree, which was philosophy and computer science together.
+
+Oh, that's so cool.
+
+They actually have a joint degree in that.
+
+They do.
+
+Yeah.
+
+It was interesting because I think I had probably started coding, I don't know, maybe in high school, something around that.
+
+But coding was something that you can sort of pick up by yourself.
+
+So it wasn't really something that I necessarily needed to study.
+
+That said, I really wanted to study philosophy ever since maybe from a young age or something.
+
+I think I was always interested in finding what potentially the meaning of life could possibly be.
+
+And that motivated me to study philosophy.
+
+Now, it turns out when you study philosophy, you find so many more questions than answers, but it was a lot of fun.
+
+That's awesome.
+
+And so studying computer science and philosophy together, has that informed the way that you think about building Retool, or is that informed the way you think about building? Well, certainly.
+
+I think philosophy is surprisingly applicable.
+
+It may not seem very applicable to sort of building a company or even day-to-day life or whatever else, but for me, I think philosophy really taught me sort of what first principles thinking looks like.
+
+So when you think about, for example, what is a number? What is zero? You know, what is one? What is two? What is addition, for example, et cetera? That stuff is really interesting.
+
+And I think when you think about company building, to some extent, you kind of want to think of it that way as well, which is, you know, companies five years ago looked like this or 10 years ago looked like this.
+
+What has changed? What are the first principles that sort of lead to X being this way or Y being this way? And for example, in the case of Retool, visual programming, programming in this drag-and-drop way is not a new idea, actually.
+
+It's been around for maybe 20 or 30 years, and yet it's actually always failed before.
+
+And so thinking a bit about why it is that an idea would work or would not work 20, 30 years ago, but could potentially work today, and sort of thinking what the differences of the world are have changed in the past 20, 30 years, I think is super interesting.
+
+So thinking from first principles is what philosophy really teaches you, but it really can be used in a surprising amount of ways.
+
+Okay.
+
+So let's talk about the idea for Retool.
+
+And I know that while you were at Oxford, you were working on side projects.
+
+And so where did the idea first come from? We had worked on a bunch of side projects when we were in school, five or 10 different side projects.
+
+And every time you work on a side project, you basically have to build internal tools.
+
+And we were like, well, you know, every side project's different.
+
+Every internal tool, you know, basically needs to get built from scratch, but we were spending probably half our time, half our engineering time building internal tools.
+
+And we were engineers.
+
+And so as engineers, we were like, there's got to be a faster way of doing all of this.
+
+And so that's kind of where the core idea of Retool came from is, hey, could there possibly be a much faster way of doing all of this stuff? If we think about how programming has been done over the past maybe 20, 25 years, there's actually been very little innovation in how programming has actually been done.
+
+We were thinking, you know, **could there be sort of a higher level way, if you will, of building all this internal software**? And that's where the idea of Retool first came from.
+
+**When we first started Retool, it was actually really for other like two or three person companies.**
+
+So, you know, **we thought Retool could be this fast way that a three person company could use to build their internal tools**.
+
+After launching Retool, we discovered, however, that actually maybe something like 50 or 60% of all the software in the world actually is internal facing.
+
+And actually big companies spend practically all their time building internal tools.
+
+So that really, I think, validated the idea as well.
+
+Okay, great.
+
+So you had this notion that internal tools were something that everyone had to build, surprisingly large percentage of all software created in the world.
+
+But what was like the very first step? You had this idea, internal tools.
+
+What was the first thing you did or the first thing that you built? If you've built, you know, 20, 30 internal tools, you have a pretty good sense, basically all internal tools are basically tables, buttons, text inputs.
+
+And so the initial version of Retool, even though Retool is sort of this generic, broad programming environment, if you will, today, the first thing we did was basically say, hey, we want to build a table component, a text input component, and a button component.
+
+And so when you, for example, you can load a table of your users and then you can search your users and it can do something with that user.
+
+So maybe you can deactivate that user or activate that user or something like that, basically.
+
+And so that was kind of the first version or prototype of Retool, if you will.
+
+And that was surprisingly applicable because the sort of initial companies that we sold to, basically all their use cases were tables and they're taking action on the table and searching the table.
+
+And so that turns out to be **a surprising percent of even all the internal tools, like that's probably like 20% of internal tools is basically tables plus buttons plus forms**.
+
+Do you remember the first person besides you and your team that tried Retool, like the first couple testers that you had? Yeah.
+
+So when we were starting Retool, we were in YC at this point.
+
+So this is probably maybe, I want to say June, I want to say of 2017, something like that.
+
+**The initial companies that use Retool are basically other YC companies. At every sort of YC dinner, I think it was every Tuesday night, we'd be annoying and try to get everyone to use Retool, basically. Actually, our first two customers were these two other YC companies. One was starting a tutoring business. And so they had to use Retool to sort of manage all their students, manage all their tutors.**
+
+And you can imagine that basically is a bunch of tables, a bunch of forms, a bunch of buttons to assign tutors to students, stuff like that.
+
+**Another one was an app that allowed drivers to drive for both Uber and Lyft at the same time. And they had a lot of internal tools to sort of manage the billing and the subscriptions.**
+
+Every time Lyft changed their app, for example, they would use Retool to sort of figure out what has changed and how they need to change their app and reaction to that, et cetera.
+
+So those are our first two customers.
+
+Cool.
+
+And how far along was the product at that point? We get into these conversations with founders about what does your MVP look like and how done does it need to be? How done or how polished was Retool at that time? Oh, it was not very polished at all.
+
+There are features that are in Retool today that seem sort of so basic and so maybe so sort of core to Retool that did not exist at that point.
+
+So for example, **the second customer I mentioned there, they were the ones who got us to build APIs integrations in Retool. But now at this point, generic API is the second most popular integration in Retool today.**
+
+It did not exist, actually, when we sold Retool to this customer.
+
+**They were like, hey, Retool seems really cool, but I don't actually have a database. I only have APIs. Can I connect Retool to my APIs? And we were like, that's a great idea. Let us come back to you tomorrow. It'll be built. And we stayed up and we built it and we came back and it worked.**
+
+So early days of Retool were very fast iteration cycles.
+
+Oftentimes, like one day or one night or something, we'd come back with a product and oftentimes it worked, oftentimes it didn't.
+
+And we have to iterate from there, too.
+
+But it was a pretty immature product at that point.
+
+Got it.
+
+**Were those first few customers happy with Retool, like kind of right off the bat, or did it take some time to get the product to a state where they were really pleased with what it was doing for them?** We started Retool from the zero to let's say a few million dollars in ARR.
+
+**Our goal always was happy customers, was how do we get to 100 happy customers? Because the idea basically is you can find 100, you can probably find 1,000, you can probably find 10,000, you can probably find a million, et cetera.**
+
+**So our goal was not even revenue at that point, it really was, can we get customers to be happy? And if they are happy, presumably we can find other people like them, basically.**
+
+And so that sort of was our North Star metric in the early days.
+
+**Those two customers, they probably got to happy within maybe a week or two, I would say. It wasn't instantaneous. Like for example, if the second customer literally could not use Retool because we didn't connect to APIs. We came back the next day with API connections, and then I think they had a few more feature requests and then we built those feature requests.**
+
+But within a week or two, I would say they were happy customers.
+
+Very cool.
+
+I want to ask a few more questions here because I think it's an area where so many founders live is like, how do I get from my first two customers to my first 10 customers? Talk us through that.
+
+How long did that take for you? How much did the product change during those days? What was that like? So this was probably around, again, maybe June of 2017 when we were going through YC.
+
+At that point, we **probably had maybe a fewish customers, so maybe three, four, five, something like that, basically. Those we had gotten via sort of outbound essentially, we were sort of outbounding in person, if you will. But the next few customers came via email outbounds.**
+
+So we were in winter 17 for YC, Brex was also in winter 17, they became an early customer and they became an early customer, so we emailed them.
+
+I sent them an email and I think Pedro and Enrique had said, hey, internal tools are indeed a challenge for us because they're a fintech company, they have a lot of operational things going on.
+
+And I remember visiting their office, I think at this point, Brex was maybe 10, 15 people, something like that.
+
+And I was thinking like, wow, this is a huge company, I can't believe there are 10, 15 people already.
+
+And we sold to them.
+
+**And so it was very much outbound basically, and it was maybe very customer driven in the sense that we were interested in sort of hearing what their problems were. But it turns out the problems were actually relatively alike across different companies.**
+
+Doordash was the early customer of ours, for example.
+
+And believe it or not, sort of the problems that a Doordash had was actually pretty similar to the problem that a Brex had, but actually pretty similar to a problem that sort of the other companies that I had mentioned had as well, which is they had engineers, but their engineers wanted to focus more on building the customer facing side of the business.
+
+For a company like Brex, for example, their engineers were working on how can we sort of create the card product or the banking product, for example.
+
+They wanted to be less focused on internal software, internal tools specifically.
+
+And so for them, the value prop of Retul was, oh, with something like Retul, I can actually go replace whole engineering teams.
+
+Now my engineers can move a lot faster, sort of the first order effect.
+
+And the second order effect is once I have really great internal software, I can serve my customers a lot better.
+
+I can be operationally excellent myself.
+
+And so it turns out that value prop was sort of pretty broadly applicable for companies like Doordash, for example, was similar, where they themselves have sort of an iOS app, an Android app, a web app they want to go and work on.
+
+And that's what's really impactful for the business.
+
+But they have a lot of internal operations they need to go and build.
+
+The first team we sold to was, our champions name was Rohan, who was on the dispatch team.
+
+And you can imagine on the dispatch team, there's a lot of internal tools to build.
+
+A lot of what has made Doordash so successful in the past few years is really being operationally excellent.
+
+And I like to think that sort of Retul played a small part in allowing them to have sort of bespoke custom software that enables them to be operationally excellent.
+
+So the value prop, I would say, early on was sort of pretty ironed out already.
+
+**And then it was a matter of finding more customers, and the path we took to find more customers was outbound emails. That probably took us from maybe two to 20 to 30 to 40 customers.**
+
+And so by the time we had launched Retul on Hacker News, I think this was maybe in 2018, so almost a year after, maybe August 2018, you can probably still find on Hacker News.
+
+**By the time we launched it, we had maybe around 40 or so customers, maybe around a million, $2 million in ARR already.**
+
+**So at that point, so to go back to the happy customers goal, we wanted to make sure that what we were doing was actually replicable.**
+
+And so that was why we had so many outbound sales, because we really wanted to prove to ourselves that we could go find...
+
+We built a product that is not just useful for one company or two companies or five customers or 10 customers, but instead is useful for 30, 40, 50.
+
+**And then once we had 40 happy customers, we were pretty convinced something was going on here, and that if we could find 40, presumably we're ready to launch basically the initial version of the product.**
+
+And so, versus launching the initial version of the product, Retul's basically all been inbound since then, but before that it was all outbound actually.
+
+I got a couple of followups on that because you covered some really interesting ground there.
+
+So one is, **you guys were really far along in terms of customers and ARR when you quote unquote launched**.
+
+How come you waited so long to launch? I think for us, we are in the sort of developer tool space.
+
+As a developer tool, I think **developer have very high standards, in the sense that they are not interested in using products that are buggy, don't work, have crappy user experience**, et cetera. And so, **we wanted to launch only when we were confident.**
+
+And it took a while for us to build that confidence.
+
+I think we had talked to Peter from Segment, maybe three months after we had first started Retul or something like that.
+
+And I think Peter's experience of product market was something like, once you have it, it's sort of so visceral.
+
+You immediately feel it.
+
+I think he described it maybe as like a geyser or something like that.
+
+He just explodes, basically.
+
+We honestly never felt that.
+
+I mean, maybe part of it is because we were outbound, so it was kind of hard to feel that necessarily.
+
+**But I remember thinking with our early customer number five, customer number six, number 10, number 12 or something, I remember thinking like, is what we're building actually a sort of replicable product? I wasn't sure, actually.**
+
+And so, every customer that we had gotten, customer number 12, 13, 14, number four, number five, almost kind of felt like this is the last customer we're ever going to get, basically.
+
+Like sort of every use case, honestly seemed pretty different, actually.
+
+And you can kind of see why.
+
+Like, you know, for a company like Doordash, for example, building logistics tools to manage drivers and orders and stuff like that.
+
+That's pretty different from Brex, which is, for example, managing KYC or AML or managing credit limits, for example.
+
+And that's pretty different from a tutoring company that's matching tutors and 2Ds, for example.
+
+So, I remember thinking, as we're working through these early, you know, five, 10 customers, all these cases are so different.
+
+Can we actually serve these customers and make them happy? And it turned out, you know, by the time we got 30, 40 customers, we sort of had built up that confidence to say, hey, if there are these all 40 different use cases, they're all good on top of Retool, and they're all happy customers, then we're actually pretty confident that if we launch this product, it will actually resonate.
+
+**Part of it also was also iterating on messaging. When we were talking with early customers, we would say things that were pretty out there just to sort of see what people thought about it. So, the initial way we pitched Retool was we said it was Excel-like with higher order primitives. And no one, it turns out, knew what that meant.**
+
+Yeah.
+
+That one didn't land.
+
+Yeah, that did not land.
+
+But I mean, as a developer, for me, actually, I was like, that's kind of how I thought about it.
+
+Retool is this sort of higher level programming language.
+
+And with Excel, primitive is the cell, which is dependent on other cells, you can put formulas inside them, you can put data inside of them.
+
+**For Retool, instead of a cell as a base component, the React component is the base component. And so, you can put things in React components, and they can depend on each other.**
+
+And so, you can sort of say, hey, this React component depends on this other React component, for example.
+
+So, to me, it was quite obvious that we should pitch Retool as Excel-like with higher order primitives.
+
+**But we discovered that was not a good pitch for the product to most of our customers, and that did not resonate.**
+
+So, I think **iterating with the messaging, iterating with the product, iterating with the use cases, that was what the early customers helped us with**. **Sometimes we think of that as a language market fit.**
+
+When did you start to see that? **Like what was the language that you could tell was starting to resonate with folks? This is one reason why we really love Outbound, or at least Outbound for earliest edition startup is so good. Because it gives you a very good sense on how resonant something is, especially cold Outbound.**
+
+Because **if you get a warm intro by an investor, for example, obviously, we'll take the call and they'll say, yeah, yeah, sounds interesting, yeah, we'll love a demo, maybe send me some login details later, I would love to play around with it, something like that, which is very noncommittal, very vague. And that actually is very harmful to early stage startup, because that makes them think that they may have product market fit, even though they don't.**
+
+**This sort of warm intro is going to be quite dangerous, basically, because they sort of give you false optimism or false hope.**
+
+We always wanted to do cold Outbound because we thought that would sort of be a good way to prove out whether the product was landing or the messaging, like you said, was landing.
+
+I remember there was one time **we had done a cold Outbound to a company called Rapi**.
+
+They're kind of like DoorDash of Latin America.
+
+I think there may be a few thousand employees now or something like that.
+
+**We emailed them, I think they were around a thousand or so people. And to be honest, when I sent an email, I didn't expect anything. I was like, let's try and see what happens.**
+
+**And I think within maybe 15 minutes, their CTO had replied saying like, hey, let's get on a call. And I was like, cool, how about tomorrow? And he was like, how about today? And I was like, great idea.**
+
+How about today? In fact, that was maybe the first sign that the messaging was really resonating.
+
+**The fact that the CTO of, you know, a thousand person company says, hey, let's get on a call right now, because this problem that you described of internal software, internal tools is so important to me that I want to take time, you know, 30 minutes, I will reschedule a meeting to talk to you right now.**
+
+I think that was sort of good evidence that the message was landing.
+
+**So after that, we're like, okay, well, clearly build internal tools faster, messaging is really resonating. Let's go apply that other company that continues to work. And so that was the early iteration that really worked.**
+
+And **if you go to our website, even today, that is the core of our messaging today, sort of build internal tools insanely fast**.
+
+So **build internal tools faster rather than excel with higher order primitives.**
+
+That was the very concrete, right? Very value proposition oriented.
+
+That's right.
+
+Yeah.
+
+That turned out to be a lot more effective.
+
+You know, as you were talking through that path from, you know, two customers to 20, 30, 40, you know, one observation is that you said **the value proposition was very consistent, but the use cases were very different**.
+
+**And so what did that mean for you in terms of prioritizing features? Like you've got one customer asking you for one thing, and you mentioned like the API was based on a customer request, another customer asking you for another thing.**
+
+I know that's a question that a lot of founders have of like, what do I build for which customers and how do I prioritize all these things? So this is actually a good example of sort of, I think we're first principles thinking comes into play.
+
+Our customer has always been the developer and that has a lot of consequences that may not be sort of immediately obvious.
+
+And this is why we believe a lot more in retools market and no code market, for example.
+
+And what having the developer, the customer enables you to do is **developers actually don't really want you to do professional services**. For example, **they actually want to build things themselves**.
+
+They want you to give them the building blocks so they can assemble those building blocks into what they want.
+
+**They don't actually want the end product they can't customize.**
+
+And so to your point around feature requests, if we're selling to a non-developer, actually a lot of feature requests probably be a lot more specific.
+
+They probably say like, Hey, I want specifically X or specifically Y or specifically Z and please do that for me.
+
+And I will buy.
+
+Instead **because we're selling to developers, what developers actually want is they say, Hey, I want you to build these sort of the APIs or SDKs such that I can go build X with a retool**.
+
+**And that turns out to be sort of a lot more generalizable.**
+
+So for example, a developer might say, Hey, I want a map component because of the map component, I can start displaying if I'm door dash was what deliveries are going, or if I'm Lyft or Uber, for example, I can display where my drivers are.
+
+Or if I'm Airbnb, I can display where all the properties are.
+
+Now, if we're selling to a non-developer, they might say something like, Hey, I want you to go build me an app that shows where all my drivers are or my orders are going.
+
+And that's actually not what the developer wants.
+
+The developer says, **give me the building block of the map and I will figure out how to leverage this map component such that I can build the app that I want**.
+
+And so **selling to developers has actually allowed us to sort of build more of these primitives**.
+
+And so we today are very customer driven in our development, but we are customer driven in the sense that we are always building sort of frameworks and APIs and SDKs such that the developers can use this as sort of the generalizable SDKs that all of our customers can use.
+
+And so, you know, maybe it's the case that, you know, for example, Airbnb might be more likely to use a map than let's say a tutoring company.
+
+Anything that we build ends up being used by sort of a large percentage of our customer base.
+
+And that is only possible because we sell to developers because developers don't actually want us building the exact end product.
+
+**They want us giving them sort of these building blocks that they themselves can assemble.**
+
+And so for us from sort of a product prioritization perspective, we always prioritize basically what are the building blocks that we can build that would enable sort of the greatest good for the greatest number of customers.
+
+And that was sort of our North Star.
+
+And that is actually quite clarifying because **when we think about all the features that we build, we basically never build any sort of quote unquote consulting features or we never build anything for any one particular customer**.
+
+What ends up happening is anything that we end up building for one particular customer ends up being used by maybe 30 percent of our customer base.
+
+So for example, **DoorDash wanted audit logs because they wanted to sort of see what people are doing inside the product. Let's say when someone refunds an order or gives someone a credit, they want to know who did that basically. That's a simple feature that we built very rapidly**. **I think we built that in a week or something.**
+
+**And that feature is now used by probably 50, 60 percent of regional customers today.**
+
+And so the features that we build are sort of these **building block features basically that could be used by a lot of customers rather than any one off feature**.
+
+I think we basically have not built one off features because our customers can build it themselves if we give them the necessary building blocks.
+
+That strikes me as an amazing property of having developers as your customers is that you get to build building blocks, you get to build components rather than having to build like separate one off features.
+
+Was that a conscious choice always for you that developers were your audience? How did you decide that? It was.
+
+And it's funny because today it's so obviously a part of Retour.
+
+And it's, I think, the cause of the early success that we've had thus far, still very early days, a lot to prove out.
+
+But certainly developers have our focus on developers, I think has really helped us a lot.
+
+But if we look back five years, which before started, it was actually really not obvious.
+
+It was actually a bad idea.
+
+Most people thought it was a bad idea, actually.
+
+What? **Another sort of way of pitching Retool instead of Excel and higher order primitives is you can say, hey, we are creating a drag and drop way such that developers can code faster, let's say. But developers are allergic to drag and drop. They hate drag and drop.**
+
+I remember, you know, as a developer, if you told me, hey, you should build this website via, you know, a drag and drop way, for example, I'd be like, oh, that's not for me.
+
+Like, that's for marketers.
+
+Like, I would never touch a drag and drop tool.
+
+I'm a hardcore engineer.
+
+Like, I write code.
+
+And so the idea of Retour actually sounded like quite a bad one, which is we're going to teach people who already know how to code, but we're going to change their mind about how they should code.
+
+In fact, we're going to sort of tell them that drag and drop is a better way of coding, which is completely antithetical to sort of their mental model of how coding is done.
+
+And I remember actually in our YC batch, I think we had maybe a few other companies actually come up to us and say, hey, we tried this idea before.
+
+It's not going to work.
+
+Like, it's not going to work.
+
+X-reason or Y-reason.
+
+And **one reason someone told us that it was not going to work was because they said you're basically going to become a consultant job**. You are going to basically be the one building all the apps. And it's not a SaaS business, so you should probably stop now. I would recommend that. We tried it two years ago and we pivoted ourselves.
+
+This is where I think sort of, again, the first principles thinking is so interesting because it's like my sort of theory of starting startups essentially is **you have to have differentiated beliefs about the world that also happen to lead to success**.
+
+Because if you believe your beliefs are the averagely accepted belief that everyone else has, there's kind of no reason why you're going to find success when everyone else did not.
+
+So my belief basically is I think we had maybe a few of these core beliefs that were, I think, quite maybe controversial or non-obvious that a lot of people would disagree with at the time, and that has now led us to success.
+
+So for example, one, I think, is the developer focus.
+
+**Another line that a lot of people might say is more promising than what Retool focused on is they could say, well, we're not focused on developers, you should actually focus on non-developers because they have no alternative.**
+
+A developer can actually always go and write and learn to react, for example.
+
+And so the alternative is actually not that bad, like you're saving them a bit of time, but they have alternative.
+
+Whereas, if you focus on, let's say, people who actually cannot code, then you're quote-unquote democratizing programming.
+
+Because these people have no alternative, it'll be a stickier product or a more valuable product, for example.
+
+So there's a lot of reasons why you might want to start a product like Rituel and sell to non-developers.
+
+**But we thought that actually when you're building complicated apps, the only way to build a complicated app is by actually writing code.**
+
+And the only way to do that is by selling to a developer, basically.
+
+And so that's an example where the commonly accepted, because I think when we started in 2017, what was I think more in vogue at that point was really quote-unquote democratizing programming.
+
+And we were like, no, actually we are squarely focused on the developer and we think that will lead us to more success than focusing on the non-developer.
+
+So I think we had maybe three or four of these kind of core beliefs, and the developer focus is one of them, that I think really has led to our success.
+
+That's an awesome story about just your contrarian beliefs at the time.
+
+How did you get developers over this thing about drag and drop? Like, how did you get them to love drag and drop? It's probably two things.
+
+First one is probably developers hate building internal tools.
+
+So it turns out the developers hate building internal tools more than they hate drag and drop systems.
+
+The second is that if you look at the history of programming over the past 20, 30, 40 years, there's actually been relatively little innovation in programming.
+
+If you think about the last major change or the last few major changes, for example, going from punched cards to actually assembly, that was a pretty big change for the whole computing industry because now you don't have to wait 13 hours for your code to compile or to run and then you come back the next day and then it turns out there's a bug and you have to go fix it again.
+
+The iteration speed was so long back when we had punched cards.
+
+Then we moved to assembly.
+
+Assembly is at a higher level.
+
+It's a lot faster.
+
+And then you go from assembly to something like a C, for example, and that's a big change as well.
+
+And then C has gone to something like a Java.
+
+Java has now gone to a higher level like a Python or a JavaScript.
+
+But actually, if you look back 10, 20 years, there has been relatively little innovation.
+
+Like what an engineer does today versus what an engineer did 10 years ago versus 20 years ago is kind of the same, actually, like, you know, today, in order to build a simple CRUD app, you have to manage sort of a giant package, just on file, you have to sort of install 30 dependencies and to go debug all of that.
+
+And then when things break, when versions are wrong, like building a simple CRUD app that writes back to a database or an API probably takes a few hours, if not, you know, a week or two, if you're sort of trying to deploy this in sort of a production environment.
+
+And to us, that seems just ridiculous to us as we should be able to get a CRUD app going in like five, 10 minutes with, you know, permissions with the APIs, you know, all sort of built in basically.
+
+So I think the higher level nature of retool is such a different way of programming.
+
+And I think we think sort of such a better way of programming.
+
+I think that has really helped get developers on board as well.
+
+I can see the computer science and philosophy things coming together here in that answer.
+
+Love that.
+
+Let's move more towards larger customers, because I know, David, that you **actually had some enterprise customers fairly early on**, which I think is relatively uncommon for startups.
+
+**So how did that happen**? And did you always sort of know that these Fortune 500 ish companies were going to be target customers for you? Initially, no.
+
+**Initially, we started the company, we were thinking it was sort of a fast way to build internal apps for small companies, basically.**
+
+**And it was actually quite surprising to us to find that the problem was actually even larger of these larger companies.**
+
+And the reason for that is that if you think about sort of all the Silicon Valley companies or our job, essentially, you know, whether it's a Dropbox or retool or any other sort of software company in Silicon Valley, our job is to sell software.
+
+And we are building software and selling it.
+
+That's how we all make money, even Google or Facebook, that's how they make money as well.
+
+Uber, Lyft, Airbnb, et cetera.
+
+**Selling software is our business model, basically, in Silicon Valley.**
+
+That said, if you actually zoom out and look at sort of most companies in the world, **most companies are not software companies**.
+
+If we look at, let's say, like an NBC, for example, one of our customers, or a Jaguar Land Rover, another one of our customers, these companies are sort of not software companies.
+
+They're actually, you know, manufacturing cars.
+
+They make money by selling cars or by being media companies.
+
+But it turns out, actually, that these companies have a ton of software engineers.
+
+**And all their software engineers, all they do day in and day out, basically, is build internal software.**
+
+And so when we sort of look at what percent of software in the world is actually internal versus external, actually, most software in the world is actually internal facing, which is kind of an unexpected fact that you might not know if you're in Silicon Valley.
+
+**Once we discovered that, we're like, wow, this is a ginormous market**.
+
+Like if we can change how the way that 50 percent of all software is built, that would be really incredible.
+
+Maybe give you one specific example of this, sort of how big the market is.
+
+**Some of our early customers, maybe customer number four or five, something like that, they are a fortune, maybe like number 250 or so**. **So it's, you know, sort of average Fortune 500 company, basically. They have around 120,000 employees. Every year, they spend $400 million building internal tools.**
+
+You know, that's kind of unbelievable.
+
+How would you spend half a billion dollars building internal software? And when you peel it back, it actually makes a lot of sense because, you know, in their company of 125K people, around about 2K of them are software engineers.
+
+And if you sort of divide, you know, $400 million by 2,000 software engineers, actually that spend is basically 200K per software engineer, which actually is quite a reasonable sort of software engineering salary.
+
+And all they do day in and day out is build internal software.
+
+And so that gives you a sense, like sort of the market for internal software is ginormously large and it's something that you don't really see.
+
+And so upon discovering that sort of most software actually is internal software, I think that was really energizing for us because if we can convince people and become actually the way all the software is built, that would be so impactful.
+
+And I think that is what motivates a lot of us today.
+
+Let's talk about, you know, the concept of product market fit, because one of the things that I think is so interesting about your story, David, is to me, when I hear this, it feels like you found product market fit pretty quickly.
+
+You had two customers and then you had five and then you had 10 and everybody, you know, is sort of digging the same value prop.
+
+But I know that when you've talked about it, you've said, well, we actually weren't sure we had product market fit for maybe a long time.
+
+Can you unpack that for us? Like what is your internal bar for product market fit? Maybe I'll zoom back a little bit or wind back a little bit and answer that question.
+
+So product market fit did not come that easily, actually.
+
+It requires a lot of, I think, flexibility, but also strong opinions.
+
+I think going back to sort of my theory of startups, you need to have strong opinions about a few things that will hopefully lead you to success, but you also have to be flexible about some other things too.
+
+So sort of the combination I think is a very powerful one.
+
+So you want to be outcomes oriented, but you want to have sort of a few values that you sort of deeply believe.
+
+For us, for example, developer first is one of them.
+
+To give you a sense of sort of early journey in product market fit for us, when we first started Retool, it was actually not totally evident what kind of developer would be the market for Retool.
+
+It turns out today, front-end developers, back-end developers, sort of React developers or even JavaScript developers overall, I would say, sort of major market for us.
+
+But that's not evident to us.
+
+That was the case in the beginning.
+
+At the beginning, actually, I remember, and this I think gets also to a sense of the space of decisions you can make really is quite large.
+
+**So if you think about Retool at the beginning, one hypothesis we had actually was, hey, Retool as a product actually is kind of similar to something like a file maker, for example, or a Microsoft Access or a Visual Basic. And so what we should do is actually we should go find customers of FileMaker and try to convince them to use Retool.**
+
+**That seems sort of like a plausible path to find a product market fit.**
+
+And I remember I was like, yeah, that sounds pretty good.
+
+Like, let's try that.
+
+Let's see what happens.
+
+You know, I have a lot of confidence this is going to work.
+
+And so what I did is I didn't know any FileMaker developers.
+
+**So I went to LinkedIn, basically found a sort of FileMaker user groups. And I was like, let me go join these groups, basically. So I applied as a sort of FileMaker developer and I infiltrated these groups.**
+
+And then once I got it, I was like, OK, great, you know, a few thousand members here.
+
+Let's see who is here.
+
+Let's go try to find where they work and maybe send them some cold emails.
+
+And we did that.
+
+**And I think we probably sent, you know, a few hundred cold emails. I think we got like a one percent reply rate, something like that.**
+
+But, you know, send a few hundred.
+
+We got like three replies or something.
+
+I think I got one call out of that into that one call.
+
+**The FileMaker developer that we talked to basically said, this is a horrible idea. I cannot believe you're working on this idea. Like FileMaker is great.**
+
+Why would I ever use any but FileMaker if I were you, I would not waste your time on this.
+
+This is like a dead end idea.
+
+We heard that.
+
+We're like, OK, well, you know, it's kind of demotivated here.
+
+You're telling us to talk about it so bad, you know, despite us thinking that you might have been in sort of our target market and we're going to find a product market by you.
+
+And that's, I think, a good example of product market fit is not just the product, but also the market that you sell to.
+
+And, you know, retools today actually does not really sell to FileMaker developers.
+
+We sell to React developers nowadays, for example, and we're sort of fairly successful doing that.
+
+Finding product market was not like, you know, we sort of turn on the product and great, you know, product market if it happens.
+
+Instead it's sort of very much like iterative cycle, like, hey, we believe as developers that there is value in the product like this.
+
+Now it is let us go find the market that is sort of most interested in a product like this.
+
+I think this kind of goes to sort of the strong beliefs, but maybe sort of you need to be sort of flexible with how you achieve your outcomes as well, which is we're like, okay, well, great.
+
+Maybe FileMaker developers is actually not.
+
+We sort of believe that it might be the case that they were the market, but they're not the market.
+
+So let's try something else.
+
+**And so we're like, okay, well, maybe CTOs of operationally heavy companies, let's try that. So we emailed for Zimbunk and DoorDash or Brex or Rappy, and that really worked.**
+
+And you know, we probably tried a few other things as well, but so that I think gets the sense that sort of the space of all of these if you try to start up really is quite large.
+
+And you have to sort of have a few core beliefs that guide you.
+
+You know, everyone emailed us basically a developer, we never emailed non-developers, but even within sort of the developer umbrella, there are sort of a lot of types of developers.
+
+And we were quite flexible about, okay, well, that did not work for these reasons.
+
+What do we learn from that? How do we apply that to sort of the next audience that we go after? You know, the point that you mentioned earlier, 10, 20 customers build internal tools, lightning fast, that's resonating.
+
+Wasn't that product market fit or you don't think that was? When did you really start to feel like you had it? I think we are quite paranoid.
+
+Every customer we had in the early days felt very one-off.
+
+And this is why really it felt sort of like every customer is our last customer, because it's like, wow, DoorDash is building this, Brex is building this, X company is building Y.
+
+Like this feels totally different because like are we actually building sort of a generic product or a platform that can be used by all these companies? It was really unclear because it was all outbound at the beginning.
+
+That was actually very good.
+
+I'm very happy we ended up doing that because I think that **really built a sort of strong muscle for us because it was all outbound, like if we didn't do anything, the company would die.**
+
+I mean, most startups die.
+
+And so it was sort of like **we had to constantly apply effort in order to sort of keep the ball rolling forward**.
+
+It was kind of like pushing a giant stone uphill.
+
+And if you stop pushing, it'll start rolling back down sort of fairly rapidly.
+
+And so for us, **that was our experience in the early days for maybe, you know, zero to a few million dollars of ARR**.
+
+And even I think at, I think **even at like maybe 10 million, maybe 20 million of ARR, I think we were actually, I was still pretty concerned about that**.
+
+I was like, hey, you know, was 10 million ARR part of market? No, I'm actually not sure.
+
+I think, again, maybe that goes to paranoia.
+
+I think you always have to be paranoid about sort of what your market is, how specific your market is, et cetera.
+
+So, for example, we like to think that **the TAM for retool is ginormously large because it's, you know, half of all software basically.**
+
+**But when we actually think about it, how do we tackle that TAM, you know, what is the initial TAM we want to go for? Maybe it's, you know, the initial one, maybe it was CTOs or VPEs at operationally heavy companies.**
+
+How big is that TAM, for example? How saturated are we today? If we think about some of our customers today at Fintech, we now have Stripe, Coinbase, Plaid, Chime, Ramp, Brex, all those customers, are we saturated in there? Like, should we be thinking about like, hey, have we saturated the TAM or should we move on to other markets? So, I think you have to be sort of very paranoid about this.
+
+And I think for someone who is paranoid, admission of product market fit does not come easily.
+
+Because to me, when I hear Peter Zuckerman talk about product market fit, I'm like, wow, it seems like life is good.
+
+You can just go sell after the sunset.
+
+You don't have to worry about anything at that point.
+
+It was not like that for us.
+
+Like, we had a lot of things that we were thinking very critically about, even though we were at, you know, $10, 20 a product and sort of ARR.
+
+So maybe I viewed product market fit as sort of a lack of stress or a lack of worry or something or a lack of paranoia.
+
+And then, you know, if you define it that way, I think you should always be paranoid.
+
+It could be your mentality.
+
+Like I think this analogy of feeling like you're pushing the rock up the hill and pushing and pushing and pushing it.
+
+And I think for some people, you know, when it starts to feel like it's rolling down the hill, that's like product market fit.
+
+But maybe it's just how you are.
+
+Like, are you still feeling like you're pushing it and pushing it uphill and it's never started to roll down? Yeah.
+
+I quite like biking.
+
+And so I think maybe biking is a good analogy for this, which is you can always go faster.
+
+You know, it's great.
+
+You can go uphill in, let's say, seven minutes.
+
+But why not six? I kind of think of a startup as that, too.
+
+I think maybe one more thing that really motivates me is about starting a startup is that if we were just building an average company, I wouldn't be here.
+
+I want to be building this company.
+
+And I think this is true for a lot of the team as well.
+
+I think we sort of have this unique opportunity where programming, really, there's been so little innovation.
+
+And I'd argue retool is one of the major steps in innovation of programming in the past 10, 20 years.
+
+And if we are able to do this, like, you know, the sort of the impact we have in the world on our customers is so phenomenal.
+
+And that, I think, is what really drives us today.
+
+Like, how can we build sort of an excellent, a truly excellent company that changes how an industry actually operates? Then if you think about it that way, you know, sort of you always have to be paranoid.
+
+You're never sort of complete.
+
+If we think about sort of what percent of software is built or retooled today, a few years ago, it was probably like 0.0001% today.
+
+It's maybe like 0.0005%, for example.
+
+But most software in the world is still not built in retool.
+
+Most engineers in the world have never heard about retool.
+
+That I think is sort of something that we think a lot about, like sort of what could we be doing better? How can we grow 10X, 100X, 1,000, maybe even 10,000 or even 100,000X from where we are today? So on this topic of product market fit, thinking about advice for future founders, if you put yourself in the shoes of a founder who is today where you were five years ago, what's a piece of advice to founders on how to find product market fit or like mistakes that they need to avoid? Yeah.
+
+I have two pieces of advice for early stage founders.
+
+One is take more photos.
+
+It started to hopefully grow very quickly.
+
+And a lot of the early days, I should really document that.
+
+But more to your question of product market fit.
+
+**The way we found product market fit was highly iterative and extremely customer driven. And I think you have to be that way.**
+
+I think we, first of all, were lucky that the product that we're building Retool because we're all engineers at Retool.
+
+And so we're lucky that sort of we knew the product.
+
+We knew the market.
+
+If it weren't for that, I think Retool would not have found product market fit probably because we were the customers or that we had taste in the sense that, oh, like, you know, if a customer says, I want an API, you know, I want to be able to connect Retool to arbitrary APIs.
+
+More like that makes sense.
+
+If I'm a developer, I want that too.
+
+So let's go build it because we're the customers.
+
+We sort of have good taste when it comes to strategic decisions for the company, the product.
+
+So I think that's one part of it is sort of, you have to know the product intimately.
+
+**The second is that you really have to iterate very rapidly.**
+
+And so for us, when I think about our method or playbook of finding product market fit, and today we're starting now three or four new product lines.
+
+And for all those four, I still work sort of in various stages of finding product market fit as well.
+
+The way we think about it is you have to be very paranoid, close, and customer driven.
+
+More specifically, what that means is when we started Retool in the product, we instrumented everything.
+
+**So at the beginning, we had no customers, no one was using Retool. And so we instrumented it such that we sort of added analytics in a very granular fashion so that we could have a very good sense of what people were doing with the product.**
+
+**So if you're dragging a table on, or you're sorting the table, or you're writing a SQL query, or you're writing an API query, whatever else, it was highly instrumented.**
+
+**You're using Mixpanel or you're doing this custom? We actually did this in-house. And the reason we did this in-house was developers, a lot of them have Adblock. And so maybe this is another first principles thing is we want to capture all data.**
+
+Because that would give us a, and there really is gives a very good sense of what people are doing with the product, basically.
+
+So **we actually wrote our own server that was, we sort of send events to that server, basically. And then that server would then send it to a BigQuery or whatever else. It was, we wrote that ourselves. And that allowed us to collect a lot of analytics data from our customers.**
+
+**And again, at the beginning, no one was using it. So then we actually set up a sort of Slack webhook that would say like, every time someone is doing anything in the product, we immediately get notified in Slack.**
+
+And we had notifications on our phones at that point, right? So like, we would sort of immediately know whenever anything happened, basically.
+
+**And at that point, because no one used the product, like we would get pinged very rarely.**
+
+**And so anytime we actually got pinged, we'd immediately be watching sort of very carefully what they were doing. And that I think was highly helpful because it sort of taught us very quickly what customers are doing, because we can't always be next to customers who use the product.**
+
+I wish we could actually, but we can't.
+
+And so these analytics kind of got us closer.
+
+**And then we set up sentries such that anytime any error occurred, we'd immediately reach out to the customer. You know, we might even call them actually, or we might even text them, we have their phone number.**
+
+So, you know, **from a customer experience perspective, their experience was really quite intimate in the sense that, you know, using this product, you run into any error, immediately the CEO calls you, you know, a minute later or something like that.**
+
+**And they're like, hey, I saw you ran into this problem. Here's the work around, you know, whatever, we'll fix it this way, basically. And I think that really built a lot of trust to the early customers.**
+
+**They're like, okay, well, if something goes wrong, the realtor's got my back, you know, they'll sort of figure it out.**
+
+**But it also taught us so much about the product, because we immediately sort of learned what the sort of major buggy areas were, for example, when they were using the products, what was friction full and what we should actually go and fix, how we should prioritize the product, what the use cases were, et cetera.**
+
+All these things we learned sort of very rapidly because we had this very tight feedback.
+
+**And so let's say we found a bug, we'd go fix it, you know, the next hour or something and then do a deploy, you know, in a few hours later or something.**
+
+**And of course, there'd be more bugs, you know, we'll figure it out, they have a feature request.**
+
+And the fact that **we called them, they would say like, hey, you know, great, you know, thanks for fixing the bug. But actually, also, I was wondering if I could do X or Y or Z or something like that. And we'd be like, oh, great. Well, that's wonderful. Let's help you with that too.**
+
+**I think the customer intimacy is so helpful because oftentimes in a SaaS product, especially sort of early days, it can actually be hard to get the customer on the phone with you.**
+
+Because if you're always texting them, like, hey, I want to do a build session or, you know, want to use the product together, you're like, no, that's not a priority right now for me. Like, go away. I want to put it on myself.
+
+But **when they run into a problem while using the product, from a customer experience perspective, like if you call them at that point, that is the best thing that could possibly happen to them because they're like, well, great, like I had rent, I was going to use the product. I ran into an error and now you're fixing the error for me and also answer some other questions. That's a great customer experience.**
+
+Right.
+
+Right.
+
+Especially for an engineer.
+
+Yeah, totally.
+
+That's a great example of just being truly customer obsessed.
+
+Let's talk about go to market a little bit, David.
+
+I know that you're a **big proponent in the early days of Outbound** and really you were selling the product, you and your co-founders, I imagine, selling the product.
+
+**When did you sort of start to evolve the go to market and bring in other folks and scale up your approach to go to market?** There's a lot of mixed advice on this and we listen to some of it and we regret listening to some of it.
+
+And I think this kind of goes against the first principles thing.
+
+**Advice is very nuanced and advice that works for one company or a group of companies may not necessarily work for you.**
+
+**And we had heard from multiple people that hiring AEs was really important because sort of AEs will unlock giant contract sizes, they will really help you sell the product, you can focus on the product, your own product development, yourself as a founder, stuff like that.**
+
+And so we hired actually pretty late.
+
+**I think the first person in maybe the go to market function that joined us, who joined us probably around a million or a million and a half, maybe two, something like that, sort of low, single digits in ARR actually.**
+
+**And so we ourselves had already sold maybe 40, 50, 60 customers at that point.**
+
+It was gone basically.
+
+And I remember the advice that we got, and this is not a knock on the advice.
+
+The advice is true and good advice.
+
+It came from great people.
+
+First of all, Peter from Segment who had told us that hiring an AE, I think it was sort of one of the biggest unlocks he had, and he was initially very skeptical of hiring AEs.
+
+He was like, how can an AE sell sort of a product segment that's so technical? And the hiring an AE, and the AE crushed it, they sort of did extremely well and was sort of a major revenue unlock for our segment as a company.
+
+And so we heard this advice, we heard advice from a few other people, and **we were like, okay, let's go hire an AE. And to be honest, we messed up. It was not effective, and it was because we were not, I think, first principle enough in thinking about how an AE can help and how AE cannot help.**
+
+And for us, **at that point in the sales process**, kind of going back to what we were talking about, **Retool was a very broad, very horizontal product**.
+
+**And so it is actually quite a difficult product to sell if you don't have sort of the dynamicism or you don't have total knowledge of the product that I as a founder would have.**
+
+**And so the sort of early sales team that we brought on were actually, they were all pretty unsuccessful. And it's not their fault, it was actually our fault in the sense that the product itself was just a difficult one to sell.**
+
+And it required sort of extreme broad knowledge of developers, of customers, of use cases.
+
+And it was just a very challenging product for anyone, for any sort of AE to sell.
+
+**What ended up happening was we ended up sort of hiring initially one, then two, then three actually people who I would say they were maybe comp sci major minors, basically.**
+
+So they sort of studied comp sci in college, but they were more the commercial side than being a software engineer.
+
+So more interested in business, let's say, than necessarily in software engineering.
+
+**We hired one profile like this, and we initially were not sure whether this person could learn to sell Retool, but they actually were much more effective.**
+
+And the reason for that is I think that technical background, they were very dynamic and they were very good at reacting on the spot or sort of figuring out what parts of the product were applicable, parts were not, how to talk to the product, how to talk to engineers.
+
+That was much more effective for us than sort of traditional AE's.
+
+Our early go-to-market team basically looked like three of those profiles.
+
+I think we got to, **even with just two of those profiles, I think we probably got to like five or eight or nine or even 10, something like that in ARR, basically.**
+
+**Then we hired a head of sales, probably around that point, maybe between five and 10, something like that.**
+
+**And then scaled sort of the learnings that we had from these two or three people. And then we started building an AE team after that.**
+
+I think the first AE that we hired at that point was probably maybe like around 10 mil ARR or something.
+
+We hired our first AE.
+
+The way that you were thinking about it then, does that continue on today? Are you still pretty true to that, that it's a very technical sale done by technically fluent people? It is, I think, 50% true today.
+
+And so for example, a lot of our sales calls, we have a sales engineer that sits there along with account executive, sort of traditional AE pairing.
+
+That said, I think we have invested a lot of resources in training, also marketing materials and even category creation because half of retail customers who end up using them today actually had users who had a previous job.
+
+And so there's just a lot more knowledge of retool in the market today, which I think really helps a lot.
+
+For example, a recent customer of ours that signed maybe just a few weeks ago actually as Chime, that champion that had bought retool at Chime had actually used retool at Brex already.
+
+And so that's a good example where the sales process was actually a lot simpler in that case because they were actually still bought it on the product because the impact we've had on Brex has really been quite phenomenal.
+
+And so they're like, we want a similar impact at Chime as well.
+
+And so the sales motion changes, I think, as the product becomes more mature, as the market becomes more aware of the product offering.
+
+And so today, I think it's changed and will continue to change probably over the next three, four, five years.
+
+Let's talk about this idea of operational excellence, which is something that I think you have a lot of thoughts on.
+
+And you've said that the job of a CEO pre-product market fit is different than the job of a CEO post-product market fit.
+
+What do you mean by that? Yeah.
+
+Well, my friend Tony, who is a YC continuity, he has a great blog post about this.
+
+His thesis is, and I think it's completely a correct one and a very astute one, is that **your first job as a startup CEO, when you're two people, five people, whatever, is to go build a product and to find product market fit, because if you don't find product market fit, nothing else matters.**
+
+Your startup will die.
+
+You don't find product market fit.
+
+**But once you find product market fit, then your job as the CEO** actually is not necessarily to even maximize product market fit or do the exploration.
+
+Instead, **it actually goes to build a company that can repeatably achieve success in that product market fit.**
+
+And that is actually quite a mindset shift.
+
+Every day, you are talking to customers and working very closely with them and even building the product sometimes, changing all the way to, how can I build the machine that builds the product and goes and finds more customers? And that, I think, is a very interesting post-product market transition.
+
+And to me, it's an extremely interesting and exciting one, in the sense that, as we discussed before, when I think about what excites me about Rachel today, it is, can we build a truly excellent company that does sales at the highest level? We are not interested in growing on the average of what sales companies grow.
+
+So it's like a triple, triple, double, double, double, for example.
+
+The average company that goes to IPO actually grows triple, triple, double, double, double.
+
+So one, three, nine, 18, 36, 72, which, I mean, these companies are IPO companies, right? So they're pretty good companies, actually.
+
+And yet, for us, it's like, hey, that's actually not enough.
+
+Can we actually go further than that? What does truly excellent look like? What if we triple, triple, triple? What if we triple four is in a row? The idea of how can we operate excellently, whether it's from a sales metrics perspective or a product perspective, or from a product perspective, how do you launch new product lines early on in your company and have them achieve product market and have them grow hopefully actually faster than what Rachel even grew in the early days? I think that the idea of building a machine that can accomplish that, building a team that can go actually build a new product that can go find product market fit, I think that really is my job and our job as a company today, is that we repeatably launch products that find product market fit and achieve success, get to 100 million ARR in a few years.
+
+That I think is really exciting.
+
+So that's one reason why we're so interested in operational excellence.
+
+The second is that, this kind of goes to sort of our customers, actually, is we help a lot of our customers achieve operational excellence.
+
+And that I think is also really important to a lot of our customers, too.
+
+The sense that if we think about, for example, why a company like Brex is able to scale so quickly, I think part of that is because they have truly great internal software.
+
+And if you think about the world of business today, if you will, most businesses are shockingly inefficient.
+
+I mean, for retail, shockingly, if you think about it, for first round, I'm sure most companies seem to just call it shockingly inefficient, like we have sort of spreadsheets that are floating around, we're doing CSV exports daily.
+
+That gives you a sense sort of like there's so much room for software to enable companies to become operationally excellent.
+
+And we think about the impact that software has had over the last 20, 30, 40, 50 years on all of us.
+
+If you think about a company like DoorDash, for example, the way that we place an order on DoorDash is via software.
+
+The way DoorDash fulfills that order is via software, internal software.
+
+The way the restaurant even sort of goes about procuring food or, you know, procuring supplies, it's all via software.
+
+It's not a tremendous impact in the past 50 years, but even in the next 10 or 20 years, we think software has a bigger impact.
+
+All the apps that are being built today, all the spreadsheets that are getting replaced by our sort of real software applications, that I think to some extent is the mission of retool is how can we sort of bring the power of software that used to be locked behind, you know, get a software here, spend a lot of time building all the software.
+
+Now you could have sort of any app that you want in a few minutes, in a few days.
+
+What does that mean for the world? That's something that I think gets us, it gets a lot of our customers really excited is it allows a company to scale so rapidly.
+
+Trey Lockerbie Got it.
+
+It makes sense.
+
+Let's talk about what's ahead and what's next for retool.
+
+What are you thinking about today as you're running the company and what do you think about what's ahead? Robert Leonard So, retool, despite the phenomenal group we've had over the past few years, it's really just getting started.
+
+Again, if we sort of think about what percent of software, if you think about what percent of internal software is built in retool, most people in the world, most engineers in the world have never heard about retool.
+
+Even most engineers building internal software have never heard about retool.
+
+And so for us, sort of with, you know, such an incredibly large TAM, the goal really is how do we get more awareness for retool? How do we get more people aware and sort of using retool? And a lot of that, I think, comes down to sort of building a really great product, expanding a product offering.
+
+So today, for example, retool is sort of more use for the front end, it's sort of a front end builder.
+
+We want to expand out into back ends.
+
+We're expanding onto mobile apps right now, we're expanding onto workflows in the back end, we're expanding onto sort of back end storage, et cetera.
+
+Two or three product lines, actually, we're launching in the next, actually, you know, two, three months.
+
+And so finding product market fit for those, getting those to, you know, 10, 20, 50, 100 million an hour one day, like that's sort of what we're very focused on.
+
+But also improving the core product.
+
+If we sort of look at the core product itself, there's so much room for us to improve that.
+
+And so many things we have to think about from first principles, again, we reinvent it for you, but not best practices.
+
+A good example is when you think about retool as a product, it's kind of like a new way of developing software, basically, and thinking about how does testing fit into that? How does something like multiplayer fit into that? How does, for example, observability, how does hooking to Datadog, you know, fit into that? These are all sort of interesting questions.
+
+How do you version control a visual app like that, that, you know, has less code than sort of a React app? These are all sort of interesting products that we're working on, but really the goal is get retool in front of more people and eventually, hopefully, become the way all of the software is built.
+
+If we look back in 10 years and say, wow, you know, half of all internal software is built in retool today, I think that would be such an incredible moment for us to look back and such an incredible sort of north star for us to go to.
+
+David, thank you for being here today.
+
+So many great stories, I think so many lessons that are applicable to future founders.
+
+So really appreciate it.
+
+Thank you for being on the show.
+
+Yeah.
+
+Thank you so much for having me.

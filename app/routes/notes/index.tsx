@@ -11,8 +11,12 @@ export function loader() {
       title: notes[path].frontmatter?.title,
       // @ts-ignore
       published: notes[path].frontmatter?.published,
+      // @ts-ignore
+      unlisted: notes[path].frontmatter?.unlisted,
     }))
-    .sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime());
+    .filter((note) => !note.unlisted)
+    // newest first; undated posts go last
+    .sort((a, b) => (b.published ? new Date(b.published).getTime() : -Infinity) - (a.published ? new Date(a.published).getTime() : -Infinity));
     
   return { links };
 }

@@ -1,0 +1,119 @@
+---
+title: "Ali Ghodsi (Databricks) on Invest Like The Best"
+description: "Podcasts notes"
+published: "2021-02-06"
+public: true
+mediaType: "Podcasts"
+lessonType: "Analytics, Startups, Technology"
+project: "Second Brain"
+source: notion
+---
+
+# Ali Ghodsi (Databricks) on Invest Like The Best
+
+*Podcasts · Analytics, Startups, Technology*
+
+Created by [Rishabh Srivastava](https://rish.blog)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[Ali Ghodsi - The Past, Present, and Future of Big Data - \[Founder's Field Guide, EP.18\] - Invest Like the Best](https://overcast.fm/+Lzu1i6QGM)
+
+**Why is it important**: An important listen around open source and data
+
+### Keywords
+
+Databricks, open source, analytics, scale
+
+### Highlights
+
+#### Databricks overview
+
+Databricks helps enterprises take massive amounts of data and do ML on top of it
+
+Most enterprises have seen how Silicon Valley companies can do amazing things with data and now want to so similar things. But they don’t have the engineers to build a data platform for their use case. Databricks offers that as a service
+
+#### History of data computing
+
+We used to have supercomputers to crunch all that data. But it became increasingly harder to do this in a single machine. So we switched to distributed computing
+
+It became difficult for companies to manage thousands of machines on prem, so they switched their data flows to the cloud
+
+The big innovation of mapreduce was running the computation closer to the data. The network can be the limiting factor if you’re sending a ton of data across. So doing everything in the same data centre and *partially on the same device* is much more efficient (again, this was the innovation of mapreduce)
+
+Now, networking technology has kept going faster and this is less of a concern. Networking technologies have kept becoming faster, and networks are now completely virtualized. So we no longer need to move code closer to the data
+
+We can now do computations in memory. Unlike compute, memory has gotten way cheaper and faster over time. Instead of doing computations on disk, we can do it in memory — it’s much faster this way
+
+Hadoop enabled you to process massive datasets in parallel over many machines. But all the computations were limited to map and reduce
+
+- Had some interesting use cases (click logging, crawling the web etc) but was limited
+
+Origins of Spark were in getting a recommendation system up for the Netflix recommendation challenge at UC Berkeley
+
+- Key problem was that Hadoop was just so slow, because ML algorithms are so iterative in nature
+- Needed to do computations in memory instead of on disk
+- First few years of spark— got Spark as an Apache open source project. From 2009-2012, was mostly an academic project with very limited industry insight
+- Eventually, got interest from industry. As ML and AI increased, interest in Spark skyrocketed
+- This laid the origins of Databricks
+
+#### About Databricks
+
+Databricks in a cloud SaaS business based on open source. Open source projects are on-Prem versions. Cloud software has a lot of complex engineering behind the scenes to run things in the cloud
+
+- In the first 2-3 years, Databricks just wanted Spark to take off and focused on a hosted version of Spark. It was really hard, because Cloudera+Hadoop were all the rage those days
+- There were a lot of wrong perceptions they had to tackle in the early days. “Spark doesn’t work if you don’t have enough memory”, “Spark is just useful for some machine learning use cases but not others”, “Spark only works for real-time computations but not others”
+- It seemed impossible to educate the market. \[note to self: If someone’s using a tool wrong, it’s not the tool’s fault, but the user will think that the tool sucked. Need to have really good and wide ranging tutorials to get around this problem]
+- Now, Databricks does loads of other things too. Open source is key. They don’t want to lock them self in into proprietary software
+- They have gotten burnt since the late 80s (Oracle 👀). They’ve bet on vendors that are really really good and have great innovations. They give them all their data and are locked in into proprietary formats. And then those vendors, because of that lock-in, become complacent after a while
+- If they have the choice, enterprises prefer not to have lock-in
+- Databricks has multiple open source projects right now. There is delta, mlflow, and redash. These help analytics and ML people do their job
+
+To use Databricks, customers need data and need to understand how to use data. Databricks can’t function if they’re providing tools to those who don’t have the skills or the raw materials to use them
+
+#### Running the company
+
+What’s the engagement like? Self service or higher touch?
+
+- Because of open source and community edition, there are a lot of people who use self serve. The community edition also lets them use the free version, and get familiarity with the product
+- When these people discover use cases that require a lot of investment, they then talk to management who then approach Databricks and gets more of a high touch engagement
+- Professional services (pure service), augmented services (product education + some service), and data platform (pure product education)
+
+TAM is gigantic — because there is a lot of upwelling within existing customers as they discover more use cases + additional customers are trying hard to be data driven
+
+Competitive advantage — what’s the accumulating advantage? Continuing to innovate and dealing with the innovators dilemma by cannibalizing your own product. Open source really helps them there. Also own the pipeline from data ingestion to processing
+
+#### How is the market evolving?
+
+Modern data stack — most of the innovation is from startups. Big companies are mostly milking past innovations with a great GTM strategy
+
+A lot of data apps that have built in interactive visualizations that you can interact with are really powerful. Data driven apps where you’re actually interacting with the data in the UI. It’s not classic BI, and it’s not just a normal application. It’s a new category that’s an emerging field. Like Bokeh and Dash. It’s much more rich than classic BI dashboards with drop downs and groupbys. Here, you can even leverage ML under the hood if you wanted to
+
+#### What walls are we trying to break through right now?
+
+The biggest walls are between data and AI. Both organizationally and in terms of tech. The people who are in the line of business and trying to come up with use cases are closest to the AI application side, but often don’t have access to the data
+
+Data governance companies will be very important for managing this
+
+AI/ML companies often don’t have data governance and reliability built in. Companies that can cover the full stack of this will be super interesting
+
+Even the preferences of the practioners are different. On the IT/governance side, they prefer something like Java. While on the ML side, they prefer Python
+
+Typically, these teams don’t even report to the same person. That’s a challenge
+
+Best practices for organisations: organisational policies around data access, using open source, building pipelines with AI in mind, and using cloud well — specially with multi cloud
+
+#### Being a founder of a data startup
+
+On leading a data company. You have to do different things in different phases. Often, what you do in one phase hurts you in another. So you have to transform
+
+- First phase was really a product market fit phase. Understanding what the enterprises need and making sure that you’re building the right thing for them
+- Second phase was realising that “we’ve figured this out — we know what they need. How do we scale this up?” This was about building and scaling up the organisational machine
+- Third phase is the optimisation phase. You have to make sure that the processes are smooth. You should be able to drop in employees into a role and ensure that they can get started very very quickly
+- Things you need to be good at in the first phase hurt you in the third pages. In the first phase, you want to do everything yourself to gain the right insights. In the third phase, you want to have the right people and processes in place so that the machine works smoothly

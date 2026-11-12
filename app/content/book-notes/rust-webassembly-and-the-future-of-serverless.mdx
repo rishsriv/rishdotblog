@@ -1,0 +1,69 @@
+---
+title: "Rust, WebAssembly, and the future of Serverless"
+description: "Videos notes"
+published: "2021-01-03"
+public: true
+mediaType: "Videos"
+lessonType: "Technology"
+source: notion
+---
+
+# Rust, WebAssembly, and the future of Serverless
+
+*Videos · Technology*
+
+Created by [Rishabh Srivastava](https://rish.blog), Founder of [Loki.ai](https://loki.ai)
+
+This summary was largely done for my own note-taking, sharing it just in case it adds more value to other people.
+
+I have no affiliation whatsoever with anyone in this note. This is a summary largely taken for my own reference, and may contain errors :)
+
+### Context
+
+**Source URL**:
+
+[https://youtu.be/CMB6AlE1QuI](https://youtu.be/CMB6AlE1QuI)
+
+**Why is it important**: Talks about how Rust can be a great tool for serverless
+
+### Keywords
+
+Rust, WebAssembly, Serverless, Programming
+
+### Summary
+
+#### Rust
+
+- Rust is when you want the speed of C/C++, and the security of modern languages (great built in garbage collection — a missed pointer here or there doesn’t mess everything up)
+- Rust is REALLY good at ensuring memory safety
+- Assembly is the only language with no runtime. Rust, C, C++ have a very small runtime
+- Rust raises a **LOT** of compiler errors. But once you get a feel for it, you can go really fast and make fewer errors
+- Rust has a VERY steep learning curve. But it’s worth it (allegedly)
+
+#### WebAssembly
+
+- We went from markup → CSS → JS when the internet was first emerging
+- We’re trying to make the web do a lot of crazy things
+- There was a Mozilla project called asm.js a long time ago. It was a very optimizable, low-level subject of Javascript
+- The reason asm.js was faster was because of the spec. It automatically used int32 instead of float which really sped things up, for example
+- WebAssembly was the spiritual successor to asm.js. Everyone agreed on the spec for wasm
+- **You can also compile languages other than JS (like C, C++, Rust) into WebAssembly**
+- 93% of browsers can use WebAssembly natively (as of 3 Jan 2021). All modern browsers have wasm support
+
+#### Rust + wasm = love
+
+Most AssemblyScript has a large runtime.
+
+#### Serverless Architecture
+
+![](/notion/rust-webassembly-and-the-future-of-serverless/1669ada8-2e80-44a0-8cd0-ff6448313884.jpeg)
+
+In IAAS, the VM provider said that I’ll give you a piece of hardware, you can SSH in, and then do whatever you want. Unix was essentially the interface programmers had to interact with the machine (Unix was essentially the API)
+
+In PaaS (Heroku, GAE), you just installed an app. Your software language essentially became your API. This then evolved to docker and then kubernetes
+
+![](/notion/rust-webassembly-and-the-future-of-serverless/2fa52fc8-282f-4b13-a9b4-b2a1a194dd6e.jpeg)
+
+Serverless: docker is a container. But a web browser is also a container. WASI is there too to create apps outside the browser.
+
+A lot of the stuff in the WebAssembly/serverless space is built in Rust

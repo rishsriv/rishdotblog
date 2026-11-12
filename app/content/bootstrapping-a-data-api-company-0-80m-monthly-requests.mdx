@@ -1,0 +1,123 @@
+---
+title: "Bootstrapping a Data/API company 0-80M+ monthly requests"
+description: "TL;DR: I learned how to work at scale, had relative freedom, and got a decent amount of money as a bootstrapped solo entrepreneur. However, I found it difficult to do truly impactful things without a team/tribe."
+published: "2019-07-19"
+public: true
+source: notion
+---
+
+# Bootstrapping a Data/API company 0-80M+ monthly requests
+
+*TL;DR: I learned how to work at scale, had relative freedom, and got a decent amount of money as a bootstrapped solo entrepreneur. However, I found it difficult to do truly impactful things without a team/tribe.*
+
+## Overview of the company
+
+My company ([Loki.ai](https://loki.ai/)) provides data APIs, dashboards, and iframes to media companies. It scrapes unstructured, publicly available data, and converts it into data feeds and articles in close to real time.
+
+Some applications of these include air-quality monitoring, traffic monitoring, election dashboards, and monitoring of economic indicators.
+
+![An air-quality monitoring iframe that we provided to a media client in India](/notion/bootstrapping-a-data-api-company-0-80m-monthly-requests/untitled.png)
+
+An air-quality monitoring iframe that we provided to a media client in India
+
+![Usage of the Loki dashboard for video creation and election analysis by a large media company in India](/notion/bootstrapping-a-data-api-company-0-80m-monthly-requests/untitled-1.png)
+
+Usage of the Loki dashboard for video creation and election analysis by a large media company in India
+
+At the same time, it also provides analytics APIs and data warehousing for a smaller subset of clients.
+
+## The road to setting up the company
+
+I’m a 27 year old self-taught programmer. I launched a t-shirt business (with \~$20k in annual revenue) in high school, and then launched a [failed analytics product for manufacturing companies](http://qualitics.weebly.com/index.html) while in college.
+
+After finishing college, I launched another [failed Edtech startup](http://edufeat.appspot.com/). After I ran out of money, I tried to get better at data science and freelanced for media companies.
+
+Then, I worked as a Data Scientist for a (now-defunct) [personalization startup](https://www.digitalnewsasia.com/business/gimmie-launches-ai-based-marketing-engagement-service-deepo) for 8 months. You’ll see a pattern here. I hardly saw any tech success — though got progressively better with the experiences.
+
+## Running Loki.ai
+
+I quit my job in December 2015, and started freelancing for media companies again to understand the industry better. Worked for cheap and tried to spend as much time in newsrooms as possible.
+
+In the meanwhile, I also launched a news site called The Broadline in 2016 (which has now been shut down) to experiment with [alternative ways of creating a CMS](https://medium.com/@rishdotblog/creating-better-articles-faster-here-is-how-you-can-half-the-time-for-creating-in-depth-8477949b3ef8), [better analytics, and better recommendations](https://medium.com/@rishdotblog/using-data-machine-learning-and-recommendation-systems-to-understand-and-engage-media-audiences-6cb7e05c72d6).
+
+![An early iteration of the analytics dashboard developed for The Broadline](/notion/bootstrapping-a-data-api-company-0-80m-monthly-requests/untitled-2.png)
+
+An early iteration of the analytics dashboard developed for The Broadline
+
+Once it became clear that there was interest from multiple media companies in my services, and that I could automate some of the work that I was doing, I decided to incorporate a company to try and scale the process in September 2017.
+
+The company focused only on the narrow problem of converting fast-changing, unstructured, publicly available data to automated visualizations and stories. I started with tracking economic indicators, air quality indicators, and automated traffic monitoring.
+
+My very first product was a bunch of iframes for real-time pollution monitoring in India — launched in November 2017. Those did okay — getting 40k+ users in the first 10 days. This wasn’t particularly impressive, but was a useful proof-of-concept. The lessons learnt from the process also allowed me to improve other products and APIs.
+
+![First 11 days of the pollution iframes — our first product](/notion/bootstrapping-a-data-api-company-0-80m-monthly-requests/untitled-3.png)
+
+First 11 days of the pollution iframes — our first product
+
+Subsequently, I also added election coverage (a huge driver of traffic), and built a number of replicable properties — including [an election dashboard](https://pollniti.com/live.html), a New York Times-inspired [“You Draw It” framework](https://timesofindia.indiatimes.com/business/india-business/budget/are-you-smarter-than-fm), [election speech monitoring](https://pollniti.com/modi.html), and more. Also added much more hyperlocal content — including fuel prices, grocery prices, and more (these are major drivers of traffic in Asia).
+
+At the same time, I tried to move the business away from providing iframes (which typically involves a lot of back-and-forth with clients who are looking to tweak the iframe’s aesthetics), and focused more on the provision of APIs (with Javascript-based examples of how the APIs could be used to create visualizations). This helped reduce my workload significantly. In the meantime, the number of our clients and requests served surged considerably. We served 86M+ requests in the last 30 days (June-July 2019).
+
+![30 day analytics from Cloudflare. Note that “unique visitors” is misleading. It’s actually unique IPs served.](/notion/bootstrapping-a-data-api-company-0-80m-monthly-requests/untitled-4.png)
+
+30 day analytics from Cloudflare. Note that “unique visitors” is misleading. It’s actually unique IPs served.
+
+In the last 6 months, I’ve expanded the customer-base from just media companies to think-tanks and government agencies. This made a lot of short-term sense, but also put a significant drain on my time as these required much more customisation and white-glove service.
+
+![Example of our election dashboard — used by newsrooms and think-tanks for political analysis](/notion/bootstrapping-a-data-api-company-0-80m-monthly-requests/untitled-5.png)
+
+Example of our election dashboard — used by newsrooms and think-tanks for political analysis
+
+## Organizing principles for bootstrapping a venture
+
+### **Principle 1. Search for natural economies of scale**
+
+The most important principle I learnt (by far) was to search for natural economies of scale in B2B markets.
+
+1. Identify a task that adds value to multiple customers
+2. Find ways to do that task at a unit cost significantly lower than what your customers can do it for
+3. Offer your service to customers at a much lower price than what they’re doing themselves
+
+For example, consider the scenario where 100 companies do some form of digitizable knowledge-work for $X. If you can do the same task faster and with better quality for — say — $20X in total costs (including overhead and other costs), and then charge each company $0.4X, you still make 100% in profit while giving your customer 60% savings.
+
+If a competitor does not exist in this market, you can have significant margins while also ensuring that your customers get significant savings.
+
+These kinds of dynamics of scale generally don’t last for long in efficient markets, but become readily available whenever there’s a technological shift. Be aware of these when a shift happens and be sure to act early and decisively to exploit them.
+
+### Principle 2. Be a cockroach, not a unicorn
+
+I would not have been able to run my company if it was in a $100M+/year industry. Large markets attract VC-funded competitors and large companies. The only way Principle 1 works is if you choose a market that is large enough for a solo founder or small team to make a comfortable living, but is small enough to not matter to tech-giants or to VCs.
+
+This would (obviously) be a shitty principle to follow if one wants to create enormous wealth and a large company.
+
+### Principle 3. Choose what's valuable over what's interesting
+
+Look for things that provide value to your customers — not necessarily what’s novel of technically interesting. If you have both novelty and value-creation, you have a home run. But if you only have novelty that doesn’t create value — it would be hard to build a business around it
+
+## Benefits of bootstrapping
+
+1. You get to have complete control of your company, its future direction, and get to choose the kinds of customers/markets you want to be engaged with
+2. You get to work on a much longer time horizon, and can indulge much more uncertainty. You can also have much stronger priors, and can stick with your gut when the data doesn’t immediately validate it (this can also be a bad thing if you are stubborn and your gut instinct is wrong)
+
+## Drawbacks of bootstrapping
+
+1. You can face “cold-start” problems, where you need smart people to create technology that drives additional revenue – but need additional revenue to hire those people
+2. It’s very hard to focus on new areas without jeopardising your existing business
+3. You’re fundamentally constrained in terms of resources, which can make it difficult to spend money on customer acquisition or marketing in the early days
+4. You don’t face the same level of scrutiny and pressure that venture-backed startups do — which can be a problem if you’re not intrinsically disciplined
+
+## Resources that have helped me
+
+While running the company and figuring out how other solo founders operate, the following resources have been absolutely invaluable:
+
+1. [The Indie Hackers podcast](https://www.indiehackers.com/podcast): Features interviews with mostly bootstrapped and often solo founders, and goes into depth about how they started and how they scaled
+2. [The Y-Combinator podcast](https://blog.ycombinator.com/category/podcast/): An eclectic podcast that frequently features conversations about technology and growth
+3. [Zero to One by Peter Thiel](https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296): a book that would be more relevant for those conceptualizing a venture-funded startup, but also contains some fascinating insights that all founders should think through
+
+I hope you found this post useful. Feedback appreciated!
+
+## Have feedback, or open to sharing your own experiences?
+
+If you have feedback about this post, or want to share your own stories, please @ me on Twitter at [@rishdotblog](https://twitter.com/rishdotblog).
+
+[](https://twitter.com/rishdotblog)

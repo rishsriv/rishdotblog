@@ -1,0 +1,138 @@
+---
+title: "Startup experiments done over 3 months during Entrepreneur First"
+description: "notes"
+published: "2021-02-17"
+public: true
+lessonType: "Personal Experiments"
+url: "https://docs.google.com/document/d/1K2CZqI5mLw245d6m7BADK6VKXQ0ghXA0pDSXiEidFPo/edit"
+source: notion
+---
+
+# Startup experiments done over 3 months during Entrepreneur First
+
+*Personal Experiments* · [Source](https://docs.google.com/document/d/1K2CZqI5mLw245d6m7BADK6VKXQ0ghXA0pDSXiEidFPo/edit)
+
+## **Idea 1: Voice APIs for call-centres**
+
+### When: **Late July to Mid August**
+
+### Idea
+
+Voice APIs for call-centres in Asia that could understand customer tones, and use them to better inform call-centre decisions
+
+### How we worked on it
+
+Shit ton of interviews with people in Singtel, vendors of these kind of solutions, and other companies with call centres
+
+### Learnings
+
+- Voice-based queries are generally declining, text-based chat is rising very very quickly. Text-based chat is often a better experience for the user, and is also much more cost efficient for companies. It’s also less draining for agents
+- In general, the funding allocated to voice-based call-centres is declining as a portion of overall spending
+- Bots are beginning to get far more prevalent and will become an ever more prominent part of the call-centre mix
+- **Companies think that their chatbots are great, but users think they suck**. What companies think is a “deflected call” (because the user didn’t call to the call-centre after chatting with the chatbot) is often the customer churning away to a competitor because he is so annoyed by the system
+- **There is no real objective way to measure customer experience while using a chatbot right now**
+
+### Why we didn’t continue with this
+
+- This felt like addressing a shrinking industry instead of addressing something with incredible tailwinds (atleast in Asia)
+- There are companies (like [Cresta](https://cresta.com/)) who are doing an incredible job at using voice to super-charge agents right now. But those are in the US and Europe markets, where chat-adoption is much lower than it is in Asia
+- **Can definitely do something around benchmarking of the chatbot experience (and benchmarking other CX things) in the future**
+
+## **Idea 2: AI-assisted bundling for ecommerce and eshops**
+
+### When: **Mid August to Mid September**
+
+### Idea
+
+AI-assisted bundling for eshops and ecommerce stores. We make it easier for companies to upsell more products every time customers land on their website
+
+### How we worked on it
+
+A lot of interviews (again) from companies in Singapore and India + creating a prototype. Link [here](https://www.youtube.com/watch?v=yBiGIUV9u8U\&feature=emb_title). Also pitched the prototype to a bookstore in Singapore called [Thryft](http://thryft.sg/) who agreed to a pilot. **Will have a chat with them again after EF ends to get a pilot going → can be a great consulting business**
+
+### Learnings
+
+- For legacy companies, the average order value online for the same purchase intent is around 40% lower than what it is in brick-and-mortar stores. Much of this is because there is far too much friction to buy online, compared to in-store
+- Consumer responses to upsell nudges are 84% lower for digital compared to in-store
+- It is extremely difficult for brands to personalize upsell opportunities online, while sales staff is skilled at upselling the right thing to the right customer
+- It takes an average 6.8 number of clicks before making a transaction online for legacy brands, compared to 2.3 clicks for digital natives like Amazon
+- Because of unclear product information, poor website navigation and irrelevant search results, over 80% of customers abandon their purchase (according to Forrester), leaving legacy brands with around 20% in lost sales
+- It’s really difficult for companies to keep updating creatives for new offers/new bundles, because the MarComm teams are already too over-worked. This is a particularly sharp issue for videos and infographics
+- Cart abandonment is an issue, but the even bigger issue is that users never get to a finished cart in the first place
+
+### How this worked
+
+Our customers add a javascript snippet to their website or our SDK to their apps, change a few configuration options from a dashboard, and are able to add automated and personalised bundling to their websites, no haggling with tech teams required.
+
+To do this, we automatically scrape data from customers’ websites or apps, and have a deep-learning model automatically understand individuals users’ preferences and create the right bundle for them. Additionally, we use deep learning to create bundle descriptions and creatives in real time. Then, we deliver these recommendations automatically to users via an HTML or JSON API.
+
+*Why we didn’t continue with this*
+
+- This seemed like a great project for consulting with large companies, but would’ve been hard to scale as a product without deep integrations with individual companies. Definitely has potential, though! Will likely come back to this as a consulting project post EF if EF doesn’t work out
+
+## **Idea 3: AI-powered digital signage for brick-and-mortar stores**
+
+### When: **Mid September to Late September**
+
+### Idea
+
+AI-powered digital signage that automatically changes what it displays to customers based on how they look (demographics, dressing style, body type etc) – works for both walker-bys and in-store users
+
+### How we worked on it
+
+Loads of interviews + 2 deployments in store with an [NVIDIA Jetson](https://developer.nvidia.com/buy-jetson) + Camera deployed with a TV in store.
+
+*Who uses this and who pays for this*
+
+Brick and Mortar SMEs who would like to see more revenue from customers. These are further subdivided into two kinds of customers:
+
+1. SMEs that are trying to convert footfall into more in-store visits via better signage (gyms, dance studios, hair salons, certain kinds of F\&B businesses)
+2. SMEs that are trying to get more revenue out of users who are certain to come in to the store via better in-store or just out-of-store interventions, specially as people begin to queue up and figure out what to order (F\&B, tailors and clothing stores)
+
+### High-level learnings
+
+- For most offline stores, the plan to visit the store is generally "pre-planned". I.e., people typically search what stores are around on Google Maps, and then visit them. There are some exceptions, where people often come just to browse items because they were supposed to be meeting someone who is late (clothing stores could be a similar example). But these are shrinking
+- What sells is the ability to grab customers' attention. Right now, customers' attention is online. Not in store. [SPHMBO](https://www.sphmbo.com.sg/) has been trying hard to do more with outdoor ad-tech, but hasn't had much success so far
+- Analytics solutions are already widely available (Nielsen etc). Doesn't matter if they are correct or not, they're already well accepted by the industry. For example, consider this bit from an [SPH press release](https://www.mumbrella.asia/2019/06/sph-outdoor-ad-firm-to-erect-led-screen-at-one-raffles-places): *According to Nielsen Media Index, 50% of the traffic in Raffles Place are PMEBs versus the national average of 32%. Raffles Place also attracts a higher proportion of high-income earners with an average monthly household income of $7,000 and above (53% versus 38% national average)*. So just going with an analytics solution won’t work
+- Optimizing in-store signage is not a hair-on-fire problem for customers. It's a nice to have, but optimizing SEO for Google Maps and using online channels to acquire users is much more urgent
+- Plenty of competition already exists, and is well known in the industry. Some of this competition is [already trying out](https://www.vizansign.com/digital-signage-research.html) AI-assisted digital signage
+- This would likely lead to a 1-8% lift in sales for brick-and-mortar stores. Hardly something game-changing
+
+### Learnings from installations and pilots
+
+- Aesthetics *really* matter to in-store consumers. You could have the best tech, but if your TV + camera dongle is black while their store is predominantly white, they would not pay for it
+- A key concern was that digital signage will take up space when they are already constrained for space in the store. Outdoor digital signage would not have this problem, but most were skeptical about its efficacy
+- There is difficulty in scaling. Installation, customization, and small iterative changes for each customer will make this a very hard to scale business
+- Better digital signage definitely attracts more gazes to a shop, but very few of these gazes convert into actual foot traffic. Before phones, people just went to a shop when they were bored in a mall. Now, they look at their phone to either browser social media OR to figure out what interesting shops exist in the mall (via Google Maps)
+
+*Why we didn’t continue with this*
+
+- Didn’t seem like a very large business moving forward
+
+## **Idea 4: TikTok for Trade Media**
+
+### When: **Late September onwards**
+
+### Idea
+
+TikTok for Trade Media. Our AI automatically creates bite-sized content (text, images, videos) that is relevant for business users in real-time. To do this, it looks at data released from primary sources in real time, converts this unstructured data into data signals that an algorithm can understand, and then automatically creates beautiful data visualizations and motion graphics out of this data. No human intervention is needed, the AI automatically creates content by itself. Once this content is created, it is automatically shown to the right user based on the user’s interactions with previous pieces of content.
+
+[https://lh5.googleusercontent.com/vzCJNWZYVVcHrRTMSvYESDy3xLUfonV7gOHsSeEB94XF1VlT9x5cSzKuvgoGvsC49G\_vmiWeHFBUSwn49VNBdTPcLVswDXm8\_rSlTgHPUKV9hER2sXIFJhzzy5TUIZ-Wj6973Iky](https://lh5.googleusercontent.com/vzCJNWZYVVcHrRTMSvYESDy3xLUfonV7gOHsSeEB94XF1VlT9x5cSzKuvgoGvsC49G_vmiWeHFBUSwn49VNBdTPcLVswDXm8_rSlTgHPUKV9hER2sXIFJhzzy5TUIZ-Wj6973Iky)
+
+### How we worked on it
+
+Mostly driven by my intuition of and experience in the media industry. No interviews so far, though it’s only been 5 days since we started
+
+### Who uses this and who pays for this
+
+Users are people who run or manage businesses of any size and want hyper-specific, niche information about the business. This results in a large collection of niche, B2B-relevant users
+
+Advertisers pay to access these users with branded content on the platform. With this, we disrupt LinkedIn, which is pretty much the only game in town for programmatic B2B advertising
+
+### Learnings so far
+
+1. Most SME owners are not on LinkedIn! In India, their kids go to very average universities (Lovely Professional University etc), and are the most likely vector for user acquisition
+2. Advertising on Facebook/LinkedIn will not get you your initial users in the SME segment. Get initial users by hand-holding. Call them. Go to their shops. Have chai with them. *Sir aapko bahut experience hai, aapki advice chahiye*
+3. Trade Media people love the idea, because they think that content is what conversations revolve around. Their business is about bringing people together to talk about relevant issues. If automated content can do that, their engagement goes up by a lot and their costs go down by a lot
+4. MNC users definitely value trends and trends-driven content. But whether or not SME owners do is a question mark → to validate
+5. Can motion graphics be as addictive as cat videos on TikTok? Will have to really validate this

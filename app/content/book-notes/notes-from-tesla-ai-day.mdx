@@ -1,0 +1,249 @@
+---
+title: "Notes from Tesla AI Day"
+description: "Videos notes"
+published: "2021-08-20"
+public: true
+mediaType: "Videos"
+lessonType: "Technology"
+url: "https://youtu.be/j0z4FweCy4M"
+source: notion
+---
+
+# Notes from Tesla AI Day
+
+*Videos · Technology* · [Source](https://youtu.be/j0z4FweCy4M)
+
+(This mostly covers the first half of the talk)
+
+## Tesla’s Neural Network Architecture for Vision
+
+8 cameras on the vehicle. They send images in real time which are processed into a vector space ⇒ 3-dimensional positions of lines, edges, curves, traffic signs etc
+
+It’s kind of represented below.
+
+![A67B5F12-0145-4ABF-9F33-46B2DED535F7.jpeg](/notion/notes-from-tesla-ai-day/a67b5f12-0145-4abf-9f33-46b2ded535f7.jpeg)
+
+Kind of building a synthetic animal from the ground up. Car senses the environment and moves around autonomously. Building all components in-house:
+
+- Mechanical components (the body)
+- The Nervous system (electric components)
+- **The Brain (the synthetic visual cortex)**
+
+### The old way
+
+4 years ago, all the processing was only on an individual image level. Each image then made a piece of the vector space
+
+#### Pre-processing and regnets
+
+Light hits the camera. Sent as a 1280x960 12Bit (HDR) @ 36Hz
+
+Then, there is a feature extraction backbone. Use residual NNs for this (regnets)
+
+There is a stem, and a number of residual blocks connected in series
+
+Regnets are great, because they allow you to trade-off latency vs accuracy
+
+![0DC9082A-0BE4-4353-993E-B1B26C4A390E.jpeg](/notion/notes-from-tesla-ai-day/0dc9082a-0be4-4353-993e-b1b26c4a390e.jpeg)
+
+Regnets give a number of features at different resolutions and scales as outputs
+
+At the bottom of the hierarchy in the image above, we have very high resolution (spatially) information with low channel counts — neurons here are really scrutinizing a small part of an image. At the very top, we have low resolution information (spatially) with high channel counts — neurons here are able to see a lot more of the image and get more context
+
+#### Feature Pyramid Networks
+
+After this, process these features with feature pyramid networks (BiFPNs here). They get multiple scales to talk to each other effectively and share a lot more information. For example, if you’re a neuron all the way down in the network and are looking at a patch and trying to figure out whether it’s a car or not – it helps to know what the top layers are telling you (for example, that you’re on a highway. This gives you a *lot* more context behind what’s going on
+
+![3ACBDAF6-04E7-4CCE-B321-A4F0F498E5B5.jpeg](/notion/notes-from-tesla-ai-day/3acbdaf6-04e7-4cce-b321-a4f0f498e5b5.jpeg)
+
+#### Detection heads
+
+After a feature fusion across scales, we then go to task specific heads. For example, there’s a one-stage YOLO-like object detector where you initialize a raster, and there’s a binary bit per position telling you whether or not there’s a car there. In addition to that (if there is a car), it also tells you a bunch of other attributes that you may be interested in (x,y with height offset, what kind of car it is etc)
+
+![4071FB50-AD1E-4217-A0B2-FA6792435F49.jpeg](/notion/notes-from-tesla-ai-day/4071fb50-ad1e-4217-a0b2-fa6792435f49.jpeg)
+
+#### Multi-task learning (Hydranets)
+
+Discovered that they didn’t just want to detect things just once – wanted to do a large number of tasks instead (and ideally in parallel) – there’s a common-shared backbone, which then branches off into a number of heads (call these Hydranets)
+
+![B6ABDA6D-014B-4A52-B548-4B2A764B4714.jpeg](/notion/notes-from-tesla-ai-day/b6abda6d-014b-4a52-b548-4b2a764b4714.jpeg)
+
+This architecture has a number of benefits:
+
+1. Because of feature sharing, we can amortize the forward pass inference at test time. So this becomes very efficient to run
+2. De-couples tasks — we can work on and fine-tune each task in isolation without impacting any of the other tasks. Makes debugging and iteration much faster
+3. Because there’s a bottleneck in the features at the “multi-scale features” stage, can cache features to disk here. This significantly speeds up training and fine-tuning
+
+![388D5671-B9E7-4C4A-B4C8-E3B5A708F29D.jpeg](/notion/notes-from-tesla-ai-day/388d5671-b9e7-4c4a-b4c8-e3b5a708f29d.jpeg)
+
+Were obtaining these kinds of predictions around 4 years ago from a hydra net
+
+![16120942-B6F1-42C3-A7B1-8BFE89107A6D.jpeg](/notion/notes-from-tesla-ai-day/16120942-b6f1-42c3-a7b1-8bfe89107a6d.jpeg)
+
+### Problems with the old way
+
+This wasn’t sufficient for full scale autonomous driving. You can’t just drive based on image-scale predictions. You actually need to project them into some kind of vector space around you
+
+Tried to do this using C++ and developed something called the Occupancy Tracker
+
+But there were two problems with this:
+
+- Across-camera fusion and trackers and extremely difficult to write explicitly. Instead of writing them explicitly, you should have them as a part of the neural network and train everything end-to-end
+- The image space is not the right output space. You don’t want to make predictions in the image space — you want to make them directly in the vector space
+
+![D3E9A6F7-FFE8-43BA-8121-72695FA0234E.jpeg](/notion/notes-from-tesla-ai-day/d3e9a6f7-ffe8-43ba-8121-72695fa0234e.jpeg)
+
+An example of this problem is below. Things that look great in the image space look haywire in the vector space
+
+![FA5F94DE-47A9-4188-939E-9622B023759D.jpeg](/notion/notes-from-tesla-ai-day/fa5f94de-47a9-4188-939e-9622b023759d.jpeg)
+
+The reason for this is that you need to have an extremely accurate depth-per-pixel in order to to accurate vector projections. But real-life cameras being what they are – it’s really hard to have per-camera detection followed by fusion. Also, if there’s any occluded areas where you would like to make predictions, you would not be able to.
+
+Another problem is that if there’s an object that spans multiple cameras (like the truck in the image below) – since no camera is able to see the entire object, you will not be able to make proper predictions on that object
+
+![2E88068C-EB90-4309-B515-CBE9A4F7DFAD.jpeg](/notion/notes-from-tesla-ai-day/2e88068c-eb90-4309-b515-cbe9a4f7dfad.jpeg)
+
+### Solution: Multi-camera vector space predictions
+
+Take all of the images, simultaneously feed them into a single neural net, and directly see the output in the vector space
+
+This is hard to achieve. But roughly, you process images from every single camera into a backbone, then somehow fuse them, and then represent the image-space features directly as vector-space features, and then go into the decoding in the head
+
+Two problems with this:
+
+1. How do you transform features from image-space to vector-space?
+2. If you want vector-space predictions, you need vector-space datasets. Labelling the images is not enough — you need vector space labels. How do you do that?
+
+#### Problem 1: Transforming features from image-space to vector-space
+
+In the vector space, we’re trying to have bird’s eye view predictions instead of image space predictions. If we focus on a single pixel in yellow in the image below, the pixel might be trying to decide “am I part of a curb or not”?
+
+![35D646D7-54F6-4B4D-AF5B-5CBC3E607D83.jpeg](/notion/notes-from-tesla-ai-day/35d646d7-54f6-4b4d-af5b-5cbc3e607d83.jpeg)
+
+We know roughly how the cameras are positioned, so we can roughly project this point in the camera images
+
+The evidence for whether this point is a part of the curb may come from somewhere in these images
+
+But this projection is really hard to get correct. It’s a function of the road’s surface (is it sloping up or down?). And there could be other data-dependent issues, like occlusion
+
+To solve this issue, use a transformer to represent this space and learn where to look end-to-end, using multi-headed self-attention
+
+![E2A6B944-6247-473D-92F9-98AA01D56440.jpeg](/notion/notes-from-tesla-ai-day/e2a6b944-6247-473d-92f9-98aa01d56440.jpeg)
+
+Effectively, this initializes a raster of the size of the output space that you would like. Then, you tile it with positional encodings. These get encoded (using an MLP) into a set of query vectors
+
+All the images and their features emit their own keys and values. The query’s keys and values then feed into the multi-headed self-attention
+
+Effectively, what’s happening here is that every single image piece is broadcasting in its key what it’s a part of. “I’m a part of roughly this location and I’m seeing this kind of stuff” — that’s in the key.
+
+Every query is on the lines of “I’m a pixel in the output space in roughly this location, and I’m looking for features of this type”
+
+The keys and the queries then interact multiplicatively, and the values get pooled accordingly
+
+#### Problem 2: Calibrating the camera
+
+You also need to normalise for the camera calibration. Transform all images into a synthetic virtual camera. This improves the performance a lot
+
+![3C535CBD-A0DD-4507-B31F-7FC97C998B43.jpeg](/notion/notes-from-tesla-ai-day/3c535cbd-a0dd-4507-b31f-7fc97c998b43.jpeg)
+
+#### Before and after, once these problems were solved!
+
+![EB2B89DA-91D6-4D8E-88FD-CAEE253605BF.jpeg](/notion/notes-from-tesla-ai-day/eb2b89da-91d6-4d8e-88fd-caee253605bf.jpeg)
+
+#### New Problem 3: Lack of memory
+
+Often, you need a video (i.e., multiple images) — a single image won’t do. This can cause you to run out of memory
+
+![F3C6DCDF-C87F-49F4-A085-E07CF807A5DA.jpeg](/notion/notes-from-tesla-ai-day/f3c6dcdf-c87f-49f4-a085-e07cf807a5da.jpeg)
+
+To solve this, created a video neural net architecture. This has a feature-queue module that caches some images over time, followed by a video module that fuses these images temporally
+
+![884527DA-6DE8-4EA1-A859-3BADD583C6EA.jpeg](/notion/notes-from-tesla-ai-day/884527da-6de8-4ea1-a859-3badd583c6ea.jpeg)
+
+#### **Feature Queue**
+
+Basically concatenate the features and positional encodings over time
+
+![33DCD2E9-3F60-46D6-B102-3A38C11A33EE.jpeg](/notion/notes-from-tesla-ai-day/33dcd2e9-3f60-46d6-b102-3a38c11a33ee.jpeg)
+
+When do you enter features into a queue?
+
+- A time-based addition of features (say, every 50ms) — needed to make sure we stay clear of temporary occlusions and can react to new features
+- In addition to a time-based queue, also need to have a space/distance based addition (say, every 1 meter travelled) — needed to make sure you can update signs and markings on the road, as well as changes to the road geometry (specially when you’re stuck at a red light)
+
+#### Video Modules
+
+Looked at multiple options. 3 Dimensional CNN, Transformers (including Axial Transformers — to make them more efficient), RNNs of different kinds …
+
+Eventually, settled on a spatial RNN for the video module
+
+![43672B04-F52A-4A7C-87F7-E6242836D534.jpeg](/notion/notes-from-tesla-ai-day/43672b04-f52a-4a7c-87f7-e6242836d534.jpeg)
+
+The structure of the problem is that you’re driving on 2-d surfaces. So you can structure it as a 2-d matrix
+
+These significantly improve robustness to temporary occlusion, and improve ability to estimate depth and velocity
+
+#### Current architecture
+
+What the complete model looks like now:
+
+![64909751-C1A9-41E4-8DF7-651A9D63B7E5.jpeg](/notion/notes-from-tesla-ai-day/64909751-c1a9-41e4-8df7-651a9d63b7e5.jpeg)
+
+### Potential improvements
+
+Fusion of time and space is pretty late right now. Maybe can do an earlier fusion?
+
+Outputs are dense rasters and its pretty expensive to process these dense rasters, which is bad given the latency requirements. How can this be done faster?
+
+---
+
+## Planning and Control Architecture
+
+The Vision Network takes in data and compresses it down into a vector space. Once this is done, the planner then consumes this vector space, and gets the car to its destination while attempting to maximise:
+
+- Safety
+- Comfort
+- Efficiency
+
+### Key Problems in Planning
+
+The Action Space is non-convex (if you use discrete search, this won’t happen. But if you use a continuous function optimisation, our planner can often get stuck in local minima) and high dimensional (if you use discrete search, this will be computationally intractable)
+
+### Solution
+
+Use a hybrid planning system. First, use a coarse search method to crunch down the non convexity and come up with a convex corridor that the car could move through
+
+Then, use continuous optimisation to come up with a final, smooth trajectory through the convex corridor
+
+![9C1E23DB-57BD-4F3F-B354-125C9AC5CE38.jpeg](/notion/notes-from-tesla-ai-day/9c1e23db-57bd-4f3f-b354-125c9ac5ce38.jpeg)
+
+## Generating datasets
+
+### Manual Labeling
+
+Working with a third-party for critical datasets is just not going to cut it. The latency of working with a third party is extremely high, and the quality is often not amazing
+
+Brought all the labelling in-house. The data labelers are in the US and colocated with the engineers. Built their own data labelling infrastructure to assist the labelers
+
+### Auto labeling
+
+Run neural networks offline (in the cloud) on data that is collected, and create segmentation maps, depth estimation, point matching etc
+
+CAN CREATE 3D MODELS WITHOUT LIDAR, BECAUSE SO MANY CARS HAVE DRIVEN PAST AN AREA!
+
+![DBF4FC82-3670-4FEC-9A7A-BD723CA6492F.jpeg](/notion/notes-from-tesla-ai-day/dbf4fc82-3670-4fec-9a7a-bd723ca6492f.jpeg)
+
+### Simulations
+
+Can use both manual and auto labels to create really great, high-fidelity simulation models!
+
+You can use then these to both study failures, and study how a new algorithm update might behave in the real world before pushing out an update
+
+### Scaling data generation and simulation
+
+Thousands of GPU, 20000 CPU cores, and 2000 actual self-pilot computers are connected in a cluster
+
+## Running it in the Car: AI Compiler and Scheduling
+
+Objective: minimise latency and maximise frame rate
+
+![3CB78565-89F5-46A2-83A4-B9FC4E81A81D.jpeg](/notion/notes-from-tesla-ai-day/3cb78565-89f5-46a2-83a4-b9fc4e81a81d.jpeg)

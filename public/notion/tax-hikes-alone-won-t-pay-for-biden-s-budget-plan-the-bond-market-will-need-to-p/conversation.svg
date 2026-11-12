@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="wg1ro8-aria" role="img" height="370" width="100%" >
+    <style>
+        svg stop:nth-child(odd) {
+        stop-color: #f2f2f2;
+        }
+        svg stop:nth-child(even) {
+        stop-color: #e3e3e3;
+        }
+        [dir="rtl"] svg {
+        transform: scale(-1);
+        }
+    </style>
+    <title id="wg1ro8-aria">Loading...</title>
+    <rect
+        role="presentation"
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        clip-path="url(#wg1ro8-diff)"
+        style="fill: url(#wg1ro8-animated-diff);"
+    ></rect>
+    <defs role="presentation">
+        <clipPath id="wg1ro8-diff">
+            <rect x="30" y="56" rx="6" ry="6" width="80%" height="31"></rect>
+            <rect x="30" y="114" rx="5" ry="5" width="40%" height="13"></rect>
+            <rect x="88" y="160" rx="6" ry="6" width="65%" height="54"></rect>
+            <rect x="88" y="240" rx="6" ry="6" width="60%" height="13"></rect>
+            <rect x="88" y="262" rx="6" ry="6" width="45%" height="13"></rect>
+            <circle cx="51" cy="186" r="21"></circle>
+            <circle cx="51" cy="255" r="21"></circle>
+            <rect x="30" y="299" rx="6" ry="6" width="75%" height="15"></rect>
+            <rect x="30" y="330" rx="6" ry="6" width="72%" height="15"></rect>
+        </clipPath>
+        <linearGradient id="wg1ro8-animated-diff">
+            <stop offset="-2" stop-opacity="1">
+                <animate
+                    attributeName="offset"
+                    values="-2; -2; 1"
+                    keyTimes="0; 0.25; 1"
+                    dur="2s"
+                    repeatCount="indefinite"
+                ></animate>
+            </stop>
+            <stop offset="-1" stop-opacity="1">
+                <animate
+                    attributeName="offset"
+                    values="-1; -1; 2"
+                    keyTimes="0; 0.25; 1"
+                    dur="2s"
+                    repeatCount="indefinite"
+                ></animate>
+            </stop>
+            <stop offset="0"  stop-opacity="1">
+                <animate
+                    attributeName="offset"
+                    values="0; 0; 3"
+                    keyTimes="0; 0.25; 1"
+                    dur="2s"
+                    repeatCount="indefinite"
+                ></animate>
+            </stop>
+        </linearGradient>
+    </defs>
+</svg>

@@ -1,0 +1,141 @@
+---
+title: "Understanding SAFEs"
+description: "Videos notes"
+published: "2021-11-15"
+public: true
+mediaType: "Videos"
+lessonType: "Startups"
+url: "https://www.youtube.com/watch?v=Dk6JNTDec9I"
+source: notion
+---
+
+# Understanding SAFEs
+
+*Videos · Startups* · [Source](https://www.youtube.com/watch?v=Dk6JNTDec9I)
+
+## What is a SAFE?
+
+- Simple Agreement for Future Equity
+- Convertible security
+- Receive money now, issue stock later
+- Minimal negotiations
+  - You decide how much money an investor will put it, and at what negotiation cap
+  - Actual valuation will be decided in a priced round
+- Not debt
+
+### Main SAFE structure
+
+THIS CERTIFIES THAT in exchange for the payment by \[Investor Name] (the **"Investor"**) of $\[\_\_\_\_\_\_\_\_\_\_\_\_\_\_] (the **"Purchase Amount"**) on or about \[Date of Safe], \[Company Name], a \[State of Incorporation] corporation (the **"Company"**), issues to the investor the right to certain shares of the Company's capital stock, subject to the terms described below
+
+This Safe is one of the forms available at [https://ycombinator.com/documents](https://ycombinator.com/documents), and the Company and Investor agree that neither one has modified the form, except to fill in blanks and bracketed terms
+
+The "**Valuation Cap**" is $\[\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_]. See Section 2 for certain additional defined terms.
+
+### Anatomy of the SAFE
+
+5 pages in length. Split into 5 sections
+
+- Section 1 - Events
+  - Equity financing (company raising money)
+  - Liquidity event (company selling)
+  - Dissolution (company closed down)
+  - Liquidation priority (who comes first in the queue to be repaid)
+  - Termination
+- Section 2 – Definitions
+- Section 3 – company representations
+- Section 4 – investor representations
+- Section 5 – legal boilerplate language
+
+### Post-Money safes
+
+Pre-money valuation + money raised = post-money valuation
+
+To understand how much of the company is sold:
+
+- Founder Ownership = Amount raised / Post-money valuation cap
+
+### Different flavors of the SAFE
+
+- Capped (valuation is capped)
+- Discount (you get a %discount on the valuation)
+- Uncapped (extremely uncommon)
+- Uncapped with a "most favored nation" clause (can happen if you're raising money early on — but very uncommon too)
+
+### Dilution
+
+Assume that – at incorporation – you just have two founders who have split up the equity equally
+
+Next, they raise some money as Post-money safes from two different investors in two different rounds
+
+Investor A:
+
+- $200k, $4M post-money valuation cap
+- Ownership = $200k/$4M = 5%
+
+Investor B:
+
+- $800k, $8M post-money valuation cap
+- Ownership = $800k/$8M = 10%
+
+Dilution for founders = 5% + 10% = 15%
+
+When you raise some cash, you'll probably hire people. When this happens, you'll also likely issue stock + set aside an option pool. Founders will get diluted when this happens. Let's assume that the total number of shares (common shares) are 10,000,000 at this stage
+
+A year after this, you'll have a priced round. Let's say you raise $5M ($4M from the lead investor) at a $15M pre-money valuation for your Series A. So your post-money valuation is $20M, and the target available option pool is 10% of the post-money valuation
+
+In the priced round, 3 things happen:
+
+1. Safes convert as shares – note that safes are included in the pre-money valuation!
+2. Optional pool is increased
+3. New investors invest
+
+#### Step 1.
+
+When the safes convert, new shares are first issued to the SAFE investors
+
+Since they have 15% of the company (pre-money), they get an additional 1,764,705 shares (the founders 10M shares stay – dilution comes from the issuing of new shares)
+
+- this is transitory. cap-table won't look this this. it's just a step in the calculation
+
+If you raise at a post-money valuation that is lower than the SAFE cap, early investors will have a higher ownership than the 15% at this stage. This is why you shouldn't negotiate a crazy high valuation when getting SAFEs
+
+#### Step 2.
+
+Option pool increases
+
+In this case, 1.695M additional shares are issued since the target available optional pool is 10% post money and the post-money valuation is $20M
+
+#### Step 3.
+
+New money invests
+
+- Price per share = Pre-Money Valuation / Capitalization
+- Capitalization = Total fully diluted shares after safe conversion and option pool increase
+- Number of shares that Series A investors get = investment amount / price per share
+
+In this case, new money capitalization = 10M original shares + 1.76M safe investor shares + 1.695M option pool increase shares = 13.455M
+
+New money price = $15M / 13.455M shares = $1.114
+
+Total new money shares = $5M  / $1.114 = 4.48M shares
+
+This is the post money cap table
+
+![](/notion/understanding-safes/untitled.png)
+
+## Other related topics
+
+### Safes vs convertible debt
+
+- Safes aren't debt
+- Convertible debt is more complex – maturity, interest rates etc
+- Try not to have a combination of the two
+
+### Post-money safes are recommendeed
+
+- Pre-money safes are an option, but it's much harder to calculate dilution (specially wrt the increase in option pool)
+
+### Don't over-optimize on market caps
+
+- really doesn't matter all that much in terms of dilution
+- In this example, if founders had negotiated for $800k on a $10M post-money safe instead of $8M, they would've owned 52.77% instead of 51.54%

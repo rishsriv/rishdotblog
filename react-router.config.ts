@@ -18,8 +18,14 @@ export default {
       return `/p/${filename}`;
     });
 
-    return ["/", "/contact", "/notes", "/editor"].concat(
-      noteSlugs
+    const bookNotes = await import.meta.glob("./app/content/book-notes/*.mdx");
+    const bookNoteSlugs = Object.keys(bookNotes).map(
+      (path: string) => `/book-notes/${path.split("/").pop()?.replace(".mdx", "")}`
+    );
+
+    return ["/", "/contact", "/notes", "/book-notes", "/editor"].concat(
+      noteSlugs,
+      bookNoteSlugs
     );
   },
 } satisfies Config;
